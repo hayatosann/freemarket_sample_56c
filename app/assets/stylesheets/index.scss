@@ -1,0 +1,36 @@
+.header{
+  height: 95px;
+  width: 100vw;
+  &__top{
+    height: 50px;
+    width: 80%;
+    margin-left: 15%;
+    display: flex;
+    margin-top: 5px;
+    &__logo{
+      background: image-url('mercari.jpg');
+      background-size: cover;
+      width: 20%;
+      height: 100%;
+    }
+    &__search{
+      height: 80%;
+      width: 65%;
+      border: solid 1px grey;
+      border-radius: 5px;
+      margin-left: 2%;
+      box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0,0,0,0.6);
+    }
+  }
+  &__bottom{
+    height: 50px;
+    width: 80%;
+    background-color: aqua;
+    margin-left: 15%;
+    display: flex;
+    &__category{
+      height: 30px;
+      width: 20%;
+    }
+  }
+}
