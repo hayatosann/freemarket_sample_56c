@@ -1,6 +1,17 @@
 .header
   .header__top
-    .header__top__logo
+    .header__top__contents
+      .header__top__contents__logo
+      .header__top__contents__icons
+        .header__top__contents__icons__bell
+          =link_to "", class: "menu" do
+            = icon("far", "bell",class:"bell")
+        .header__top__contents__icons__check
+          =link_to "", class: "menu" do
+            = icon("fas", "check",class:"check")
+        .header__top__contents__icons__mypage
+          =link_to "", class: "menu" do
+            .header__top__contents__icons__mypage__thumbnail
     .header__top__search
   .header__bottom
     .header__bottom__category
