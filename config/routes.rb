@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'  
+  }
   resources :products
+  get '/users/mypage' => 'users#mypage'
   get '/users/sign_out' => 'users#sign_out'
 end

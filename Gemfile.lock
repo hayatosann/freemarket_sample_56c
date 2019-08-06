@@ -81,6 +81,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    erb2haml (0.1.5)
+      html2haml
     devise-i18n (1.8.1)
       devise (>= 4.6)
     devise-i18n-views (0.3.7)
@@ -236,6 +238,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  erb2haml
   font-awesome-rails
   devise
   devise-i18n
