@@ -1,0 +1,61 @@
+@media (min-width: 785px) {
+  .exhibitation{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    height: 150px;
+    width: 150px;
+    background-color: #ea352d;
+    border-radius: 50%;
+    text-align: center;
+    position: fixed;
+    bottom:30px;
+    right:30px;
+    z-index:9999;
+    &__logo{
+      font-size: 20px;
+      color: white;
+      padding-top: 20px;
+    }
+    &__icon{
+      .camera{
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: white;
+      }
+    }
+  }
+  .exhibit-btn{
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 785px) {
+  .exhibitation{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    height: 80px;
+    width: 80px;
+    background-color: #ea352d;
+    border-radius: 50%;
+    text-align: center;
+    position: fixed;
+    bottom:-15px;
+    right:-15px;
+    z-index:9999;
+    &__logo{
+      font-size: 12px;
+      color: white;
+      padding-top: 15px;
+      text-decoration:none;
+    }
+    &__icon{
+      .camera{
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: white;
+        font-size:24px;
+      }
+    }
+  }
+  .exhibit-btn{
+    text-decoration: none;
+  }
+}
