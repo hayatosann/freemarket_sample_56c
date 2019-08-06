@@ -1,0 +1,981 @@
+@media (min-width: 1020px) {
+  .footer{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    
+    &__top{
+      height: 260px;
+      width: 100vw;
+      position: relative;
+      &__area{
+        width: 100%;
+        height: 100%;
+        background: image-url('mercarilabel.png');
+        background-size: cover;
+        position: absolute;
+        left: 50%;
+        right: 0;
+        transform: translateX(-50%);
+      }
+    }
+    &__bottom{
+      height: 385px;
+      width: 100vw;
+      background-color: #212121;
+      &__area{
+        width: 1020px;
+        margin-top: auto;
+        margin-bottom: 0;
+        margin-left:auto;
+        margin-right:auto;
+        box-sizing: border-box;
+        display:flex;
+        &__about{
+          height: 100%;
+          width: 215px;
+          .about{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__company{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__recruit{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__pless{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__blog{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logoguideline{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logos{
+            height: 40px;
+            width: 100px;
+            margin-top: 30px;
+            display: flex;
+            &__twitter{
+              .twitter{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+            &__facebook{
+              margin-left:20px;
+              .facebook{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+          }
+          &__logowhite{
+            height: 35px;
+            width: 140px;
+            margin-top: 60px;
+            margin-bottom: 10px;
+            background: image-url('mercari-white.svg');
+            background-size: cover;
+          }
+        }
+        &__helpguide{
+          height: 300px;
+          width: 270px;
+          .helpguide{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:17px;
+          }
+          &__guide{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__rakuraku{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__yuyu{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__ogata{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__carguide{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__declaration{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__faker{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__box{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+        }
+        &__privacyleft{
+          height: 300px;
+          width: 260px;
+          .privacyleft{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:17px;
+          }
+          &__userule{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:13px;
+          }
+          &__polcy{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:13px;
+          }
+          &__rule{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__compla{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__mercari{
+            margin-top: 150px;
+            font-size: 8px;
+            text-align: center;
+            color: white;
+          }
+        }
+        &__privacyright{
+          margin-top: 40px;
+          height: 300px;
+          width: 240px;
+          .privacyright{
+            color:white;
+            text-decoration: none;
+          }
+          &__direction{
+            padding-top: 15px;
+            margin-left: 20px;
+            font-size:13px;
+          }
+          &__notation{
+            padding-top: 15px;
+            margin-left: 20px;
+            font-size:13px;
+          }
+          &__display{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 13px;
+          }
+          &__law{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 13px;
+          }
+        }
+        &__country{
+          height: 300px;
+          width: 150px;
+          .country{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:17px;
+          }
+          &__language{
+            &__japan{
+              padding-top: 15px;
+              margin-left: 30px;
+              font-size:13px;
+            }
+            &__english{
+              padding-top: 15px;
+              margin-left: 30px;
+              font-size:13px;
+            }
+          }
+          &__logos{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1020px) and (min-width: 785px) {
+  .footer{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    &__top{
+      height: 260px;
+      width: 100vw;
+      position: relative;
+      &__area{
+        width: 100%;
+        height: 100%;
+        background: image-url('mercarilabel.png');
+        background-size: cover;
+        position: absolute;
+        left: 50%;
+        right: 0;
+        transform: translateX(-50%);
+      }
+    }
+    
+    &__bottom{
+      height:660px;
+      width: 100vw;
+      margin-top: auto;
+      margin-bottom: 0;
+      background-color: #212121;
+      &__area{
+        width: 600px;
+        margin-left:auto;
+        margin-right:auto;
+        display:flex;
+        flex-wrap: wrap;
+        &__about{
+          height: 100%;
+          width: 215px;
+          .about{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__company{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__recruit{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__pless{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__blog{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logoguideline{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logos{
+            height: 40px;
+            width: 100px;
+            margin-top: 30px;
+            display: flex;
+            &__twitter{
+              .twitter{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+            &__facebook{
+              margin-left:20px;
+              .facebook{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+          }
+          &__logowhite{
+            height: 35px;
+            width: 140px;
+            margin-bottom: 10px;
+            background: image-url('mercari-white.svg');
+            background-size: cover;
+            display: none;
+          }
+        }
+        &__helpguide{
+          height: 300px;
+          width: 330px;
+          .helpguide{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            margin-left: 115px;
+            font-size:17px;
+          }
+          &__guide{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__rakuraku{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__yuyu{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__ogata{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__carguide{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__declaration{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__faker{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__box{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+        }
+        &__privacyleft{
+          height: 200px;
+          width: 300px;
+          .privacyleft{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__userule{
+            padding-top: 15px;
+            font-size:13px;
+          }
+          &__polcy{
+            padding-top: 15px;
+            font-size:13px;
+          }
+          &__rule{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__compla{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__mercari{
+            display: none;
+            font-size: 8px;
+            text-align: center;
+            color: white;
+          }
+        }
+        &__privacyright{
+          margin-top: 40px;
+          height: 150px;
+          width: 300px;
+          .privacyright{
+            color:white;
+            text-decoration: none;
+          }
+          &__direction{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:13px;
+          }
+          &__notation{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:13px;
+          }
+          &__display{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__law{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+        }
+        &__country{
+          height: 140px;
+          width: 300px;
+          .country{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__language{
+            display:flex;
+            &__japan{
+              padding-top: 15px;
+              font-size:13px;
+            }
+            &__english{
+              padding-top: 15px;
+              margin-left: 30px;
+              font-size:13px;
+            }
+          }
+          &__logos{
+            display: flex;
+            margin-top:40px;
+            &__logowhite{
+              height: 35px;
+              width: 140px;
+              margin-bottom: 10px;
+              background: image-url('mercari-white.svg');
+              background-size: cover;
+            }
+            &__mercari{
+              margin-top:13px;
+              margin-left: 10px;
+              font-size: 8px;
+              text-align: center;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 785px) and (min-width: 560px) {
+  .footer{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    &__bottom{
+      height:660px;
+      width: 100vw;
+      margin-top: auto;
+      margin-bottom: 0;
+      background-color: #212121;
+      &__area{
+        width: 600px;
+        margin-left:auto;
+        margin-right:auto;
+        display:flex;
+        flex-wrap: wrap;
+        &__about{
+          height: 100%;
+          width: 215px;
+          .about{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__company{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__recruit{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__pless{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__blog{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logoguideline{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logos{
+            height: 40px;
+            width: 100px;
+            margin-top: 30px;
+            display: flex;
+            &__twitter{
+              .twitter{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+            &__facebook{
+              margin-left:20px;
+              .facebook{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+          }
+          &__logowhite{
+            height: 35px;
+            width: 140px;
+            margin-bottom: 10px;
+            background: image-url('mercari-white.svg');
+            background-size: cover;
+            display: none;
+          }
+        }
+        &__helpguide{
+          height: 300px;
+          width: 330px;
+          .helpguide{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            margin-left: 115px;
+            font-size:17px;
+          }
+          &__guide{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__rakuraku{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__yuyu{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__ogata{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__carguide{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__declaration{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__faker{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+          &__box{
+            margin-top: 10px;
+            margin-left: 115px;
+            font-size: 13px;
+          }
+        }
+        &__privacyleft{
+          height: 200px;
+          width: 300px;
+          .privacyleft{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__userule{
+            padding-top: 15px;
+            font-size:13px;
+          }
+          &__polcy{
+            padding-top: 15px;
+            font-size:13px;
+          }
+          &__rule{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__compla{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__mercari{
+            display: none;
+            font-size: 8px;
+            text-align: center;
+            color: white;
+          }
+        }
+        &__privacyright{
+          margin-top: 40px;
+          height: 150px;
+          width: 300px;
+          .privacyright{
+            color:white;
+            text-decoration: none;
+          }
+          &__direction{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:13px;
+          }
+          &__notation{
+            padding-top: 15px;
+            margin-left: 30px;
+            font-size:13px;
+          }
+          &__display{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+          &__law{
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 13px;
+          }
+        }
+        &__country{
+          height: 140px;
+          width: 300px;
+          .country{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__language{
+            display:flex;
+            &__japan{
+              padding-top: 15px;
+              font-size:13px;
+            }
+            &__english{
+              padding-top: 15px;
+              margin-left: 30px;
+              font-size:13px;
+            }
+          }
+          &__logos{
+            display: flex;
+            margin-top:40px;
+            &__logowhite{
+              height: 35px;
+              width: 140px;
+              margin-bottom: 10px;
+              background: image-url('mercari-white.svg');
+              background-size: cover;
+            }
+            &__mercari{
+              margin-top:13px;
+              margin-left: 10px;
+              font-size: 8px;
+              text-align: center;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 560px) {
+  .footer{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+
+    &__bottom{
+      height:660px;
+      width: 100vw;
+      margin-top: auto;
+      margin-bottom: 0;
+      background-color: #212121;
+      &__area{
+        width: 600px;
+        margin-left:auto;
+        margin-right:auto;
+        display:flex;
+        flex-wrap: wrap;
+        &__about{
+          height: 100%;
+          width: 215px;
+          .about{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__company{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__recruit{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__pless{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__blog{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logoguideline{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__logos{
+            height: 40px;
+            width: 100px;
+            margin-top: 30px;
+            display: flex;
+            &__twitter{
+              .twitter{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+            &__facebook{
+              margin-left:20px;
+              .facebook{
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 400;
+                color: white;
+              }
+            }
+          }
+          &__logowhite{
+            height: 35px;
+            width: 140px;
+            margin-bottom: 10px;
+            background: image-url('mercari-white.svg');
+            background-size: cover;
+            display: none;
+          }
+        }
+        &__helpguide{
+          height: 300px;
+          width: 330px;
+          .helpguide{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            margin-left: 40px;
+            font-size:17px;
+          }
+          &__guide{
+            margin-top: 10px;
+            margin-left: 40px;
+            font-size: 13px;
+          }
+          &__rakuraku{
+            margin-top: 10px;
+            margin-left: 40px;
+            font-size: 13px;
+          }
+          &__yuyu{
+            margin-top: 10px;
+            margin-left:40px;
+            font-size: 13px;
+          }
+          &__ogata{
+            margin-top: 10px;
+            margin-left: 40px;
+            font-size: 13px;
+          }
+          &__carguide{
+            margin-top: 10px;
+            margin-left: 40px;
+            font-size: 13px;
+          }
+          &__declaration{
+            margin-top: 10px;
+            margin-left: 40px;
+            font-size: 13px;
+          }
+          &__faker{
+            margin-top: 10px;
+            margin-left: 40px;
+            font-size: 13px;
+          }
+          &__box{
+            margin-top: 10px;
+            margin-left: 45px;
+            font-size: 13px;
+          }
+        }
+        &__privacyleft{
+          height: 200px;
+          width: 250px;
+          .privacyleft{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__userule{
+            padding-top: 15px;
+            font-size:13px;
+          }
+          &__polcy{
+            padding-top: 15px;
+            font-size:13px;
+          }
+          &__rule{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__compla{
+            margin-top: 10px;
+            font-size: 13px;
+          }
+          &__mercari{
+            display: none;
+            font-size: 8px;
+            text-align: center;
+            color: white;
+          }
+        }
+        &__privacyright{
+          margin-top: 40px;
+          height: 150px;
+          width: 300px;
+          .privacyright{
+            color:white;
+            text-decoration: none;
+          }
+          &__direction{
+            padding-top: 15px;
+            margin-left: 10px;
+            font-size:13px;
+          }
+          &__notation{
+            padding-top: 15px;
+            margin-left: 10px;
+            font-size:13px;
+          }
+          &__display{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 13px;
+          }
+          &__law{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 13px;
+          }
+        }
+        &__country{
+          height: 140px;
+          width: 300px;
+          .country{
+            color:white;
+            text-decoration: none;
+          }
+          &__title{
+            padding-top: 15px;
+            font-size:17px;
+          }
+          &__language{
+            display:flex;
+            &__japan{
+              padding-top: 15px;
+              font-size:13px;
+            }
+            &__english{
+              padding-top: 15px;
+              margin-left: 30px;
+              font-size:13px;
+            }
+          }
+          &__logos{
+            display: flex;
+            margin-top:40px;
+            &__logowhite{
+              height: 35px;
+              width: 140px;
+              margin-bottom: 10px;
+              background: image-url('mercari-white.svg');
+              background-size: cover;
+            }
+            &__mercari{
+              margin-top:13px;
+              margin-left: 10px;
+              font-size: 8px;
+              text-align: center;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
