@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root to: 'products#index'
   get '/users/mypage' => 'users#mypage'
   get '/users/sign_out' => 'users#sign_out'
-
+  resources :users
+  
 end
