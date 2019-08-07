@@ -1,0 +1,191 @@
+.contents{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  margin-top:10px;
+  background-color: #f5f5f5;
+  margin-left: auto;
+  margin-right: auto;
+  .heart{
+    color: #dcdcdc;
+  }
+  &__slideshow{
+    height: 380px;
+    width: 100vw;
+    background: image-url('camp.png');
+    background-size: cover;
+  }
+  &__pickup{
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    &__logo{
+       text-align: center;
+       font-size: 28px;
+       font-weight: bold;
+    }
+    &__items{
+      height: 1000vw;
+      width: auto;
+      &__box{
+        margin-top: 50px;
+        height: 430px;
+        width: 930px;
+        margin-left: auto;
+        margin-right: auto;
+        &__title{
+          font-size: 24px;
+          text-align: center;
+          font-weight: bold;
+        }
+        &__contents{
+          margin-top:15px;
+          height: 330px;
+          width: 100%;
+          display: flex;
+          background-color: #f5f5f5;
+          &--content1{
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 100%;
+            width:213px;
+            background-color: white;
+            &__thumbnail{
+              height: 218px;
+              width: 213px;
+              background: image-url('thumbnail.png');
+              background-size: cover;
+            }
+            &__title{
+              height: 50px;
+              width: 193px;
+              margin-top:20px;
+              margin-left: 10px;
+              overflow: hidden;
+            }
+            &__footer{
+              height: 32px;
+              width: 193px;
+              display:flex;
+              margin-top:5px;
+              margin-left:10px;
+              &__price{
+              }
+              &__iine{
+                margin-left: auto;
+                margin-right: 0;
+              }
+            }
+          }
+          &--content2{
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 100%;
+            width:213px;
+            background-color: white;
+            &__thumbnail{
+              height: 218px;
+              width: 213px;
+              background: image-url('thumbnail.png');
+              background-size: cover;
+            }
+            &__title{
+              height: 50px;
+              width: 193px;
+              margin-top:20px;
+              margin-left: 10px;
+              overflow: hidden;
+            }
+            &__footer{
+              height: 32px;
+              width: 193px;
+              display:flex;
+              margin-top:5px;
+              margin-left:10px;
+              &__price{
+              }
+              &__iine{
+                margin-left: auto;
+                margin-right: 0;
+              }
+            }
+          }
+          &--content3{
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 100%;
+            width:213px;
+            background-color: white;
+            &__thumbnail{
+              height: 218px;
+              width: 213px;
+              background: image-url('thumbnail.png');
+              background-size: cover;
+            }
+            &__title{
+              height: 50px;
+              width: 193px;
+              margin-top:20px;
+              margin-left: 10px;
+              overflow: hidden;
+            }
+            &__footer{
+              height: 32px;
+              width: 193px;
+              display:flex;
+              margin-top:5px;
+              margin-left:10px;
+              &__price{
+              }
+              &__iine{
+                margin-left: auto;
+                margin-right: 0;
+              }
+            }
+          }
+          &--content4{
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 100%;
+            width:213px;
+            background-color: white;
+            &__thumbnail{
+              height: 218px;
+              width: 213px;
+              background: image-url('thumbnail.png');
+              background-size: cover;
+            }
+            &__title{
+              height: 50px;
+              width: 193px;
+              margin-top:20px;
+              margin-left: 10px;
+              overflow: hidden;
+            }
+            &__footer{
+              height: 32px;
+              width: 193px;
+              display:flex;
+              margin-top:5px;
+              margin-left:10px;
+              &__price{
+              }
+              &__iine{
+                margin-left: auto;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        &__more{
+          margin-top:10px;
+          text-align: right;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.item{
+  color: rgb(3, 186, 247);
+  text-decoration: none;
+}
+      
