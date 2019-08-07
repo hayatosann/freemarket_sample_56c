@@ -1,3 +1,4 @@
+
 /*
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
@@ -106,6 +107,7 @@ select {
   font-family:inherit;
   font-size:inherit;
   font-weight:inherit;
+
   *font-size:100%; /*to enable resizing for IE*/
 }
 /*because legend doesn't inherit in IE */
