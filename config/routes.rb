@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'products#show'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'  
+  }
   resources :products
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/users/mypage' => 'users#mypage'
+  get '/users/sign_out' => 'users#sign_out'
 end
