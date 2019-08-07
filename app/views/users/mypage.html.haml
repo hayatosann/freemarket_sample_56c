@@ -1,0 +1,58 @@
+%main.wrapper
+  .content
+    .left_contents
+      = render partial: 'navigations'
+    .right_contents
+      %section.user-icon
+        = link_to "https://www.mercari.com/jp/u/1/", class: "user-link" do
+          %figure
+            = image_tag("member_photo_noimage_thumb.png", class: "user-link__image", alt: "", width: 60, height: 60)
+          %h2.user-icon__name.bold
+            user_name
+          .user-link__number
+            %div.user-link__number__status
+              評価
+              %span.bold
+                0
+            %div.user-link__number__status
+              出品数
+              %span.bold
+                0
+
+      %section.notification-todo
+        %ul.tabs
+          %li.tabs__tab.active
+            %h3
+              = link_to 'お知らせ', "#tab-notification", class: "tabs__tab__info", data: {toggle: "tab"}
+          %li.tabs__tab
+            %h3
+              = link_to 'やることリスト', "#tab-todo", class: "tabs__tab__info", data: {toggle: "tab"}
+
+        .tab-content
+          %ul#tab-notification.tab-content__item-list
+            %li.tab-content__item-list__item-not-found.bold
+              %p
+                お知らせの商品がありません
+
+          -# %ul#tab-todo.tab-content__item-list
+            -# %li.tab-content__item-list__item-not-found.bold
+              -# %p
+                -# 現在、やることリストはありません
+
+      %section.tab-container
+        %h2.tab-header 購入した商品
+        %ul.tabs
+          %li.tabs__tab.active
+            %h3
+              = link_to '取引中', "#tab-item-now", class: "tabs__tab__info", data: {toggle: "tab"}
+          %li.tabs__tab
+            %h3
+              = link_to '過去の取引', "#tab-item-old", class: "tabs__tab__info", data: {toggle: "tab"}
+        .tab-content
+          %ul#tab-item-now.item-list
+            %li.item-list__item-not-found.bold
+              %p
+                取引中の商品がありません
+          -# .active をitem-listにつける
+          -# %ul#tab-item-old.item-list
+          -#   %li.item-list__item-not-found.bold 過去に取引した商品がありません
