@@ -9,9 +9,11 @@
   }
   &__slideshow{
     height: 380px;
-    width: 100vw;
-    background: image-url('camp.png');
-    background-size: cover;
+    width: 100%;
+    background: image-url('camp2.png');    
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: repeat-x;
   }
   &__pickup{
     margin-top: 30px;
