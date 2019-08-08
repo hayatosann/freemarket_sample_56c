@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/users/mypage' => 'users#mypage'
   get '/users/sign_out' => 'users#sign_out'
 
+  resources :purchase, only: :show
+
 end
