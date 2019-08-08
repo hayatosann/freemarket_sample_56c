@@ -1,0 +1,154 @@
+
+.bold {
+  font-weight: 600;
+}
+.contentsbox{
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  .contentsbox-container-inner__head{
+    padding-top:10px;
+    text-align:center;
+  }  
+  .buycontent {
+    margin: 10px 0 40px 0px;
+    text-align: center;
+    padding: 24px 12.5% 0;
+    border-top: 1px solid #f5f5f5;
+    &__inner{
+      flex-wrap: wrap;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .buyitem {
+      text-align: center;
+      &__image{
+        width:64px;
+        height:64px;
+      }
+      &__name{
+      padding-left:20px;
+      margin: 0 35px 60 0px;
+      font-size: 16px;
+      line-height: 1.5;
+      }
+      .buyform {
+        width: 100%;
+        .buyform p {
+          margin: 8px 0 0;
+          line-height: 1.5;
+        }  
+        .sendingfee.bold{
+          font-size: 14px;
+        }
+      } 
+      .buy-price-table {
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+        float:right;
+      }     
+    }    
+  }
+}
+.buy-content {
+  margin: 40px 0 0;
+  padding: 24px 12.5% 0;
+  border-top: 1px solid #f5f5f5;
+  padding-bottom:40px;
+  &__inner{
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.buy-user-info{
+  h3:first-child {
+    margin: 0;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  address {
+    display: block;
+  }
+  &__text {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  &__fix {
+    float:right;
+    text-align: right;
+  }
+}
+
+.buy-user-info__fix span{
+  text-align: right;
+}
+
+.buy-accordion.not-toggle {
+  background: #ccc;
+  padding: 16px;
+  margin-top:20px;
+}
+
+.buy-you-pay {
+  font-size: 16px;
+}
+
+
+
+.buy-price-row:first-child {
+  border: 0;
+}
+.buy-price-ja {
+  margin-top:70px;
+  font-size: 22px;
+}
+
+.buy-price-row {
+  display: table-row;
+  border-top: 1px solid #ccc;
+}
+
+.buy-price-cell:first-child {
+  text-align: left;
+}
+
+.buy-price-cell {
+  display: table-cell;
+  padding: 16px 0;
+}
+
+.buy-price-cell {
+  display: table-cell;
+  padding: 16px 0;
+}
+
+.buy-price-cell span {
+  font-size: 28px;
+  margin-left:140px;
+}
+
+.buy-item .btn-red {
+  margin: 8px 0 0;
+}
+
+.btn-red {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+
+.icon-arrow-right {
+  margin: 0 0 0 8px;
+  font-size: 10px;
+}
+.item-picture{
+  width:64px;
+  height:64px;
+  float:left;
+}
+
