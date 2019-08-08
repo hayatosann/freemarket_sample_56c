@@ -46,14 +46,14 @@ body {
   color: #fff;
   text-shadow: none;
 }
-a, area, button, input, label, select, textarea, [tabindex] {
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
-a {
-  color: #0099e8;
-  text-decoration: none;
-}
+// a, area, button, input, label, select, textarea, [tabindex] {
+//   -ms-touch-action: manipulation;
+//   touch-action: manipulation;
+// }
+// a {
+//   color: #0099e8;
+//   text-decoration: none;
+// }
 button, input, select, textarea {
   color: inherit;
   font-family: inherit;
