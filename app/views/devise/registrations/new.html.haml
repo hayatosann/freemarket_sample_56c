@@ -1,21 +1,50 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.signup-container
+  %header.signup-header
+    %h1.signup-header__title
+      = link_to root_path, class: "signup-header__title__link" do
+        = image_tag "logo.svg", class: "signup-header__title__link__img", alt: "mercari"
+  %main.signup-main
+    %section.signup-main__container
+      %h2.signup-main__container__head.registration 新規会員登録
+      .signup-main__container__inner.registration-form
+        .signup-main__container__inner__content
+          = link_to "https://www.mercari.com/jp/signup/registration/", class: "signup-main__container__inner__content__mail-btn btn-default" do
+            %i.far.fa-envelope.fa-lg.signup-main__container__inner__content__mail-btn__icon
+            メールアドレスで登録する
+          %button#facebook-login.signup-main__container__inner__content__facebook-btn.btn-default.btn-sns
+            %i.fab.fa-facebook-square.fa-2x.signup-main__container__inner__content__facebook-btn__icon
+            Facebookで登録する
+          %button#google-login.signup-main__container__inner__content__google-btn.btn-default.btn-sns
+            Googleで登録する
+    %form#login_form_facebook{action: "/jp/signup/facebook/", method: "POST", novalidate: "novalidate"}
+      %input{name: "__csrf_value", type: "hidden", value: "9e97125fda5dca21a5e67d9cdcb7eb355e6abf67ad6d48794ce7cc744b2067115fba726defc841dffe21a3bb477734d54f3857b4538bec5a03f28e6bc58b27ca8"}/
+      %input{name: "nickname", type: "hidden", value: ""}/
+      %input{name: "email", type: "hidden", value: ""}/
+      %input{name: "facebook_user_id", type: "hidden", value: ""}/
+      %input{name: "facebook_access_token", type: "hidden", value: ""}/
+      %input{name: "login_type", type: "hidden", value: "facebook"}/
+    %form#login_form_google{action: "/jp/signup/google/", :method => "POST", :novalidate => "novalidate"}
+      %input{name: "__csrf_value", type: "hidden", value: "9e97125fda5dca21a5e67d9cdcb7eb355e6abf67ad6d48794ce7cc744b2067115fba726defc841dffe21a3bb477734d54f3857b4538bec5a03f28e6bc58b27ca8"}/
+      %input{name: "nickname", type: "hidden", value: ""}/
+      %input{name: "email", type: "hidden", value: ""}/
+      %input{name: "google_user_id", type: "hidden", value: ""}/
+      %input{name: "google_access_token", type: "hidden", value: ""}/
+      %input{name: "login_type", type: "hidden", value: "google"}/
+    %input#google_client_id{type: "hidden", value: "238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com"}/
+    %input#facebook_app_id{type: "hidden", value: "466308336793848"}/
+  %footer.signup-footer
+    %nav
+      %ul.signup-footer__lists.clearfix
+        %li.signup-footer__lists__list
+          = link_to "https://www.mercari.com/jp/privacy/", class: "signup-footer__lists__list__link" do
+            プライバシーポリシー
+        %li.signup-footer__lists__list
+          = link_to "https://www.mercari.com/jp/tos/", class: "signup-footer__lists__list__link" do
+            メルカリ利用規約
+        %li.signup-footer__lists__list
+          = link_to "https://www.mercari.com/jp/tokutei/", class: "signup-footer__lists__list__link" do
+            特定商取引に関する表記
+    = link_to root_url, class: "signup-footer__logo" do
+      = image_tag "logo-gray.svg", alt: "mercari", width: "80", height: "65"
+    %p.signup-footer__copyright
+      %small © 2019 Mercari
