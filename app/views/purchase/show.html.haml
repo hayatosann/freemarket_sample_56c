@@ -1,0 +1,63 @@
+%body
+  %noscript
+    %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden", :width => "0"}
+  .exhibition-wrap
+    %header.exhibition-header
+      %h1
+        %a{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?863303983"}/
+    .contentsbox
+      .contentsbox-container
+        .contentsbox-container-inner
+          %h2.contentsbox-container-inner__head 購入内容の確認
+          .buycontent
+            .buycontent__inner
+              %h3.buyitem__image-clearfix
+                %img.item-picture{:alt => "",style: "width:64px;", "data-src" => "https://static.mercdn.net/thumb/photos/m68393148128_1.jpg?1564776661", :src => "https://static.mercdn.net/thumb/photos/m68393148128_1.jpg?1564776661"}/
+              %p.buyitem__name.bold usjみにおんTシャツ
+              %form.buyform{:action => "https://www.mercari.com/jp/transaction/buy/done/m68393148128/", :method => "POST", :novalidate => "novalidate"}
+                %p.buy-price-ja.bold
+                  ¥ 1,900
+                  %span.sendingfee.bold 送料込み
+                %ul.buy-accordion.not
+                  %li.buy-accordion.not-parent
+                    .buy-accordion.not-toggle
+                      ポイントはありません
+                %ul.buy-price-table
+                  %li.buy-price-row.buy-you-pay.bold
+                    .buy-price-cell 支払い金額
+                    .buy-price-cell
+                      %span{"data-buy-pay" => "1900"} ¥ 1,900
+                %button.btn-default.btn-red.bold{:type => "submit"} 購入する
+        %section.buy-content.buy-user-info
+          .buy-content__inner
+            %h3 配送先
+            %address.buy-user-info__text
+              〒211-0025
+              %br/
+              神奈川県 川崎市中原区
+              
+              %br/
+              笹野
+            %p.buy-user-info__text
+              test
+              %br/
+              test
+              %br/
+            %a.buy-user-info__fix{:href => "https://www.mercari.com/jp/transaction/address/m68393148128/?_s=U2FsdGVkX18r8LkQxcZ5xHmXyr8fWBRKC4sF1f3of10qJ-5FDE4YTr5xClKeHEswy6Jir5ObJrlishe9d8vfDyrb7eZfmXG-UrL9TqwR7E2CgKtKxl--2bAdXOwP1X_N"}
+              %span 変更する 
+              %i.fa.fa-arrow-right  
+
+    %footer.exhibition-footer
+      %nav
+        %ul.clearfix
+          %li
+            %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+          %li
+            %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+          %li
+            %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+      %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
+        %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983", :width => "80"}/
+      %p
+        %small © 2019 Mercari
