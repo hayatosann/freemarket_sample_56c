@@ -1,0 +1,29 @@
+= render 'shared/header'
+= render 'shared/exhibitation'
+.container
+  .left_contents
+    = render partial: 'shared/navigations'
+  .right_contents
+    .credit_title
+      支払い方法
+    .credit_body
+      .credit_box
+        クレジットカード一覧
+        %br
+        %br
+        %img.creditpic{:src => "/assets/amex.png"}
+        %button.delete_credit{:type => "submit"}削除する
+        %br
+      .credit_info
+        ***********1111
+        %br
+        06/17
+      .method
+        支払い方法について
+        %i.fas.fa-chevron-right
+        
+
+= render 'shared/footer'
+
+
+
