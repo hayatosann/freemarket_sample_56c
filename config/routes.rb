@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/users/payment' => 'users#payment'
   get '/users/complete' => 'users#complete'
   get '/users/infomation' => 'users#infomation'
+  get '/users/mypage/identification' => 'users#identification'
 
   resources :purchase, only: :show
 
