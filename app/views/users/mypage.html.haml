@@ -1,7 +1,9 @@
+= render 'shared/header'
+= render 'shared/exhibitation'
 %main.wrapper 
   .content
     .left_contents
-      = render partial: 'navigations'
+      = render partial: 'shared/navigations'
     .right_contents
       %section.user-icon
         = link_to "https://www.mercari.com/jp/u/1/", class: "user-link" do
@@ -10,11 +12,11 @@
           %h2.user-icon__name.bold
             user_name
           .user-link__number
-            %div.user-link__number__status
+            .user-link__number__status
               評価
               %span.bold
                 0
-            %div.user-link__number__status
+            .user-link__number__status
               出品数
               %span.bold
                 0
@@ -56,3 +58,4 @@
           -# .active をitem-listにつける
           -# %ul#tab-item-old.item-list
           -#   %li.item-list__item-not-found.bold 過去に取引した商品がありません
+= render 'shared/footer'

@@ -1,3 +1,5 @@
+= render 'shared/header'
+= render 'shared/exhibitation'
 %main.wrapper_all 
   .left_contents
     = render partial: 'navigations'
@@ -11,4 +13,5 @@
     .bottom-boxes
       %textarea.text-area{:cols => "60", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5"}
       %button.submit-changes{:type => "submit"}変更する
+= render 'shared/footer'
 
