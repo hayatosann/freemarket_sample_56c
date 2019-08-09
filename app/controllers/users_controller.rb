@@ -26,4 +26,6 @@ class UsersController < ApplicationController
   def identification
   end
   
+  def credit_confirmation
+  end 
 end
