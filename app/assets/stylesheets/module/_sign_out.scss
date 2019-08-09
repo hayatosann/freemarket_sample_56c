@@ -1,18 +1,19 @@
 
-
-.container{
+.container{ 
   background-color: #f4f4f4;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
-  padding-top: 200px;
+  padding-top: 40px;
+  display: flex;
+  padding-left: 20%;
 }
 
 .back-box{
   height: 150px;
   width: 700px;
   background-color: white;
-  margin-left: 40%;
+  margin-left: 40px;
   margin-right: 20%;
   box-sizing: border-box;
 
@@ -22,11 +23,13 @@
     text-align: center;   
     cursor: pointer; 
     padding: 18px 165px;   
-    background: #D84639;
+    background: #ea352d;
     color: white;
     line-height: 1em;
     box-sizing: border-box;
     margin: 40px 150px;
+    height: 60px;
+    width: 400px;
   }
 }
 
