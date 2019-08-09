@@ -14,10 +14,10 @@ pid "/var/www/freemarket_sample_56c/shared/tmp/pids/unicorn.pid"
 listen "/var/www/freemarket_sample_56c/shared/tmp/sockets/unicorn.sock"
 
 #エラーのログを記録するファイルを指定
-stderr_path "/var/www/freemarket_sample_56c/shared/log/unicorn.stderr.log"
+stderr_path "/var/www/freemarket_sample_56c/log/unicorn.stderr.log"
 
 #通常のログを記録するファイルを指定
-stdout_path "/var/www/freemarket_sample_56c/shared/log/unicorn.stdout.log"
+stdout_path "/var/www/freemarket_sample_56c/log/unicorn.stdout.log"
 
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
