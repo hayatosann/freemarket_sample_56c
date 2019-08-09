@@ -1,0 +1,161 @@
+.wrapper1
+  %section.item-container1
+    %h1.item-container1__item-name 商品名
+    .item-container1__item-content.clearfix
+      .content--photo
+        .content--photo-up   picture zone
+        .content--photo-down picture挿入
+      %table.content--detail-table
+        %tbody.table
+          %tr.table--section
+            %th.table--section-left 出品者
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left カテゴリー
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left ブランド
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left 商品状態
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left 配送料負担
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left 配送方法
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left 配送元
+            %th.table--section-right 
+          %tr.table--section
+            %th.table--section-left 配送日目安
+            %th.table--section-right 明日
+    .item-container1__item-price
+      .test
+        %span.item-container1__item-price-bold  ¥1,000
+        %span.item-container1__item-price-tax (税込)
+        %span.item-container1__item-price-shipping-fee 送料込み
+    .item-container1__item-buy-btn 購入画面に進む
+    .item-container1__item-description 
+      %p.item-description-inner
+        出品者コメント//
+        出品者コメント//
+        出品者コメント//
+        出品者コメント//
+        出品者コメント//
+        出品者コメント//出品者コメント//
+        出品者コメント//出品者コメント//
+        出品者コメント//
+        
+    .item-container1__item-other-btn.clearfix
+      .link_btn_left
+        %button.item-other-btn-left 
+          %i.fa.fa-heart いいね！
+        %button.item-other-btn-left 不適切な商品の勧告
+      .link_btn_right
+        %i.fa.fa-lock あんしん・あんぜんへの取り組み
+  .item-detail-message
+    .message-container
+      .message-content
+        %form.message-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
+          %input{:name => "__csrf_value", :type => "hidden", :value => "c55239470129d9454965bb6e795b3c51b1a2c574b8adf51df04606f58bd8d41724a694229487bce3caa8a08b5537a8923c9f042e751656ccf095b59342b60d381"}/
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{:name => "item_id", :type => "hidden", :value => "m42713469142"}/
+          %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+          %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+          %button.message-submit.btn-default.btn-gray{:type => "submit"}
+            %span コメントする
+  %ul.item-nav.clearfix
+    %li.item-nav__link
+      = link_to '< Preview product', root_path, class: 'item-nav__link-prev'
+      = link_to 'Next product >', root_path, class: 'item-nav__link-next'
+    
+  .sns
+    %ul.sns--icon
+      %i.fab.fa-facebook-square
+      %i.fab.fa-twitter-square
+      %i.fab.fa-pinterest-square
+  .item-others
+    %section.item-others--seller
+      %h2.item-others-seller-name 出品者のその他の商品
+      .item-others--seller_product
+        .items-box
+          .items-box_photo
+            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_body
+            %h3.items-box-name
+              G-パン
+            .items-box-num
+              .items-box-price
+                ￥6,000
+              .items-box-icon
+                %i.fa.fa-heart
+                1
+        .items-box
+          .items-box_photo
+            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_body
+            %h3.items-box-name
+              チノパン
+            .items-box-num
+              .items-box-price
+                ￥2,000
+              .items-box-icon
+                %i.fa.fa-heart
+                2
+            
+        .items-box
+          .items-box_photo
+            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_body
+            %h3.items-box-name
+              t-シャツ
+            .items-box-num
+              .items-box-price
+                ￥500
+              .items-box-icon
+                %i.fa.fa-heart
+                1
+          
+    %section.item-others--product
+      %h2.item-others--product__category-name 同カテゴリーその他の商品
+      .item-others--product__content
+        .items-box
+          .items-box_photo
+            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_body
+            %h3.items-box-name
+              shirt
+            .items-box-num
+              .items-box-price
+                ￥3,000
+              .items-box-icon
+                %i.fa.fa-heart
+                2
+        .items-box
+          .items-box_photo
+            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_body
+            %h3.items-box-name
+              shirt
+            .items-box-num
+              .items-box-price
+                ￥3,000
+              .items-box-icon
+                %i.fa.fa-heart
+                2
+        .items-box
+          .items-box_photo
+            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_body
+            %h3.items-box-name
+              shirt
+            .items-box-num
+              .items-box-price
+                ￥3,000
+              .items-box-icon
+                %i.fa.fa-heart
+                2 
+
+       

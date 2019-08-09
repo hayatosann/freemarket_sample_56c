@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  get '/users/mypage', to: 'users#mypage'
+  get '/users/sign_out', to: 'users#sign_out'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'  
   }
-  resources :products
   root to: 'products#index'
-  get '/users/mypage' => 'users#mypage'
-  get '/users/sign_out' => 'users#sign_out'
+  resources :purchase, only: :show
 
+  resources :products
+  resources :users
 end
