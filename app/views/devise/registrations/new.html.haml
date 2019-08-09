@@ -1,8 +1,8 @@
 .signup-container
-  %header.signup-header
-    %h1.signup-header__title
-      = link_to root_path, class: "signup-header__title__link" do
-        = image_tag "logo.svg", class: "signup-header__title__link__img", alt: "mercari"
+  %header.signup-header-box
+    %h1.signup-header-box__title
+      = link_to root_path, class: "signup-header-box__title__link" do
+        = image_tag "logo.svg", class: "signup-heade-boxr__title__link__img", alt: "mercari"
   %main.signup-main
     %section.signup-main__container
       %h2.signup-main__container__head.registration 新規会員登録
@@ -32,19 +32,19 @@
       %input{name: "login_type", type: "hidden", value: "google"}/
     %input#google_client_id{type: "hidden", value: "238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com"}/
     %input#facebook_app_id{type: "hidden", value: "466308336793848"}/
-  %footer.signup-footer
+  %footer.sign-up-footer
     %nav
-      %ul.signup-footer__lists.clearfix
-        %li.signup-footer__lists__list
-          = link_to "https://www.mercari.com/jp/privacy/", class: "signup-footer__lists__list__link" do
+      %ul.sign-up-footer__lists.clearfix
+        %li.sign-up-footer__lists__list
+          = link_to "https://www.mercari.com/jp/privacy/", class: "sign-up-footer__lists__list__link" do
             プライバシーポリシー
-        %li.signup-footer__lists__list
-          = link_to "https://www.mercari.com/jp/tos/", class: "signup-footer__lists__list__link" do
+        %li.sign-up-footer__lists__list
+          = link_to "https://www.mercari.com/jp/tos/", class: "sign-up-footer__lists__list__link" do
             メルカリ利用規約
-        %li.signup-footer__lists__list
-          = link_to "https://www.mercari.com/jp/tokutei/", class: "signup-footer__lists__list__link" do
+        %li.sign-up-footer__lists__list
+          = link_to "https://www.mercari.com/jp/tokutei/", class: "sign-up-footer__lists__list__link" do
             特定商取引に関する表記
-    = link_to root_url, class: "signup-footer__logo" do
+    = link_to root_url, class: "sign-up-footer__logoimg" do
       = image_tag "logo-gray.svg", alt: "mercari", width: "80", height: "65"
-    %p.signup-footer__copyright
+    %p.sign-up-footer__copyright
       %small © 2019 Mercari
