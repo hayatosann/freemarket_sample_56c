@@ -1,4 +1,10 @@
-
+.sendingfee{
+  font-weight: 400;
+  margin-left:10px;
+}
+.exhibition-wrap{
+  background: rgb(245, 245, 245);
+}
 .bold {
   font-weight: 600;
 }
@@ -7,8 +13,11 @@
   margin: 0 auto;
   background: #fff;
   .contentsbox-container-inner__head{
-    padding-top:10px;
+    padding-top: 20px;
+    padding-bottom: 12px;
     text-align:center;
+    font-size: 22px;
+    font-weight: 700;
   }  
   .buycontent {
     margin: 10px 0 40px 0px;
@@ -84,6 +93,10 @@
   }
 }
 
+.buy-user-info__fix{
+  color: #0099e8;
+  text-decoration: none;
+}
 .buy-user-info__fix span{
   text-align: right;
 }
@@ -106,6 +119,9 @@
 .buy-price-ja {
   margin-top:70px;
   font-size: 22px;
+}
+.buy-price-ja:first-child {
+  font-weight: 600;
 }
 
 .buy-price-row {
