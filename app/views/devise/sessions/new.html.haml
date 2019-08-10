@@ -1,6 +1,7 @@
 .all
   .log_in
-    %img{src: "/assets/mercari_logo.svg", class: "log_in__logo"}
+    %div.log_in__logo= image_tag asset_path('mercari_logo.svg')
+    //%img{src: "/assets/mercari_logo.svg", class: "log_in__logo"}
     .boxtop
       %p.boxtop__NoAccount アカウントをお持ちでない方はこちら
       .boxtop__NewRegistration 新規会員登録
