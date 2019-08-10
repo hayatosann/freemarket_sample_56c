@@ -4,8 +4,7 @@
   .exhibition-wrap
     %header.exhibition-header
       %h1
-        %a{:href => "https://www.mercari.com/jp/"}
-          %div= image_tag asset_path('logo.svg?863303983')
+        %a= image_tag asset_path('logo.svg?863303983')
     %main.exhibition-main
       %section.l-exhibition-container
         #sell-container
@@ -259,7 +258,7 @@
             %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
           %li
             %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-      %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-        %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983", :width => "80"}/
+      %a.single-footer-logo
+        %div.LogoGray= image_tag asset_path('logo-gray.svg')
       %p
         %small © 2019 Mercari
