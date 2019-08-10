@@ -26,10 +26,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
 |postal_code|integer|null: false|
 |prefecture|integer|null: false, unique:true|
 |city|string|null: false|
@@ -85,7 +81,6 @@
 |buyer_id|integer|null: false, foreign_key: true|
 |seller_id|integer|null: false, foreign_key: true|
 |postage_by|integer|null: false|
-|address_id|integer|null: false, foreign_key: true|
 |status|integer|null: false|
 
 ### Association
@@ -97,6 +92,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|image|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -111,6 +107,5 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :product
 - belongs_to :purchase
 - belongs_to :user
