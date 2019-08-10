@@ -8,7 +8,8 @@
       プロフィール
     .bgimage
       .person
-        %img.thumbnail{:src => "#{asset_path('thumbnail.png')}"}
+        %div.thumbnail= image_tag asset_path('thumbnail.png')
+        //%img.thumbnail{:src => "#{asset_path('thumbnail.png')}"}
         //%img.thumbnail{:src => "/assets/thumbnail.png"}
         %input.profile-text{:size => "20", :type => "text"}
     .bottom-boxes

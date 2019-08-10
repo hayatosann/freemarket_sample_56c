@@ -65,7 +65,7 @@
   position: relative;
   height: 200px;
   width: 700px;
-  background-image: url("user-bg.jpg"); 
+  background-image: image-url("user-bg.jpg"); 
 }
 
 
@@ -82,16 +82,18 @@
 }
 
 .thumbnail{
+  position: absolute;
+  img{
   border-radius: 50%;
+  margin-left: 180px;
+  margin-top: 95px;
   height: 60px;
   width: 60px;
-  position: absolute;
   // top: 0;
   // bottom: 0;
   // right: 0;
   // left: 0;
   // margin: auto;
-  margin-left: 5px;
-  margin-top: 95px;
+  }
 }
 
