@@ -5,8 +5,9 @@
     %h1.item-container1__item-name 商品名
     .item-container1__item-content.clearfix
       .content--photo
-        .content--photo-up   picture zone
+        .content--photo-up= image_tag asset_path('test.png'), size: "300x300"
         .content--photo-down picture挿入
+        
       %table.content--detail-table
         %tbody.table
           %tr.table--section
@@ -83,8 +84,7 @@
       %h2.item-others-seller-name 出品者のその他の商品
       .item-others--seller_product
         .items-box
-          .items-box_photo
-            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_photo= image_tag asset_path('test.png'), size: "220x220"
           .items-box_body
             %h3.items-box-name
               G-パン
@@ -95,8 +95,7 @@
                 %i.fa.fa-heart
                 1
         .items-box
-          .items-box_photo
-            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_photo= image_tag asset_path('test.png'), size: "220x220"
           .items-box_body
             %h3.items-box-name
               チノパン
@@ -108,8 +107,7 @@
                 2
             
         .items-box
-          .items-box_photo
-            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_photo= image_tag asset_path('test.png'), size: "220x220"
           .items-box_body
             %h3.items-box-name
               t-シャツ
@@ -124,8 +122,7 @@
       %h2.item-others--product__category-name 同カテゴリーその他の商品
       .item-others--product__content
         .items-box
-          .items-box_photo
-            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_photo= image_tag asset_path('test.png'), size: "220x220"
           .items-box_body
             %h3.items-box-name
               shirt
@@ -136,8 +133,7 @@
                 %i.fa.fa-heart
                 2
         .items-box
-          .items-box_photo
-            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_photo= image_tag asset_path('test.png'), size: "220x220"
           .items-box_body
             %h3.items-box-name
               shirt
@@ -148,8 +144,7 @@
                 %i.fa.fa-heart
                 2
         .items-box
-          .items-box_photo
-            = link_to image_tag "https://static.mercdn.net/thumb/photos/m23331756195_1.jpg?1565069598", href:"", size: "220x220"
+          .items-box_photo= image_tag asset_path('test.png'), size: "220x220"
           .items-box_body
             %h3.items-box-name
               shirt
