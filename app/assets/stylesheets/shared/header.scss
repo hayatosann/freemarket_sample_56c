@@ -10,6 +10,7 @@
       display: flex;
       padding-top: 10px;
       &__contents{
+        text-align: center;
         &__logo{
           height: 50px;
           background: image-url('mercari.jpg');
