@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  detail: MyText
+  user: one
+  large_category_id: 1
+  medium_category_id: 1
+  small_category_id: 1
+  size_id: 1
+  brand_id: 1
+  condition_id: 1
+  delivery_fee_id: 1
+  shipping_method: 1
+  prefecture_from: 1
+  shipping_days: 1
+  price: 1
+
+two:
+  name: MyString
+  detail: MyText
+  user: two
+  large_category_id: 1
+  medium_category_id: 1
+  small_category_id: 1
+  size_id: 1
+  brand_id: 1
+  condition_id: 1
+  delivery_fee_id: 1
+  shipping_method: 1
+  prefecture_from: 1
+  shipping_days: 1
+  price: 1

@@ -1,6 +1,6 @@
 # README
 
-## Usersテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -50,16 +50,14 @@
 ### Association
 - belongs_to :user
 
-## Productsテーブル
+## productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |detail|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|large_category_id|integer|null: false, foreign_key: true|
-|medium_category_id|integer|null: false, foreign_key: true|
-|small_category_id|integer|null: true, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false|
 |brand_id|integer|null: false|
 |condition_id|integer|null: false|
@@ -70,11 +68,12 @@
 |price|integer|null: false|
 
 ### Association
-- belongs_to :user, :large_category, :medium_category, :small_category, optional: true, :brand optional: true
+- belongs_to :user, :brand
+- belongs_to :category, foreign_key: true, null:false 
 - has_many :images, :comments, :users through :comments
 - belongs_to active_hash :size_id, brand_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
 
-## Purchaseテーブル
+## purchasesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -88,7 +87,7 @@
 - belongs_to :buyer, class_name: "User", foreign_key: "buyer_id"
 - belongs_to :seller, class_name: "User", foreign_key: "seller_id"
 
-## Imageテーブル
+## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -99,13 +98,34 @@
 - belongs_to :product
 
 
-## Commentテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |purchase_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+|comment|text|null: false|
 
 ### Association
 - belongs_to :purchase
 - belongs_to :user
+
+## brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: true|
+
+### Association
+- has_many :products
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: true|
+|ancestry|integer|null: true, index: true|
+
+### Association
+- has_ancestry
+- has_many :products
