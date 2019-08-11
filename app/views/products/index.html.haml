@@ -10,46 +10,19 @@
         =link_to "", class: "item" do
           レディース 新着アイテム
       .contents__pickup__items__box__contents
-        .contents__pickup__items__box__contents--content1
-          .contents__pickup__items__box__contents--content1__thumbnail
-          .contents__pickup__items__box__contents--content1__title
-            セール！新品 アルベロベロ 大人気 赤ずきんちゃん ジーンズ
-          .contents__pickup__items__box__contents--content1__footer
-            .contents__pickup__items__box__contents--content1__footer__price
-              ¥16,000
-            .contents__pickup__items__box__contents--content1__footer__iine
-              = icon("far", "heart",class:"heart")
-              15
-        .contents__pickup__items__box__contents--content2
-          .contents__pickup__items__box__contents--content2__thumbnail
-          .contents__pickup__items__box__contents--content2__title
-            セール！新品 アルベロベロ 大人気 赤ずきんちゃん ジーンズ
-          .contents__pickup__items__box__contents--content2__footer
-            .contents__pickup__items__box__contents--content2__footer__price
-              ¥16,000
-            .contents__pickup__items__box__contents--content2__footer__iine
-              = icon("far", "heart",class:"heart")
-              15
-        .contents__pickup__items__box__contents--content3
-          .contents__pickup__items__box__contents--content2__thumbnail
-          .contents__pickup__items__box__contents--content2__title
-            セール！新品 アルベロベロ 大人気 赤ずきんちゃん ジーンズ
-          .contents__pickup__items__box__contents--content2__footer
-            .contents__pickup__items__box__contents--content2__footer__price
-              ¥16,000
-            .contents__pickup__items__box__contents--content2__footer__iine
-              = icon("far", "heart",class:"heart")
-              15
-        .contents__pickup__items__box__contents--content4
-          .contents__pickup__items__box__contents--content2__thumbnail
-          .contents__pickup__items__box__contents--content2__title
-            セール！新品 アルベロベロ 大人気 赤ずきんちゃん ジーンズ
-          .contents__pickup__items__box__contents--content2__footer
-            .contents__pickup__items__box__contents--content2__footer__price
-              ¥16,000
-            .contents__pickup__items__box__contents--content2__footer__iine
-              = icon("far", "heart",class:"heart")
-              15
+        - @products.each do |product|  
+          .contents__pickup__items__box__contents--content1
+            .contents__pickup__items__box__contents--content1__thumbnail
+            .contents__pickup__items__box__contents--content1__title
+              = product.name
+            .contents__pickup__items__box__contents--content1__footer
+              .contents__pickup__items__box__contents--content1__footer__price
+                ¥
+                = product.price
+              .contents__pickup__items__box__contents--content1__footer__iine
+                = icon("far", "heart",class:"heart")
+                15
+   
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
