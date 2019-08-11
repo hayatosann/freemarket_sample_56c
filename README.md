@@ -57,9 +57,7 @@
 |name|string|null: false|
 |detail|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|large_category_id|integer|null: false, foreign_key: true|
-|medium_category_id|integer|null: false, foreign_key: true|
-|small_category_id|integer|null: true, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false|
 |brand_id|integer|null: false|
 |condition_id|integer|null: false|
