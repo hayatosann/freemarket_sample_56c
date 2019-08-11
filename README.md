@@ -105,6 +105,7 @@
 |------|----|-------|
 |purchase_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+|comment|text|null: false|
 
 ### Association
 - belongs_to :purchase
