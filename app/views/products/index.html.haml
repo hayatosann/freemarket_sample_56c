@@ -13,7 +13,7 @@
         - @products.each do |product|  
           .contents__pickup__items__box__contents--content1
             .contents__pickup__items__box__contents--content1__thumbnail
-              = product.images.map &:image
+              = product.images.first.image
             .contents__pickup__items__box__contents--content1__title
               = product.name
             .contents__pickup__items__box__contents--content1__footer
