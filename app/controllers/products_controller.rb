@@ -7,4 +7,14 @@ class ProductsController < ApplicationController
   
   def show
   end
+
+  def search
+    if params[:search]
+      @products = Product.where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(132).order('updated_at DESC')
+    else
+      @products = Product.page(params[:page]).per(132).order('updated_at DESC')
+    end
+  end
+
+
 end

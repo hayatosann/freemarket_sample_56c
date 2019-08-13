@@ -1,0 +1,31 @@
+= render 'shared/header'
+= render 'shared/exhibitation'
+
+.seach
+  .seach__seachbox
+    .seach__seachbox__seachbar
+    .seach__seachbox__seachlist
+      .seach__seachbox__seachlist__logo
+        検索結果
+      .seach__seachbox__seachlist__number
+        1-100件表示
+      .seach__seachbox__seachlist__seacharea
+        - @products.each do |product|
+          .seach__seachbox__seachlist__seacharea__cards
+            .seach__seachbox__seachlist__seacharea__cards__image
+            .seach__seachbox__seachlist__seacharea__cards__title
+              = product.name
+            .seach__seachbox__seachlist__seacharea__cards__footer
+              .seach__seachbox__seachlist__seacharea__cards__footer__price
+                ¥
+                = product.price
+              .seach__seachbox__seachlist__seacharea__cards__footer__iine
+                = icon("far", "heart",class:"heart")
+                15
+      .seach__seachbox__seachlist__pagenation
+        = paginate @products
+
+      
+
+
+= render 'shared/footer'
