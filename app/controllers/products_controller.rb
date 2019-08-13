@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
       @products = Product.page(params[:page]).per(132).order('updated_at DESC')
     end
   end
-
+  
+  
 
 end
