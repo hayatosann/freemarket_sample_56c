@@ -6,7 +6,8 @@
       %p.boxtop__NoAccount アカウントをお持ちでない方はこちら
       .boxtop__NewRegistration 新規会員登録
     .boxbottom
-      .boxbottom__FacebookRegistration Facebookでログイン
+      .boxbottom__FacebookRegistration
+        = render "devise/shared/sns_login"
       .boxbottom__GoogleRegistration Googleでログイン
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
@@ -15,8 +16,13 @@
           = f.password_field :password, autocomplete: :password, placeholder: "パスワード"
           %img{src: "/assets/robot.png", class: "boxbottom__robot"}/
         .actions
-          = f.submit "ログイン", class: "boxbottom__login_button"
+          -# = f.submit "ログイン", class: "boxbottom__login_button"
+          = link_to "ログイン", user_session_path, method: :post, class: "boxbottom__login_button"
       = render "devise/shared/links"
+
+    -# .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "ここにサイトキーをいれる"}
+    
+
     #nav
       %ul.infos
         %li
