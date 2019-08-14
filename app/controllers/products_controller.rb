@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     @product.size_id = 1  /非同期通信でのフォーム実装が完了するまで仮の値を入れています
     @product.brand_id = 1  /非同期通信でのフォーム実装が完了するまで仮の値を入れています
     @product.shipping_method_id = 4   /非同期通信でのフォーム実装が完了するまで仮の値を入れています
-    binding.pry
     @product.save!
   end
   
