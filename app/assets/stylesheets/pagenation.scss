@@ -1,0 +1,54 @@
+.page{
+  padding: 10px 12px;
+  margin: 0 1px;
+  border-style: solid ;
+  border-width: 1px;
+  border-color: #888;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+}
+.next{
+  padding: 10px 14px;
+  border-style: solid ;
+  border-width: 1px;
+  border-color: #888;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  right: 41px;
+  top: 0;
+}
+.last{
+  padding: 10px 12px;
+  border-style: solid ;
+  border-width: 1px;
+  border-color: #888;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.first{
+  padding: 10px 12px;
+  border-style: solid ;
+  border-width: 1px;
+  border-color: #888;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.prev{
+  padding: 10px 14px;
+  border-style: solid ;
+  border-width: 1px;
+  border-color: #888;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  left: 41px;
+  top: 0;
+}

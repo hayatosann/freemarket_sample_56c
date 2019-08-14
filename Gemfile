@@ -90,6 +90,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
+gem 'kaminari'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'

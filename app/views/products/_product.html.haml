@@ -1,0 +1,12 @@
+.seach__seachbox__seachlist__seacharea__cards
+  .seach__seachbox__seachlist__seacharea__cards__image
+    = image_tag product.images.first.image, size:'167x160'
+  .seach__seachbox__seachlist__seacharea__cards__title
+    = product.name
+  .seach__seachbox__seachlist__seacharea__cards__footer
+    .seach__seachbox__seachlist__seacharea__cards__footer__price
+      ¥
+      = product.price
+    .seach__seachbox__seachlist__seacharea__cards__footer__iine
+      = icon("far", "heart",class:"heart")
+      15
