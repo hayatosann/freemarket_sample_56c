@@ -91,6 +91,7 @@ gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
 gem 'pry-rails'
+gem 'kaminari'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'

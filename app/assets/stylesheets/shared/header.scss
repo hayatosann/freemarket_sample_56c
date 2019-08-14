@@ -26,12 +26,34 @@
         }
       }
       &__search{
-        height: 40px;
-        min-width: 800px;;
-        border: solid 1px #dcdcdc;
-        border-radius: 5px;
-        margin-left: 5%;
-        background: #f5f5f5;
+        .field{
+          display: flex;
+          .search{
+            padding-left:10px;
+            height: 40px;
+            min-width: 750px;;
+            border: solid 1px #dcdcdc;
+            border-radius: 5px;
+            margin-left: 5%;
+            background: #f5f5f5;
+            
+          }
+          .submit{
+            height: 40px;
+            min-width: 40px;;
+            border: solid 1px #dcdcdc;
+            border-radius: 5px;
+            margin-left: 5%;
+            background: #f5f5f5;
+            margin-left: -40px;
+            opacity: 0;
+          }
+          .search-icon{
+            font-family: FontAwesome;
+            margin-top: 12px;
+            margin-left: -30px;
+          }
+        }
       }
     }
     &__bottom{
@@ -75,6 +97,7 @@
         position:absolute;
         left: 310px;
         .heart{
+          font-family: FontAwesome;
           color: #dcdcdc;
           font-size: 20px;
         }
@@ -90,6 +113,7 @@
         left: 610px;
        
         .bell{
+          font-family: FontAwesome;
           color: #dcdcdc;
           font-size: 20px;
         }

@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   
 
   resources :products do
+    collection{ get "search" }
     resources :purchase, only: :show
   end
   resources :users
-
 end
 
