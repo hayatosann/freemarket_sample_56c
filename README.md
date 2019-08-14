@@ -27,7 +27,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|integer|null: false|
-|prefecture|integer|null: false, unique:true|
+|prefecture_id|integer|null: false, unique:true|
 |city|string|null: false|
 |block|string|null: false|
 |building|string|null: true|
@@ -35,7 +35,7 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to active_hash :prefecture
+- belongs_to active_hash :prefecture_id
 - belongs_to :user, :prefecture
 
 ## cardsテーブル
@@ -71,7 +71,7 @@
 - belongs_to :user, :brand
 - belongs_to :category, foreign_key: true, null:false 
 - has_many :images, :comments, :users through :comments
-- belongs_to active_hash :size_id, brand_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
+- belongs_to active_hash :size_id, brand_id, condition_id, delivery_fee_id, shipping_method_id, prefecture_from_id, shipping_days_id
 
 ## purchasesテーブル
 
