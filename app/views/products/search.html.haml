@@ -41,7 +41,6 @@
             .seach__seachbox__seachlist__logo__word
               新着商品
             .seach__seachbox__seachlist__logo__result
-              
           - else
             .seach__seachbox__seachlist__logo__word
               = @keyword
@@ -50,19 +49,7 @@
         .seach__seachbox__seachlist__number
           = page_entries_info @products
         .seach__seachbox__seachlist__seacharea
-          - @products.each do |product|
-            .seach__seachbox__seachlist__seacharea__cards
-              .seach__seachbox__seachlist__seacharea__cards__image
-                = image_tag product.images.first.image, size: '167x160'
-              .seach__seachbox__seachlist__seacharea__cards__title
-                = product.name
-              .seach__seachbox__seachlist__seacharea__cards__footer
-                .seach__seachbox__seachlist__seacharea__cards__footer__price
-                  ¥
-                  = product.price
-                .seach__seachbox__seachlist__seacharea__cards__footer__iine
-                  = icon("far", "heart",class:"heart")
-                  15
+          = render partial: 'products/product', collection: @products
         .seach__seachbox__seachlist__pagenation
           = paginate @products,window: 2
 
