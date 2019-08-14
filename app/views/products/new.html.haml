@@ -22,13 +22,14 @@
                       .upload-items__box.have-item-0
                         %ul
                     .upload-items-drop-box.have-item-0
-                      = form.label :image
-                      = form.file_field :image,class:'upload-items-drop-box__file'
-                      %pre.upload-items-drop-box__drop
-                        :preserve
-                          ドラッグアンドドロップ
-                          またはクリックしてファイルをアップロード
-                      %i.upload-items-drop-box__icon
+                      = form.fields_for :images do |i|
+                        = i.label :image
+                        = i.file_field :image,class:'upload-items-drop-box__file'
+                        %pre.upload-items-drop-box__drop
+                          :preserve
+                            ドラッグアンドドロップ
+                            またはクリックしてファイルをアップロード
+                        %i.upload-items-drop-box__icon
                 .sell-content
                   .sell-content__form--top.form-group
                     %label
