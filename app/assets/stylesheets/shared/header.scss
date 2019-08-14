@@ -16,6 +16,10 @@
           background: image-url('mercari.jpg');
           background-size: cover;
           min-width: 180px;
+          .logo{
+            height: 50px;
+            min-width: 180px;
+          }
         }
         &__icons{
           display:none;

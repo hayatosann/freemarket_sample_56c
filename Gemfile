@@ -92,3 +92,4 @@ gem 'recaptcha', require: "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+
