@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',  
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
   get '/users/mypage', to: 'users#mypage'
   get '/users/sign_out', to: 'users#sign_out'
   get '/users/credit_confirmation', to: 'users#credit_confirmation'
 
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'  
-  }
+
   root to: 'products#index'
 
   get '/users/mypage' => 'users#mypage'
