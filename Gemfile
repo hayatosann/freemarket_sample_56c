@@ -49,6 +49,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
+  gem 'pry-doc'
 end
 
 group :development do
@@ -89,3 +91,9 @@ gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
 gem 'pry-rails'
+gem 'kaminari'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
