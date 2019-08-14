@@ -1,7 +1,8 @@
 .header
   .header__top
     .header__top__contents
-      .header__top__contents__logo
+      =link_to root_path,class: "logo" do
+        .header__top__contents__logo
       .header__top__contents__icons
         .header__top__contents__icons__bell
           =link_to "", class: "menu" do
