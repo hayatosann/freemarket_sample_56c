@@ -62,9 +62,9 @@
 |brand_id|integer|null: false|
 |condition_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
-|shipping_method|integer|null: false|
-|prefecture_from|integer|null: false|
-|shipping_days|integer|null: false|
+|shipping_method_id|integer|null: false|
+|prefecture_from_id|integer|null: false|
+|shipping_days_id|integer|null: false|
 |price|integer|null: false|
 
 ### Association

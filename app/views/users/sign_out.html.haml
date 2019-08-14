@@ -4,6 +4,6 @@
   .left_contents
     = render partial: 'shared/navigations'
   .back-box
-    %button.back-box__btn-logout{:type => "submit"} ログアウト
+    = link_to 'ログアウト', "/users/sign_out", method: :delete, class: :logout
 = render 'shared/footer'
 
