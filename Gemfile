@@ -88,4 +88,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
-#gem 'carrierwave'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
