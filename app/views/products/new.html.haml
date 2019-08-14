@@ -53,10 +53,7 @@
                       %div
                         .select-wrap
                           %i.fas.fa-chevron-down
-                          %select.select-default
-                            %option{:value => ""} ---
-                            - @parents.each do |parent|
-                              %option{:value => "1"} #{parent.name}
+                          = form.collection_select :category_id, Category.all, :id, :name,class:"select-default"
                     .form-group
                       %label
                         商品の状態
@@ -72,7 +69,7 @@
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-default"
+                        = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,class:"select-default"
                     .form-group
                       %label
                         発送元の地域
@@ -95,22 +92,15 @@
                       %li.form-group
                         .clearfix
                           %label.l-left
-                            / react-text: 104
                             価格
-                            / /react-text
                             %span.form-require 必須
                           .l-right.sell-price-input
-                            / react-text: 107
                             %span.yen ¥
-                            / /react-text
                             %span.price-box
-                              %input.input-default{:placeholder => "例）300", :value => ""}/
-                        / react-empty: 110
+                              = form.number_field :price,class:"input-default",placeholder:"例）300"
                       %li.clearfix
                         .l-left
-                          / react-text: 212
                           販売手数料 (10%)
-                          / /react-text
                         .l-right -
                       %li.clearfix.bold
                         .l-left 販売利益

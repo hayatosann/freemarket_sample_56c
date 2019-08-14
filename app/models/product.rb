@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   # include ActiveHash::Associations
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :images 
   #
   mount_uploader :image_path, ImageUploader
