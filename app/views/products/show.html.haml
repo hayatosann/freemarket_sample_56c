@@ -98,7 +98,7 @@
             %span コメントする
   %ul.item-nav.clearfix
     %li.item-nav__link
-      = link_to '< Preview product', product_path(@product.id-1), class: 'item-nav__link-prev' unless @product.id <= 1
+      = link_to '< Preview product', product_path(@product.prev), class: 'item-nav__link-prev' unless @product.id <= 1
       = link_to 'Next product >', product_path(@product.id.next), class: 'item-nav__link-next'
  
   .sns
