@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
   
   private
 
-  def product_parmit
-    params.require(:product).parmit(:id, :name, :price)
+  def product_permit
+    params.require(:product).permit(:id, :name, :price)
   end
 
 
