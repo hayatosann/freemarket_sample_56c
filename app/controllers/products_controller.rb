@@ -13,6 +13,8 @@ class ProductsController < ApplicationController
   def search
     if params[:search]
       @products = Product.where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(132).order('updated_at DESC')
+      @keyword = params[:search]
+      @search_count = Product.where('name LIKE ?', "%#{params[:search]}%").size
     else
       @products = Product.page(params[:page]).per(132).order('updated_at DESC')
     end

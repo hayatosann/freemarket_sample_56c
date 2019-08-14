@@ -6,3 +6,11 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: ""
+  helpers:
+    page_entries_info:
+      one_page:
+        zero: "%{entry_name} が存在しません"
+        one: "<b>1件中 1-1 件を表示</b>"
+        display_entries: '1-%{count}件表示'
+      more_pages:
+        display_entries: '%{first}-%{last}件表示'

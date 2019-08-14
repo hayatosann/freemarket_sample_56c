@@ -4,6 +4,7 @@
   padding-bottom: 300px;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   .heart{
+    font-family: FontAwesome;
     color: #dcdcdc;
   }
   &__seachbox{
@@ -23,6 +24,20 @@
         height: 30px;
         font-size: 20px;
         margin-left: 10px;
+        display: flex;
+        &__word{
+          font-weight: bold;
+          font-size: 20px;
+        }
+        &__result{
+          margin-left:10px;
+          font-size: 18px;
+        }
+      }
+      &__notfound{
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 15px;
       }
       &__number{
         margin-top: 10px;

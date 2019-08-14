@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :images 
   # has_many :comments
-  has_many :users through :comments
+  #has_many :users through :comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
