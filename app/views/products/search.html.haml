@@ -14,19 +14,7 @@
         .seach__seachbox__seachlist__notfound
           該当する商品が見つかりません。検索条件を変えて、再度お試しください。
         .seach__seachbox__seachlist__seacharea
-          - @products.each do |product|
-            .seach__seachbox__seachlist__seacharea__cards
-              .seach__seachbox__seachlist__seacharea__cards__image
-                = image_tag product.images.first.image, size: '167x160'
-              .seach__seachbox__seachlist__seacharea__cards__title
-                = product.name
-              .seach__seachbox__seachlist__seacharea__cards__footer
-                .seach__seachbox__seachlist__seacharea__cards__footer__price
-                  ¥
-                  = product.price
-                .seach__seachbox__seachlist__seacharea__cards__footer__iine
-                  = icon("far", "heart",class:"heart")
-                  15
+          = render partial: 'products/product', collection: @products
         .seach__seachbox__seachlist__pagenation
           = paginate @products
 
