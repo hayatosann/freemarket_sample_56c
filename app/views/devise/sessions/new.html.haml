@@ -7,8 +7,9 @@
       .boxtop__NewRegistration 新規会員登録
     .boxbottom
       .boxbottom__FacebookRegistration
-        = render "devise/shared/sns_login"
-      .boxbottom__GoogleRegistration Googleでログイン
+        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
+      .boxbottom__GoogleRegistration
+        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           = f.email_field :email, autofocus: true, autocomplete: :email, placeholder: "メールアドレス"
