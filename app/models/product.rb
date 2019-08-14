@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   # include ActiveHash::Associations
   belongs_to :user
   has_many :images 
+  accepts_nested_attributes_for :images
   #
   mount_uploader :image_path, ImageUploader
   # has_many :comments
