@@ -40,6 +40,7 @@ class User < ApplicationRecord
   has_many :bought_plural, class_name: "Purchase", dependent: :destroy
   has_many :sold_plural, class_name: "Purchase", dependent: :destroy
   has_many :products
+  #  取引成立前のコメント機能は後ほど実装予定
   # has_many :comments
   # has_many :products, through: :comments
   has_one :address
