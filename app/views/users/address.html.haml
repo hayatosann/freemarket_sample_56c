@@ -44,6 +44,7 @@
     .address__areadown__form
       
       = form_with model: @address, url: users_payment_path, local: true do |f|
+        -# ユーザー情報は既に入力済みのため、現時点では暫定的に非表示にしておいて後ほど実装予定
         -# .field
         -#   = f.label :お名前, class: 'title'
         -#   = f.label :必須, class: 'need'
