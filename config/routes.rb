@@ -20,10 +20,12 @@ Rails.application.routes.draw do
   get '/users/infomation' => 'users#infomation'
   get '/users/mypage/identification' => 'users#identification'
 
-  resources :purchase, only: :show
+  
 
-  resources :products
+  resources :products do
+    collection{ get "search" }
+    resources :purchase, only: :show
+  end
   resources :users
-
 end
 
