@@ -33,7 +33,13 @@
         .content--photo-down {
           height: 75px;
           border-top: 1px dashed gray;
+          display:flex;
         }
+        .boxshow{
+          height:72px;
+          width:72px;
+        }
+
       }
       .content--detail-table {
         
@@ -132,11 +138,12 @@
       }
       .link_btn_right {
         float: right;
-        margin: 8px 0 0;
-        font-size:14px;
+        margin: 15px 0 0;
+        font-size:13px;
         .item-other-btn-right {
-          margin: 1px 0 0 8px;
+          margin: 3px 0 0 8px;
           display: inline;
+          color: #0099e8;
           .fa-lock{
             color: #0099e8;
           }
@@ -242,6 +249,9 @@
       i.fab.fa-twitter-square{
         color:#5d9dc9;
       }
+      i.fab.fa-line{
+        color:#00c137;
+      }
       i.fab.fa-pinterest-square{
         color:#aa262a;
       }
@@ -323,12 +333,14 @@ body {
   width:220px;
   height:330px;
   float:left;
-  margin-right:5px;
-  margin-left:5px;
+  margin:10px 5px;
   background-color: white;
 }
 .items-box-name{
   height:3rem
+}
+.items-box-price{
+  margin-top:-3px;
 }
 .items-box-head{
   font-weight:bold;
@@ -349,9 +361,59 @@ body {
 }
 .item-others--product{
   font-size: 22px;
-  margin: 24px 0 8px;
 }
 .fa-lock{
   color: #0099e8;
   text-decoration: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  text-align:center;
+  
+  .modal-content{
+    background-color: white;
+    width: 500px;
+    margin: 40% auto;
+   
+    .modal-body{
+      padding: 32px 2.5%;
+      line-height: 1.5;
+    }
+    .modalbtnbox{
+      display:flex;
+      .modal-btn {
+        border-top: 1px solid #ccc;
+        width: 50%;
+        text-align: center;
+        line-height: 49px;
+      }
+      .modal-btn-submit{
+        color: #0099e8;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.table--section-right-blue {
+  color: #0099e8;
+  width: 61%;
+  padding: 8px;
+  text-align: left;
+  flex-wrap: 400;
+  background: #fff;
+  border: 1px solid #f5f5f5;
+  border-collapse: collapse;
+}
+.blue{
+  color: #0099e8;
 }

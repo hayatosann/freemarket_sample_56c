@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions'  
+    sessions: 'users/sessions',  
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
+
   root to: 'products#index'
 
   get '/users/mypage', to: 'users#mypage'
@@ -21,10 +23,10 @@ Rails.application.routes.draw do
   get '/users/mypage/identification', to: 'users#identification'
   get '/users/credit_confirmation', to: 'users#credit_confirmation'
 
-  resources :purchase, only: :show
-
-  resources :products
+  resources :products do
+    collection{ get "search" }
+    resources :purchase, only: :show
+  end
   resources :users
-
 end
 

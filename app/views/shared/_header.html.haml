@@ -1,7 +1,8 @@
 .header
   .header__top
     .header__top__contents
-      .header__top__contents__logo
+      =link_to root_path,class: "logo" do
+        .header__top__contents__logo
       .header__top__contents__icons
         .header__top__contents__icons__bell
           =link_to "", class: "menu" do
@@ -13,6 +14,11 @@
           =link_to "", class: "menu" do
             .header__top__contents__icons__mypage__thumbnail
     .header__top__search
+      = form_with url:'/products/search', method: :get, local: true do |f|
+        .field
+          = f.text_field :search,placeholder: "何かお探しですか？" ,class: 'search',value:@keyword
+          = f.submit "",class:'submit', name: nil
+          = icon("far", "search",class:"search-icon")
   .header__bottom
     .header__bottom__category
       =link_to "", class: "menu" do
