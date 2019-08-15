@@ -19,11 +19,12 @@ class Product < ApplicationRecord
   belongs_to_active_hash :category
 
   def previous
-    Product.where("id < ?", self.id).order("id DESC").first
+    Product.where("id < ?",id).order("id DESC").first
   end
 
+
   def next
-    Product.where("id > ?", self.id).order("id ASC").first
+    Product.where("id > ?",id).order("id ASC").first
   end
 
 end
