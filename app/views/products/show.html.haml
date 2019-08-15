@@ -98,8 +98,8 @@
             %span コメントする
   %ul.item-nav.clearfix
     %li.item-nav__link
-      = link_to '< Preview product', product_path(@product.prev), class: 'item-nav__link-prev' unless @product.id <= 1
-      = link_to 'Next product >', product_path(@product.id.next), class: 'item-nav__link-next'
+      = link_to '< Preview product', product_path(@product.previous), class: 'item-nav__link-prev' unless @product.id == @first_product.id
+      = link_to 'Next product >', product_path(@product.next), class: 'item-nav__link-next' unless @product.id == @last_product.id
  
   .sns
     %ul.sns--icon
@@ -161,7 +161,7 @@
       %button#closeBtn.modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
       %button.modal-btn.modal-btn-submit はい
 
-// app/assets/javascript　fileに下記を記述しても反映されないので下記に記載
+// app/assets/javascript　fileに下記を記述しても反映されないので下記haml内に記載
 :javascript
   var btn = document.getElementById('btn');
   var modal = document.getElementById('modal');
