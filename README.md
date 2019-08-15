@@ -5,16 +5,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|mail|string|null: false, unique:true|
+|email|string|null: false, unique:true|
 |password|string|null: false|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
-|phone|integer|null: false, unique:true|
-|image|string|null: false|
-|profile|text|null: false|
+|phone|integer|unique:true|
+|image|string||
+|profile|text||
 
 ### Association
 - has_one :address, :card
@@ -26,12 +26,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|postal_code|integer|null: false|
-|prefecture|integer|null: false, unique:true|
+|postal_code|string|null: false|
+|prefecture_id|integer|null: false, unique:true|
 |city|string|null: false|
 |block|string|null: false|
 |building|string|null: true|
-|sub_phone|integer|null: true|
+|sub_phone|string|null: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -42,7 +42,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false|
+|number|string|null: false|
 |expiration_date|date|null: false|
 |security_code|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
