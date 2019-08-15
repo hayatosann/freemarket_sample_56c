@@ -1,7 +1,6 @@
-# rake db:seed command operate
+rake db:seed command operate
 
 lady = Category.create(:name=>"レディース")
-
 
 lady_tops = lady.children.create(:name=>"トップス")
 lady_jacket = lady.children.create(:name=>"ジャケット/アウター")
@@ -44,4 +43,6 @@ lady_suit.children.create([{:name=>"スカートスーツ上下"}, {:name=>"パ�
 lady_baby.children.create([{:name=>"トップス"}, {:name=>"アウター"}, {:name=>"インナー"},{:name=>"ワンピース"},{:name=>"パンツ/スパッツ"},{:name=>"スカート"},{:name=>"パジャマ"},{:name=>"授乳服"},{:name=>"その他"}])
 lady_other.children.create([{:name=>"コスプレ"}, {:name=>"下着"}, {:name=>"その他"}])
 
-
+ brand = Brand.create(:name=>"アーカー")
+ user = User.new(:email=>"tanaka.tarou@gmail.com", :password => 'hugahuga')
+ user.save!
