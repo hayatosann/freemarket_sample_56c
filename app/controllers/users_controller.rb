@@ -76,9 +76,12 @@ class UsersController < ApplicationController
       expiration_date: session[:expiration_date],
       security_code: session[:security_code]
     )
-    unless @user.save && @address.save && @card.save
+    unless @user.valid?
       redirect_to new_user_registration_path
     end
+    @user.save
+    @address.save
+    @card.save
   end
   
   def show
