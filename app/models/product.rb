@@ -1,12 +1,11 @@
 class Product < ApplicationRecord
-  # include ActiveHash::Associations
   belongs_to :user
   has_many :images 
   accepts_nested_attributes_for :images
-  #
   mount_uploader :image_path, ImageUploader
   # has_many :comments
-  #has_many :users through :comments
+  # has_many :users through: :comments
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
@@ -18,6 +17,15 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to_active_hash :brand
   belongs_to_active_hash :category
+
+  def previous
+    Product.where("id < ?",id).order("id DESC").first
+  end
+
+
+  def next
+    Product.where("id > ?",id).order("id ASC").first
+  end
 
 end
 

@@ -90,10 +90,10 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
+gem 'pry-rails'
 gem 'kaminari'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
-
