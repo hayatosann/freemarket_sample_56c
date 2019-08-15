@@ -1,22 +1,25 @@
 Rails.application.routes.draw do
-  get '/users/mypage', to: 'users#mypage'
-  get '/users/sign_out', to: 'users#sign_out'
-  get '/users/credit_confirmation', to: 'users#credit_confirmation'
-
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'  
   }
   root to: 'products#index'
 
-  get '/users/mypage' => 'users#mypage'
-  get '/users/sign_out' => 'users#sign_out'
-  get '/users/sms_confirmation' => 'users#sms_confirmation'
-  get '/users/address' => 'users#address'
-  get '/users/payment' => 'users#payment'
-  get '/users/complete' => 'users#complete'
-  get '/users/infomation' => 'users#infomation'
-  get '/users/mypage/identification' => 'users#identification'
+  get '/users/mypage', to: 'users#mypage'
+  get '/users/sign_out', to: 'users#sign_out'
+
+  get '/users/infomation', to: 'users#infomation'
+  get '/users/sms_confirmation', to: 'users#sms_confirmation'
+  post '/users/sms_confirmation', to: 'users#sms_confirmation'
+  get '/users/address', to: 'users#address'
+  post '/users/address', to: 'users#address'
+  get '/users/payment', to: 'users#payment'
+  post '/users/payment', to: 'users#payment'
+  get '/users/complete', to: 'users#complete'
+  post '/users/complete', to: 'users#complete'
+
+  get '/users/mypage/identification', to: 'users#identification'
+  get '/users/credit_confirmation', to: 'users#credit_confirmation'
 
   resources :purchase, only: :show
 
