@@ -18,5 +18,13 @@ class Product < ApplicationRecord
   belongs_to_active_hash :brand
   belongs_to_active_hash :category
 
+  def previous
+    Product.where("id < ?", self.id).order("id DESC").first
+  end
+
+  def next
+    Product.where("id > ?", self.id).order("id ASC").first
+  end
+
 end
 
