@@ -1,4 +1,4 @@
-rake db:seed command operate
+
 
 lady = Category.create(:name=>"レディース")
 
