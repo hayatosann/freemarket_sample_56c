@@ -36,44 +36,38 @@
         .signup-header__area__figure__complete__under
           .signup-header__area__figure__complete__under__dot
 
-
-
 .payment
   .payment__areaup
     .payment__areaup__logo
       クレジットカード情報入力
   .payment__areadown
     .payment__areadown__form
-      = form_with model: @user do |f|
+      = form_with model: @card, url: users_complete_path, local: true do |f|
         .field
-          = f.label :カード番号,class: 'title'
-          = f.label :必須,class: 'need'
+          = f.label :number, 'カード番号', class: 'title'
+          = f.label :必須, class: 'need'
           %br/
-          = f.text_field :cardnumber,placeholder: "半角数字のみ" ,class: 'forms'
+          = f.text_field :number, placeholder: "半角数字のみ", class: 'forms'
           .cards
 
         
-          = f.label :有効期限,class: 'title'
-          = f.label :必須,class: 'need'
+          = f.label :expiration_date, '有効期限', class: 'title'
+          = f.label :必須, class: 'need'
           .pulldown
-            = f.select :prefectures, [["01", "01"], ["02", "02"],  ["03", "03"], ["04", "04"],["05", "05"] ,["06", "06"],["07", "07"],["08", "08"],["09", "09"],["10", "10"],["11", "11"],["12", "12"]]
-            .pulldown__month
-              月
-            = f.select :prefectures, [["19", "19"], ["20", "20"],  ["21", "21"], ["22", "22"],["23", "23"] ,["24", "24"],["25", "25"],["26", "26"],["27", "27"],["28", "28"],["29", "29"]]
-            .pulldown__year
-              年
+            = raw sprintf(f.date_select(:expiration_date, start_year: Time.now.year, end_year: Time.now.year + 10, use_two_digit_numbers: true, use_month_numbers: true, discard_day: true, order: [:month, :year], date_separator: '%s'), '月')
+            年
           
           .field
-          = f.label :セキュリティコード,class: 'title'
-          = f.label :必須,class: 'need'
+          = f.label :security_code, 'セキュリティコード', class: 'title'
+          = f.label :必須, class: 'need'
           %br/
-          = f.text_field :securitycord,placeholder: "カード裏面の4桁もしくは３桁の数字" ,class: 'forms'
+          = f.text_field :security_code, placeholder: "カード裏面の4桁もしくは３桁の数字", class: 'forms'
           .question
             =link_to "", class: "question" do
-              = icon("far", "question-circle",class:"question")
+              = icon("far", "question-circle", class: "question")
               カード裏面の番号とは？
 
           .actions
-          = f.submit "次へ進む",class:'next_submit'
+          = f.submit "次へ進む", class: 'next_submit'
 
 = render 'shared/sign_up_footer'
