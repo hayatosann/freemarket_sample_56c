@@ -78,6 +78,18 @@
     line-height: 1em;
     margin: 30px 30px 0 30px;
     box-sizing: border-box;
+    position: relative;
+
+    &__flogo{
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      // margin: 0 auto;
+      top: 1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
   
   &__GoogleRegistration{
@@ -95,7 +107,23 @@
     margin-bottom: 30px;
     margin-right: 30px;
     box-sizing: border-box;
+    position: relative;
+
+    
   }
+
+.glogo{
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  // margin: 0 auto;
+  top: -5px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+
+}
+
 
   &__robot{
     height: 80px;
