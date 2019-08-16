@@ -89,5 +89,8 @@ man_other.children.create([{:name=>"腕時計(アナログ)"}, {:name=>"腕時�
  brand = Brand.create(:name=>"アーカー")
  user = User.new(:email=>"tanaka.tarou@gmail.com", :password => 'hugahuga', :password_confirmation => 'hugahuga', :nickname => 'taro', :family_name => '田中', :first_name => '太朗', :family_name_kana =>'タナカ', :first_name_kana =>'タロウ',:birthday =>'1992/11/08',:phone =>'09012123434')
  user.save!
+ 
+ product = user.products.build(name: "test_product", detail: "お気に入り", size_id: 1, brand_id: 1, condition_id: 1, delivery_fee_id: 1, shipping_method_id: 1, prefecture_from_id: 1, shipping_days_id: 1, price: 300, category_id: 384)
+ product.save!
 
- image = Image.create(:image=>'https://static.mercdn.net/item/detail/orig/photos/m10514030790_1.jpg?1561816215',:product_id => '1')
+ 
