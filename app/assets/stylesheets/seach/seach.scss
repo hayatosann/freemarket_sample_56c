@@ -15,7 +15,104 @@
     display: flex;
     &__seachbar{
       width: 280px;
-      background-color: aqua;
+      min-height: 1315.5px;
+      select{
+        height: 47px;
+        width: 280px;
+        padding-left: 10px;
+        border: solid 1px #dcdcdc;
+        background-color: #ffffff;
+      }
+      .icon{
+        color: #888;
+      }
+      .tag{
+        color: #888;
+        transform: rotate(-45deg);
+      }
+      .label{
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .form{
+        padding-left:10px;
+        padding-right: 10px;
+        height: 47px;
+        width: 100%;
+        border: solid 1px #dcdcdc;
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+      .min{
+        margin-top:10px;
+        padding-left:10px;
+        padding-right: 10px;
+        height: 47px;
+        width: 45%;
+        border: solid 1px #dcdcdc;
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+      .max{
+        margin-top: 10px;
+        margin-left: 5px;
+        padding-left:10px;
+        padding-right: 10px;
+        height: 47px;
+        width: 45%;
+        border: solid 1px #dcdcdc;
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+      .wave{
+        font-size:10px;
+        margin-top:10px;
+        margin-left: 5px;
+        color: #888;
+      }
+      .field{
+        height: 1228.5px;
+        width: 280px;
+        margin-top: 40px;
+        background-color: #ffffff;
+        &__area{
+          height: 1228.5px;
+          width: 250px;
+          margin:0 auto;
+          &__logo{
+            font-weight: bold;
+            font-size: 16px;
+            padding-top: 10px;
+          }
+          &__detail{
+            height: 90px;
+            width: 100%;
+            margin-top:20px;
+            select{
+              height: 47px;
+              width: 250px;
+              padding-left: 10px;
+              border: solid 1px #dcdcdc;
+              background-color: #ffffff;
+            }
+          }
+          .clear{
+            margin-top:100px;
+            height: 50px;
+            width: 117.6px;
+            background-color: #aaaaaa;
+            color: #ffffff;
+          }
+          .comp{
+            margin-top:100px;
+            height: 50px;
+            width: 117.6px;
+            margin-left: 10px;
+            background-color: #ea352d;
+            color: #ffffff;
+          }
+        }
+      }
     }
     &__seachlist{
       width: 710px;

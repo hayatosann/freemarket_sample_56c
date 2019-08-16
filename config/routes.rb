@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   resources :purchase, only: :show
 
   resources :products do
-    collection{ get "search" }
+    collection do
+      match 'search' => 'products#search', via: [:get, :post]
+    end
   end
   resources :users
 

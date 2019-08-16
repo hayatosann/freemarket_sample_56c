@@ -3,8 +3,7 @@
 - if @search_count == 0
   .seach
     .seach__seachbox
-      .seach__seachbox__seachbar
-        Lv2
+      = render 'products/searchbar'
       .seach__seachbox__seachlist
         .seach__seachbox__seachlist__logo
           .seach__seachbox__seachlist__logo__word
@@ -21,8 +20,7 @@
 - else
   .seach
     .seach__seachbox
-      .seach__seachbox__seachbar
-        Lv2
+      = render 'products/searchbar'
       .seach__seachbox__seachlist
         .seach__seachbox__seachlist__logo
           - if @keyword == ""
@@ -39,7 +37,7 @@
         .seach__seachbox__seachlist__seacharea
           = render partial: 'products/product', collection: @products
         .seach__seachbox__seachlist__pagenation
-          = paginate @products,window: 2
+          = paginate @products
 
       
 
