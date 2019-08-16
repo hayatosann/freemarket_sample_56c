@@ -11,7 +11,7 @@
         クレジットカード一覧
         %br
         %br
-        %img.creditpic{:src => "/assets/amex.png"}
+        = image_tag asset_path('amex.png'), class: "creditpic"
         %button.delete_credit{:type => "submit"}削除する
         %br
       .credit_info

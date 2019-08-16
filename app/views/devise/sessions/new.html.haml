@@ -7,10 +7,11 @@
       .boxtop__NewRegistration 新規会員登録
     .boxbottom
       .boxbottom__FacebookRegistration
-        %img{src: "/assets/flogo.png", class: "boxbottom__FacebookRegistration__flogo"}
+        = image_tag asset_path('flogo.png'), class: "boxbottom__FacebookRegistration__flogo"
         = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
       .boxbottom__GoogleRegistration
-        %img{src: "/assets/google.svg", class: "glogo"}
+        -# %img{src: "/assets/google.svg", class: "glogo"}
+        = image_tag asset_path('google.svg'), class: "glogo"
         = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
         
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -18,7 +19,7 @@
           = f.email_field :email, autofocus: true, autocomplete: :email, placeholder: "メールアドレス"
         .field
           = f.password_field :password, autocomplete: :password, placeholder: "パスワード"
-          %img{src: "/assets/robot.png", class: "boxbottom__robot"}/
+          =image_tag asset_path("/assets/robot.png"), class: "boxbottom__robot"
         .actions
           -# = f.submit "ログイン", class: "boxbottom__login_button"
           = link_to "ログイン", user_session_path, method: :post, class: "boxbottom__login_button"
