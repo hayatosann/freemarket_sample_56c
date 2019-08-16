@@ -7,9 +7,9 @@
       .boxtop__NewRegistration 新規会員登録
     .boxbottom
       .boxbottom__FacebookRegistration
-        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
+        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, style: "color: white"
       .boxbottom__GoogleRegistration
-        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
+        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, style: "color: black"
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           = f.email_field :email, autofocus: true, autocomplete: :email, placeholder: "メールアドレス"
