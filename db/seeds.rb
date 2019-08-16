@@ -1,5 +1,4 @@
 
-
 lady = Category.create(:name=>"レディース")
 man = Category.create(:name=>"メンズ")
 baby_kids = Category.create(:name=>"ベビー・キッズ")
@@ -78,18 +77,17 @@ man_pants.children.create([{:name=>"スラックス"}, {:name=>"チノパン"}, 
 man_shoes.children.create([{:name=>"スニーカー"}, {:name=>"サンダル"}, {:name=>"ブーツ"},{:name=>"モカシン"},{:name=>"ドレス/ビジネス"},{:name=>"長靴/レインシューズ"},{:name=>"デッキシューズ"},{:name=>"その他"}])
 man_bag.children.create([{:name=>"ショルダーバッグ"}, {:name=>"トートバッグ"}, {:name=>"リュック/バックパック"}, {:name=>"ウエストポーチ"}, {:name=>"ボディーバッグ"}, {:name=>"ドラムバッグ"}, {:name=>"ビジネスバッグ"}, {:name=>"トラベルバッグ"}, {:name=>"メッセンジャーバッグ"}, {:name=>"エコバッグ"},{:name=>"その他"}])
 man_suit.children.create([{:name=>"スーツジャケット"}, {:name=>"スーツベスト"}, {:name=>"スラックス"},{:name=>"セットアップ"},{:name=>"その他"}])
-man_hat.children.create([{:name=>"キャップ"}, {:name=>"ハット"}, {:name=>"ハット"}])
-man_accessory.children.create([{:name=>"ソックス"}, {:name=>"スパッツ/レギンス"}, {:name=>"ストッキング/タイツ"},{:name=>"レッグウォーマー"},{:name=>"その他"}])
-man_small_accessory.children.create([{:name=>"ニットキャップ/ビーニー"}, {:name=>"ハット"}, {:name=>"ハンチング/ベレー帽"},{:name=>"キャップ"},{:name=>"キャスケット"},{:name=>"麦わら帽子"},{:name=>"その他"}])
+man_hat.children.create([{:name=>"キャップ"}, {:name=>"ハット"}, {:name=>"ニットキャップ/ビーニー"}, {:name=>"ハンチング/ベレー帽"}, {:name=>"キャスケット"}, {:name=>"サンバイザー"}, {:name=>"その他"}])
+man_accessory.children.create([{:name=>"ネックレス"}, {:name=>"ブレスレット"}, {:name=>"バングル/リストバンド"},{:name=>"リング"},{:name=>"ピアス(片耳用)"},{:name=>"ピアス(両耳用)"},{:name=>"アンクレット"},{:name=>"その他"}])
+man_small_accessory.children.create([{:name=>"長財布"}, {:name=>"折り財布"}, {:name=>"マネークリップ"},{:name=>"コインケース/小銭入れ"},{:name=>"名刺入れ/定期入れ"},{:name=>"キーケース"},{:name=>"キーホルダー"},{:name=>"ネクタイ"},{:name=>"手袋"},{:name=>"ハンカチ"},{:name=>"ベルト"},{:name=>"マフラー"},{:name=>"ストール"},{:name=>"バンダナ"},{:name=>"ネックウォーマー"},{:name=>"サスペンダー"},{:name=>"ウォレットチェーン"}])
 man_watch.children.create([{:name=>"ハンドバッグ"}, {:name=>"トートバッグ"}, {:name=>"エコバッグ"},{:name=>"リュック/バックパック"},{:name=>"ボストンバッグ"},{:name=>"スポーツバッグ"},{:name=>"ショルダーバッグ"},{:name=>"クラッチバッグ"},{:name=>"ポーチ/バニティ"},{:name=>"ボディバッグ/ウェストバッグ"},{:name=>"マザーズバッグ"},{:name=>"メッセンジャーバッグ"},{:name=>"ビジネスバッグ"},{:name=>"旅行用バッグ/キャリーバッグ"},{:name=>"ショップ袋"},{:name=>"和装用バッグ"},{:name=>"かごバッグ"},{:name=>"その他"}])
-man_swimsuit.children.create([{:name=>"ネックレス"}, {:name=>"ブレスレット"}, {:name=>"バングル/リストバンド"},{:name=>"リング"},{:name=>"ピアス(片耳用)"},{:name=>"ピアス(両耳用)"},{:name=>"イヤリング"},{:name=>"アンクレット"},{:name=>"ブローチ/コサージュ"},{:name=>"チャーム"},{:name=>"その他"}])
+man_swimsuit.children.create([{:name=>"ネックレス"}, {:name=>"ブレスレット"}, {:name=>"バングル/リストバンド"},{:name=>"リング"},{:name=>"ピアス(片耳用)"},{:name=>"ピアス(両耳用)"},{:name=>"アンクレット"}])
 man_leg_wear.children.create([{:name=>"ヘアゴム/シュシュ"}, {:name=>"ヘアゴム/カチューシャ"}, {:name=>"ヘアピン"},{:name=>"その他"}])
 man_under_wear.children.create([{:name=>"長財布"}, {:name=>"折財布"}, {:name=>"コインケース/小銭入れ"},{:name=>"名刺入れ/定期入れ"},{:name=>"キーケース"},{:name=>"キーホルダー"},{:name=>"手袋/アームカバー"},{:name=>"ハンカチ"},{:name=>"ベルト"},{:name=>"マフラー/ショール"},{:name=>"ストール/スヌード"},{:name=>"バンダナ/スカーフ"},{:name=>"ネックウォーマー"},{:name=>"サスペンダー"},{:name=>"サングラス/メガネ"},{:name=>"モバイルケース/カバー"},{:name=>"手帳"},{:name=>"イヤマフラー"},{:name=>"傘"},{:name=>"レインコート/ポンチョ"},{:name=>"ミラー"},{:name=>"タバコグッズ"},{:name=>"その他"}])
 man_other.children.create([{:name=>"腕時計(アナログ)"}, {:name=>"腕時計(デジタル)"}, {:name=>"ラバーベルト"},{:name=>"レザーベルト"},{:name=>"金属ベルト"},{:name=>"その他"}])
 
-
-
-
  brand = Brand.create(:name=>"アーカー")
  user = User.new(:email=>"tanaka.tarou@gmail.com", :password => 'hugahuga', :password_confirmation => 'hugahuga', :nickname => 'taro', :family_name => '田中', :first_name => '太朗', :family_name_kana =>'タナカ', :first_name_kana =>'タロウ',:birthday =>'1992/11/08',:phone =>'09012123434')
  user.save!
+
+ image = Image.create(:image=>'https://static.mercdn.net/item/detail/orig/photos/m10514030790_1.jpg?1561816215',:product_id => '1')
