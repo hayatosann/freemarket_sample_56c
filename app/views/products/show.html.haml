@@ -7,13 +7,13 @@
     .item-container1__item-content.clearfix
       .content--photo
         .content--photo-up
-          = image_tag @product.images.first.image, size: "300x300"
+          = image_tag @product.images.first.image.url, size: "300x300"
     
         .content--photo-down
           - @product.images.each_with_index do |image, index|
             - unless index == 0 
               .boxshow 
-                = image_tag image.image, size: "72x72"
+                = image_tag image.image.url, size: "72x72"
           //params[:id]で取得した一つの商品に対する複数枚の写真を並べ出す際に下に複数枚小さく並ぶ箇所にメインの画像とのダブりを解消する記述//
       %table.content--detail-table
         %tbody.table
@@ -119,7 +119,7 @@
               .items-box_photo
                 -# = image_tag img.image, size: "220x220"
                 -# = image_tag product_other.images.first.image, size: "220x220"
-                = link_to image_tag("#{product_other.images.first.image}", size: "220x220"), product_path(product_other.id)  
+                = link_to image_tag("#{product_other.images.first.image.url}", size: "220x220"), product_path(product_other.id)  
               .items-box_body
                 %h3.items-box-name
                   =product_other.name
@@ -137,7 +137,7 @@
       .item-others--product__content
       - @same_category_products.each do |product|
         .items-box
-          .items-box_photo= link_to image_tag("#{product.images.first.image}", size: "220x220"), product_path(product.id)
+          .items-box_photo= link_to image_tag("#{product.images.first.image.url}", size: "220x220"), product_path(product.id)
           .items-box_body
             %h3.items-box-name
               = product.name
