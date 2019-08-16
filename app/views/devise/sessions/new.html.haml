@@ -15,7 +15,7 @@
           = f.email_field :email, autofocus: true, autocomplete: :email, placeholder: "メールアドレス"
         .field
           = f.password_field :password, autocomplete: :password, placeholder: "パスワード"
-          %img{src: "/assets/robot.png", class: "boxbottom__robot"}/
+          =image_tag asset_path("robot.png"), class: "boxbottom__robot"
         .actions
           -# = f.submit "ログイン", class: "boxbottom__login_button"
           = link_to "ログイン", user_session_path, method: :post, class: "boxbottom__login_button"
