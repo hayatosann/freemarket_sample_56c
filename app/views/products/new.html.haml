@@ -11,7 +11,7 @@
           %div{"data-reactroot" => ""}
             .sell-container-inner
               %h2.sell-container-inner__head 商品の情報を入力
-              = form_with model: @product, class:'sell-form sell-container-inner__form' do |form|
+              = form_with model: @product, class:'sell-form sell-container-inner__form',local: true do |form|
                 .sell-upload-box
                   %h3.sell-upload-box__head
                     出品画像
@@ -21,9 +21,9 @@
                     .upload-items
                       .upload-items__box.have-item-0
                         %ul
-                    .upload-items-drop-box.have-item-0
+                    %div.image-upload-box
                       = form.fields_for :images do |i|
-                        = i.label :image
+                        = i.label :image,class:"upload-items-drop-box have-item-0"
                         = i.file_field :image,class:'upload-items-drop-box__file'
                         %pre.upload-items-drop-box__drop
                           :preserve
@@ -59,7 +59,10 @@
                       %label
                         商品の状態
                         %span.form-require 必須
-                      = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap"
+                      %div
+                        .select-wrap
+                          %i.fas.fa-chevron-down
+                          = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap"
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 配送について
                   %a.sell-content__form.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
@@ -123,9 +126,8 @@
                       また、出品をもちまして
                       %a{:href => "/jp/seller_terms/"} 加盟店規約
                       に同意したことになります。
-                  .btn-default.btn-red
-                    = form.submit
-                    出品する
+                  %div
+                    = form.submit "出品する", class:"btn-default btn-red"
                   %a.btn-default.btn-gray もどる
               
               .overlay
