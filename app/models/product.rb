@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
   # has_many :comments
   # has_many :users through: :comments
+  has_one :purchase
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
