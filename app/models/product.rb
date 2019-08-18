@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_many :images 
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
   # has_many :comments
   # has_many :users through: :comments
