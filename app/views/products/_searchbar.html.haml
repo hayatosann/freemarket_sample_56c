@@ -16,15 +16,80 @@
           = f.search_field :brand_name_cont,class: 'form',placeholder: "例) シャネル"
           
         
-        .field__area__detail
+        .field__area__price
           = icon("fas", "yen",class:"icon")
-          = f.label :price_gteq,'価格', class: 'label'
+          = f.label '価格', class: 'label'
           = f.select:price, {'選択してください':  '', '300 ~ 1000':  '1', '1000 ~ 5000': '2', '5000 ~ 10000': '3', '10000 ~ 30000': '4','30000 ~ 50000': '5', '50000 ~': '6'}
-         
           = f.search_field :price_gteq,class: 'min',placeholder: "¥ Min"
           = f.label '~',class: 'wave'
           = f.search_field :price_lteq,class: 'max',placeholder: "¥ Max"
-          
+
+        .field__area__condition
+          = icon("fas", "star",class:"icon")
+          = f.label :condition_id_eq_any,'商品の状態', class: 'label'
+          .checks
+            .checks__check
+              = f.check_box :condition_id_eq_any, {multiple: true},checked_value = 0, unchecked_value = nil
+              .checks__check__label
+                すべて
+            .checks__check-r
+              = f.check_box :condition_id_eq_any , {multiple: true},checked_value = 1, unchecked_value = nil
+              .checks__check__label
+                新品、未使用
+            .checks__check
+              = f.check_box :condition_id_eq_any, {multiple: true},checked_value = 2, unchecked_value = nil
+              .checks__check__label
+                未使用に近い
+            .checks__check-r
+              = f.check_box :condition_id_eq_any, {multiple: true},checked_value = 3, unchecked_value = nil
+              .checks__check__label-2line
+                目立った傷や汚れなし
+            .checks__check
+              = f.check_box :condition_id_eq_any, {multiple: true},checked_value = 4, unchecked_value = nil
+              .checks__check__label-2line
+                やや傷や汚れあり
+            .checks__check-r
+              = f.check_box :condition_id_eq_any, {multiple: true},checked_value = 5, unchecked_value = nil
+              .checks__check__label
+                傷や汚れあり
+            .checks__check
+              = f.check_box :condition_id_eq_any, {multiple: true},checked_value = 6, unchecked_value = nil
+              .checks__check__label-2line
+                全体的に状態が悪い
+             
+        .field__area__fee
+          = icon("fas", "truck fa-flip-horizontal",class:"icon")
+          = f.label :delivery_fee_id_eq_any,'配送料の負担', class: 'label'
+          .checks
+            .checks__check
+              = f.check_box :delivery_fee_id_eq_any, {multiple: true},checked_value = 0, unchecked_value = nil
+              .checks__check__label
+                すべて
+            .checks__check-r
+              = f.check_box :delivery_fee_id_eq_any , {multiple: true},checked_value = 1, unchecked_value = nil
+              .checks__check__label-2line
+                着払い(購入者負担)
+            .checks__check
+              = f.check_box :delivery_fee_id_eq_any, {multiple: true},checked_value = 2, unchecked_value = nil
+              .checks__check__label-2line
+                送料込み(出品者負担)
+
+        .field__area__status
+          = icon("fas", "shopping-cart",class:"icon")
+          = f.label :sales_status_eq_any,'販売状況', class: 'label'
+          .checks
+            .checks__check
+              = f.check_box :sales_status_eq_any, {multiple: true},checked_value = "", unchecked_value = nil
+              .checks__check__label
+                すべて
+            .checks__check-r
+              = f.check_box :sales_status_eq_any , {multiple: true},checked_value = 0, unchecked_value = nil
+              .checks__check__label
+                販売中
+            .checks__check
+              = f.check_box :sales_status_eq_any, {multiple: true},checked_value = 1, unchecked_value = nil
+              .checks__check__label
+                売り切れ
         .action
           = f.submit "クリア", type: :reset,class:'clear'
           = f.submit "完了",class:'comp'

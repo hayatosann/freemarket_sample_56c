@@ -49,8 +49,11 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:id,:name,:detail,:user_id,:size_id,:brand_id,:condition_id,:delivery_fee_id,:shipping_method,:prefecture_from_id,:shipping_days_id,:price,:category_id,images_attributes:[:image])
   end
   
+  #def search_params
+  #  params.require(:q).permit(:sorts,:name_cont,:brand_name_cont,:price_gteq,:price_lteq,condition_id_eq_any:[:condition_id])
+  #end
   def search_params
-    params.require(:q).permit(:sorts,:name_cont,:brand_name_cont,:price_gteq,:price_lteq)
+    params.require(:q).permit!
   end
 end
 
