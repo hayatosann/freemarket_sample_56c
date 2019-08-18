@@ -24,7 +24,7 @@
                     %div.image-upload-box
                       = form.fields_for :images do |i|
                         = i.label :image,class:"upload-items-drop-box have-item-0"
-                        = i.file_field :image,class:'upload-items-drop-box__file'
+                        = i.file_field :image,multiple: true,class:'upload-items-drop-box__file'
                         %pre.upload-items-drop-box__drop
                           :preserve
                             ドラッグアンドドロップ
