@@ -7,6 +7,10 @@
     %section.signup-main__container
       %h2.signup-main__container__head.registration 新規会員登録
       .signup-main__container__inner.registration-form
+        - if @messages
+          - @messages.each do |message|
+            %p
+              = message
         .signup-main__container__inner__content
           = link_to users_infomation_path, class: "signup-main__container__inner__content__mail-btn btn-default" do
             %i.far.fa-envelope.fa-lg.signup-main__container__inner__content__mail-btn__icon

@@ -42,6 +42,10 @@
       電話番号の確認
   
   .confirmation__areadown
+    - if @messages
+      - @messages.each do |message|
+        %p
+          = message
     .confirmation__areadown__phonenumber
       = form_with model: @user, url: users_address_path, local: true do |f|
         .field
