@@ -117,9 +117,9 @@
                         / react-text: 880
                         あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
                         / /react-text
-                        %a.btn-default.btn-red{:href => "http://3.113.50.33/products/new"} 続けて出品する
+                        =link_to "続けて出品する",'http://3.113.50.33/products/new', class: "btn-default btn-red"
                         %p.text-center
-                          %a{:href => "https://item.mercari.com/jp/m21781045456/"} 商品ページへ行ってシェアする
+                          =link_to "商品ページへ行ってシェアする",'https://item.mercari.com/jp/m21781045456/'
                 .sell-content.sell-btn-box
                   %div
                     %p
