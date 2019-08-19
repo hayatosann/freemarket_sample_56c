@@ -70,13 +70,6 @@ class UsersController < ApplicationController
       birthday: session[:birthday],
       phone: session[:phone]
     )
-    # @user = User.new(
-    #   family_name: session[:family_name],
-    #   first_name: session[:first_name],
-    #   family_name_kana: session[:family_name_kana],
-    #   first_name_kana: session[:first_name_kana],
-    #   phone: session[:phone]
-    # )
     @address = @user.build_address(user_params[:address_attributes])
     if @address.valid_address?
       @card = Card.new
