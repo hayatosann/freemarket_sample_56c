@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def sign_out
   end
 
-  def infomation
+  def information
     @user = User.new
   end
 
@@ -25,11 +25,11 @@ class UsersController < ApplicationController
     end
     # /users/addressでユーザー情報の表示をするため、そこまではuser_paramsを使ってインスタンスを作って渡していく形でデータを保持
     @user = User.new(user_params)
-    if @user.valid_infomation?
+    if @user.valid_information?
       render :sms_confirmation
     else
       @messages = @user.errors.full_messages
-      render :infomation
+      render :information
     end
   end
 

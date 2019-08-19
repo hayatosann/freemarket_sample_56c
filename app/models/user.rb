@@ -62,7 +62,7 @@ class User < ApplicationRecord
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
   validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
 
-  def valid_infomation?
+  def valid_information?
     valid?
     excluded_column = :phone
     errors.delete(excluded_column)
