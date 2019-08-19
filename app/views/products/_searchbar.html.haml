@@ -15,7 +15,568 @@
           = f.label :brand_name_cont,'ブランド名から探す', class: 'label'
           = f.search_field :brand_name_cont,class: 'form',placeholder: "例) シャネル"
           
-        
+        .field__area__size
+          = icon("fas", "arrows-alt",class:"tag")
+          = f.label 'サイズを指定する', class: 'label'
+          = f.select:size_id, {'すべて':  '0', '洋服のサイズ':  '1', 'メンズ靴のサイズ': '2', 'レディース靴のサイズ': '3', 'スカートのサイズ': '4', 'キッズ服のサイズ': '5','ベビー・キッズ靴のサイズ': '6', 'ベビー服のサイズ': '7', 'テレビのサイズ': '8', 'カメラレンズのサイズ': '9', 'オートバイのサイズ': '10', 'ヘルメットのサイズ': '11', 'タイヤのサイズ': '12', 'スキーのサイズ': '13', 'スノーボードのサイズ': '14'}
+          .field__area__size__clothes
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 1, unchecked_value = nil
+                .checks__check__label
+                  XXS以下
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 2, unchecked_value = nil
+                .checks__check__label
+                  XS(SS)
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 3, unchecked_value = nil
+                .checks__check__label
+                  S
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 4, unchecked_value = nil
+                .checks__check__label
+                  M
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 5, unchecked_value = nil
+                .checks__check__label
+                  L
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 6, unchecked_value = nil
+                .checks__check__label
+                  XL(LL)
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 7, unchecked_value = nil
+                .checks__check__label
+                  2XL(3L)
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 8, unchecked_value = nil
+                .checks__check__label
+                  3XL(4L)
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 9, unchecked_value = nil
+                .checks__check__label
+                  4XL(5L)以上
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 10, unchecked_value = nil
+                .checks__check__label
+                  FREE SIZE
+          
+          .field__area__size__mens
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 11, unchecked_value = nil
+                .checks__check__label
+                  23.5cm以下
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 12, unchecked_value = nil
+                .checks__check__label
+                  24cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 13, unchecked_value = nil
+                .checks__check__label
+                  24.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 14, unchecked_value = nil
+                .checks__check__label
+                  25cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 15, unchecked_value = nil
+                .checks__check__label
+                  25,5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 16, unchecked_value = nil
+                .checks__check__label
+                  26cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 17, unchecked_value = nil
+                .checks__check__label
+                  26.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 18, unchecked_value = nil
+                .checks__check__label
+                  27cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 19, unchecked_value = nil
+                .checks__check__label
+                  27.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 20, unchecked_value = nil
+                .checks__check__label
+                  28cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 21, unchecked_value = nil
+                .checks__check__label
+                  28.5cm]
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 22, unchecked_value = nil
+                .checks__check__label
+                  29cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 23, unchecked_value = nil
+                .checks__check__label
+                  29.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 24, unchecked_value = nil
+                .checks__check__label
+                  30cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 25, unchecked_value = nil
+                .checks__check__label
+                  30.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 26, unchecked_value = nil
+                .checks__check__label
+                  31cm以上
+
+          .field__area__size__ladies
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 27, unchecked_value = nil
+                .checks__check__label
+                  20cm以下
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 28, unchecked_value = nil
+                .checks__check__label
+                  20.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 29, unchecked_value = nil
+                .checks__check__label
+                  21cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 30, unchecked_value = nil
+                .checks__check__label
+                  21.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 31, unchecked_value = nil
+                .checks__check__label
+                  22cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 32, unchecked_value = nil
+                .checks__check__label
+                  22.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 33, unchecked_value = nil
+                .checks__check__label
+                  23cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 34, unchecked_value = nil
+                .checks__check__label
+                  23.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 35, unchecked_value = nil
+                .checks__check__label
+                  24cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 36, unchecked_value = nil
+                .checks__check__label
+                  24.5cm]
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 37, unchecked_value = nil
+                .checks__check__label
+                  25cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 38, unchecked_value = nil
+                .checks__check__label
+                  25.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 39, unchecked_value = nil
+                .checks__check__label
+                  26cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 40, unchecked_value = nil
+                .checks__check__label
+                  26.5cm以上
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 41, unchecked_value = nil
+                .checks__check__label
+                  27cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 42, unchecked_value = nil
+                .checks__check__label
+                  27.5cm以上
+
+          .field__area__size__skirt
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 50, unchecked_value = nil
+                .checks__check__label
+                  60cm以下
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 51, unchecked_value = nil
+                .checks__check__label
+                  〜70cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 52, unchecked_value = nil
+                .checks__check__label
+                  〜80cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 53, unchecked_value = nil
+                .checks__check__label
+                  〜90cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 54, unchecked_value = nil
+                .checks__check__label
+                  90cm以上
+
+          .field__area__size__kidsclothes
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 60, unchecked_value = nil
+                .checks__check__label
+                  100cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 61, unchecked_value = nil
+                .checks__check__label
+                  110cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 62, unchecked_value = nil
+                .checks__check__label
+                  120cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 63, unchecked_value = nil
+                .checks__check__label
+                  130cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 64, unchecked_value = nil
+                .checks__check__label
+                  140cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 65, unchecked_value = nil
+                .checks__check__label
+                  150cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 66, unchecked_value = nil
+                .checks__check__label
+                  160cm
+
+          .field__area__size__kidsshoes
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 70, unchecked_value = nil
+                .checks__check__label
+                  10.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 71, unchecked_value = nil
+                .checks__check__label
+                  11cm・11.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 72, unchecked_value = nil
+                .checks__check__label
+                  12cm・12.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 73, unchecked_value = nil
+                .checks__check__label
+                  13cm・13.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 64, unchecked_value = nil
+                .checks__check__label
+                  14cm・14.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 75, unchecked_value = nil
+                .checks__check__label
+                  15cm・15.5cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 76, unchecked_value = nil
+                .checks__check__label
+                  16cm・16.5cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 77, unchecked_value = nil
+                .checks__check__label
+                  17cm以上
+
+          .field__area__size__babyclothes
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 80, unchecked_value = nil
+                .checks__check__label
+                  60cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 81, unchecked_value = nil
+                .checks__check__label
+                  70cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 82, unchecked_value = nil
+                .checks__check__label
+                  80cm
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 83, unchecked_value = nil
+                .checks__check__label
+                  90cm
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 84, unchecked_value = nil
+                .checks__check__label
+                  95cm
+
+          .field__area__size__tv
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 90, unchecked_value = nil
+                .checks__check__label
+                  〜20インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 91, unchecked_value = nil
+                .checks__check__label
+                  20〜26インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 92, unchecked_value = nil
+                .checks__check__label
+                  26〜32インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 93, unchecked_value = nil
+                .checks__check__label
+                  32〜37インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 94, unchecked_value = nil
+                .checks__check__label
+                  37〜40インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 95, unchecked_value = nil
+                .checks__check__label
+                  40〜42インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 96, unchecked_value = nil
+                .checks__check__label
+                  42〜46インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 97, unchecked_value = nil
+                .checks__check__label
+                  46〜52インチ 
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 96, unchecked_value = nil
+                .checks__check__label
+                  52〜60インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 97, unchecked_value = nil
+                .checks__check__label
+                  60インチ〜
+
+          .field__area__size__camera
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 100, unchecked_value = nil
+                .checks__check__label-2line
+                  ニコンFマウント
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 101, unchecked_value = nil
+                .checks__check-r__label-2line
+                  キヤノンEFマウント
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 102, unchecked_value = nil
+                .checks__check__label-2line
+                  ペンタックスKマウント
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 103, unchecked_value = nil
+                .checks__check-r__label-2line
+                  ペンタックスQマウント
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 104, unchecked_value = nil
+                .checks__check__label-2line
+                  フォーサーズマウント
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 105, unchecked_value = nil
+                .checks__check-r__label-3line
+                  マイクロフォーサーズマウント
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 106, unchecked_value = nil
+                .checks__check__label
+                  αAマウント
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 107, unchecked_value = nil
+                .checks__check-r__label
+                  αEマウント
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 108, unchecked_value = nil
+                .checks__check__label-2line
+                  ニコン1マウント
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 109, unchecked_value = nil
+                .checks__check-r__label-2line
+                  キヤノンEF-Mマウント
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 110, unchecked_value = nil
+                .checks__check__label
+                  Xマウント
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 111, unchecked_value = nil
+                .checks__check-r__label-2line
+                  シグマSAマウント
+
+          .field__area__size__bike
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 120, unchecked_value = nil
+                .checks__check__label
+                  50cc以下
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 121, unchecked_value = nil
+                .checks__check-r__label
+                  51cc-125cc
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 122, unchecked_value = nil
+                .checks__check__label
+                  126cc-250cc
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 123, unchecked_value = nil
+                .checks__check-r__label
+                  251cc-400cc
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 124, unchecked_value = nil
+                .checks__check__label
+                  401cc-750cc
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 125, unchecked_value = nil
+                .checks__check-r__label
+                  751cc以上
+
+          .field__area__size__helmet
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 130, unchecked_value = nil
+                .checks__check__label
+                  HSサイズ以下
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 131, unchecked_value = nil
+                .checks__check-r__label
+                  Sサイズ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 132, unchecked_value = nil
+                .checks__check__label
+                  Mサイズ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 133, unchecked_value = nil
+                .checks__check-r__label
+                  Lサイズ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 134, unchecked_value = nil
+                .checks__check__label
+                  XLサイズ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 135, unchecked_value = nil
+                .checks__check-r__label
+                  XXLサイズ以上
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 134, unchecked_value = nil
+                .checks__check__label
+                  フリーサイズ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 135, unchecked_value = nil
+                .checks__check-r__label
+                  子ども用
+
+          .field__area__size__tire
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 140, unchecked_value = nil
+                .checks__check__label
+                  12インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 141, unchecked_value = nil
+                .checks__check-r__label
+                  13インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 142, unchecked_value = nil
+                .checks__check__label
+                  14インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 143, unchecked_value = nil
+                .checks__check-r__label
+                  15インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 144, unchecked_value = nil
+                .checks__check__label
+                  16インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 145, unchecked_value = nil
+                .checks__check-r__label
+                  17インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 146, unchecked_value = nil
+                .checks__check__label
+                  18インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 147, unchecked_value = nil
+                .checks__check-r__label
+                  19インチ
+              .checks__check
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 148, unchecked_value = nil
+                .checks__check-r__label
+                  21インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 149, unchecked_value = nil
+                .checks__check__label
+                  22インチ
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 150, unchecked_value = nil
+                .checks__check-r__label
+                  23インチ
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 151, unchecked_value = nil
+                .checks__check__label
+                  24インチ
+
+          .field__area__size__ski
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 160, unchecked_value = nil
+                .checks__check__label
+                  140cm〜
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 161, unchecked_value = nil
+                .checks__check-r__label
+                  150cm〜
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 162, unchecked_value = nil
+                .checks__check__label
+                  160cm〜
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 163, unchecked_value = nil
+                .checks__check-r__label
+                  170cm〜
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 164, unchecked_value = nil
+                .checks__check__label
+                  スノーボード
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 165, unchecked_value = nil
+                .checks__check-r__label
+                  子ども用
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 166, unchecked_value = nil
+                .checks__check__label
+                  その他
+
+          .field__area__size__snowboard
+            .checks
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 180, unchecked_value = nil
+                .checks__check__label-2line
+                  135cm-140cm未満
+              .checks__check-r
+                = f.check_box :size_id_eq_any , {multiple: true},checked_value = 181, unchecked_value = nil
+                .checks__check-r__label-2line
+                  140cm-145cm未満
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 182, unchecked_value = nil
+                .checks__check__label-2line
+                  145cm-150cm未満
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 183, unchecked_value = nil
+                .checks__check-r__label-2line
+                  150cm-155cm未満
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 184, unchecked_value = nil
+                .checks__check__label-2line
+                  155cm-160cm未満
+              .checks__check-r
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 185, unchecked_value = nil
+                .checks__check-r__label-2line
+                  160cm-165cm未満
+              .checks__check
+                = f.check_box :size_id_eq_any, {multiple: true},checked_value = 186, unchecked_value = nil
+                .checks__check__label-2line
+                  165cm-170cm未満
+
         .field__area__price
           = icon("fas", "yen",class:"icon")
           = f.label '価格', class: 'label'

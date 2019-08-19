@@ -15,7 +15,6 @@
     display: flex;
     &__seachbar{
       width: 280px;
-      min-height: 1315.5px;
       select{
         height: 47px;
         width: 280px;
@@ -71,12 +70,12 @@
         color: #888;
       }
       .field{
-        height: 1228.5px;
+        height: auto;
         width: 280px;
         margin-top: 40px;
         background-color: #ffffff;
+        padding-bottom:15px;
         &__area{
-          height: 1228.5px;
           width: 250px;
           margin:0 auto;
           &__logo{
@@ -101,6 +100,18 @@
           }
           &__price{
             height: 150px;
+            width: 100%;
+            margin-top:40px;
+            select{
+              height: 47px;
+              width: 250px;
+              padding-left: 10px;
+              border: solid 1px #dcdcdc;
+              background-color: #ffffff;
+            }
+          }
+          &__size{
+            height: auto;
             width: 100%;
             margin-top:20px;
             select{
