@@ -109,8 +109,17 @@
                       %li.clearfix.bold
                         .l-left 販売利益
                         .l-right -
-                .modal{:role => "dialog", :tabindex => "-1"}
+                .modal.is-show{:role => "dialog", :tabindex => "-1"}
                   .modal-inner
+                    %div
+                      %h3.modal-head 出品が完了しました
+                      .sell-modal-body{"data-gtm-vis-first-on-screen-6824027_198" => "42356", "data-gtm-vis-has-fired-6824027_198" => "1", "data-gtm-vis-recent-on-screen-6824027_198" => "42356", "data-gtm-vis-total-visible-time-6824027_198" => "100"}
+                        / react-text: 880
+                        あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+                        / /react-text
+                        %a.btn-default.btn-red{:href => "http://3.113.50.33/products/new"} 続けて出品する
+                        %p.text-center
+                          %a{:href => "https://item.mercari.com/jp/m21781045456/"} 商品ページへ行ってシェアする
                 .sell-content.sell-btn-box
                   %div
                     %p
@@ -127,7 +136,7 @@
                       %a{:href => "/jp/seller_terms/"} 加盟店規約
                       に同意したことになります。
                   %div
-                    = form.submit "出品する", class:"btn-default btn-red"
+                    = form.submit "出品する", class:"btn-default btn-red exhibition_submit"
                   %a.btn-default.btn-gray もどる
               
               .overlay

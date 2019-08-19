@@ -651,7 +651,16 @@ select#product_shipping_days_id{
                 }
               }
             }
+            .is-show {
+              display: block;
+            }
+            .is-animate {
+              opacity: 1;
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
             .modal {
+              opacity: 1;
               display: none;
               position: fixed;
               top: 0;
@@ -664,14 +673,42 @@ select#product_shipping_days_id{
               -webkit-overflow-scrolling: touch;
               -webkit-transition: all ease-out .3s;
               transition: all ease-out .3s;
-              opacity: 0;
               -webkit-transform: translate(0, -10px);
               transform: translate(0, -10px);
               .modal-inner {
                 max-width: none;
                 width: 600px;
                 margin: 20px auto;
+                position: relative;
+                overflow: hidden;
+                background: #fff;
+                h3.modal-head {
+                  text-align: center;
+                  line-height: 80px;
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+                .sell-modal-body {
+                  border-top: 1px solid #eee;
+                  padding: 40px;
+                }
               }
+            }
+            .overlay {
+              display: none;
+              position: fixed;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 2999;
+              background: rgba(0,0,0,0.64);
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              opacity: 0;
+            }
+            .modal-open {
+              display: block;
             }
             .sell-content.sell-btn-box{
               padding: 40px;
@@ -749,4 +786,3 @@ select#product_shipping_days_id{
     }
   }
 }
-
