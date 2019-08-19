@@ -41,6 +41,10 @@
     .payment__areaup__logo
       クレジットカード情報入力
   .payment__areadown
+    - if @messages
+      - @messages.each do |message|
+        %p
+          = message
     .payment__areadown__form
       = form_with model: @card, url: users_complete_path, local: true do |f|
         .field
@@ -49,14 +53,11 @@
           %br/
           = f.text_field :number, placeholder: "半角数字のみ", class: 'forms'
           .cards
-
-        
           = f.label :expiration_date, '有効期限', class: 'title'
           = f.label :必須, class: 'need'
           .pulldown
-            = raw sprintf(f.date_select(:expiration_date, start_year: Time.now.year, end_year: Time.now.year + 10, use_two_digit_numbers: true, use_month_numbers: true, discard_day: true, order: [:month, :year], date_separator: '%s'), '月')
+            = raw sprintf(f.date_select(:expiration_date, prompt: '--', start_year: Time.now.year, end_year: Time.now.year + 15, use_two_digit_numbers: true, discard_day: true, order: [:month, :year], date_separator: '%s'), '月')
             年
-          
           .field
           = f.label :security_code, 'セキュリティコード', class: 'title'
           = f.label :必須, class: 'need'

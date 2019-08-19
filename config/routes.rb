@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/users/mypage', to: 'users#mypage'
   get '/users/sign_out', to: 'users#sign_out'
 
-  get '/users/infomation', to: 'users#infomation'
+  get '/users/information', to: 'users#information'
   get '/users/sms_confirmation', to: 'users#sms_confirmation'
   post '/users/sms_confirmation', to: 'users#sms_confirmation'
   get '/users/address', to: 'users#address'

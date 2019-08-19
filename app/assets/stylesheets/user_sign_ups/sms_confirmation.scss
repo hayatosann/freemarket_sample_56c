@@ -26,6 +26,11 @@
     margin-left: auto;
     margin-right: auto;
     background: white;
+    padding-top: 20px;
+    p {
+      text-align: center;
+      color: red;
+    }
     &__phonenumber{
       width: 345px;
       height: 300px;
@@ -58,6 +63,7 @@
       background-color: #ea352d;
       color:white;
       font-weight: 100;
+      cursor: pointer;
     }
     &__phonesubmit{
       margin-top: 10px;

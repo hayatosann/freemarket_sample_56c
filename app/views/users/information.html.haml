@@ -3,12 +3,12 @@
   .signup-header__area
     .signup-header__area__logo
     .signup-header__area__figure
-      .signup-header__area__figure__infomation
-        .signup-header__area__figure__infomation__title-info
+      .signup-header__area__figure__information
+        .signup-header__area__figure__information__title-info
           会員情報
-        .signup-header__area__figure__infomation__under
-          .signup-header__area__figure__infomation__under__dot
-          .signup-header__area__figure__infomation__under__bar
+        .signup-header__area__figure__information__under
+          .signup-header__area__figure__information__under__dot
+          .signup-header__area__figure__information__under__bar
 
       .signup-header__area__figure__sms
         .signup-header__area__figure__sms__title
@@ -36,12 +36,16 @@
         .signup-header__area__figure__complete__under
           .signup-header__area__figure__complete__under__dot
 
-.infomation
-  .infomation__areaup
-    .infomation__areaup__logo
+.information
+  .information__areaup
+    .information__areaup__logo
       会員情報入力
-  .infomation__areadown
-    .infomation__areadown__form
+  .information__areadown
+    .information__areadown__form
+      - if @messages
+        - @messages.each do |message|
+          %p
+            = message
       = form_with model: @user, url: users_sms_confirmation_path, local: true do |f|
         .field
           = f.label :nickname, 'ニックネーム', class: 'title'
@@ -86,11 +90,10 @@
             = f.text_field :family_name_kana, placeholder: "例)ヤマダ", class: 'name'
             = f.text_field :first_name_kana, placeholder: "例)アヤ", class: 'names'
 
-        
           = f.label :birthday, '生年月日', class: 'title'
           = f.label :必須, class: 'need'
           .birthday
-            = raw sprintf(f.date_select(:birthday, start_year: 1900, end_year: Time.now.year, use_month_numbers: true, date_separator: '%s'),'年','月')
+            = raw sprintf(f.date_select(:birthday, prompt: '--', start_year: Time.now.year, end_year: 1900, use_month_numbers: true, date_separator: '%s'),'年','月')
             日
           .personalinfo
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

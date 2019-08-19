@@ -23,10 +23,15 @@
     margin-left: auto;
     margin-right: auto;
     background: white;
+    padding-top: 20px;
+    p {
+      text-align: center;
+      color: red;
+    }
     &__form{
       width: 345px;
       height: 300px;
-      padding-top:40px;
+      padding-top: 40px;
       margin-left: auto;
       margin-right: auto;
       font-weight: bold;
