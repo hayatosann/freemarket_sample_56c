@@ -43,6 +43,14 @@ class ProductsController < ApplicationController
       @products = Product.page(params[:page]).per(132).order('updated_at DESC')
     end
   end
+
+  def destroy
+    product = Product.find(params[:id])
+      if product.user_id == current_user.id
+        product.destroy
+      end
+    redirect_to root_path
+  end
   
   private
 
