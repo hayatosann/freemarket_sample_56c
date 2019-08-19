@@ -43,7 +43,8 @@ class User < ApplicationRecord
   #  取引成立前のコメント機能は後ほど実装予定
   # has_many :comments
   # has_many :products, through: :comments
-  has_one :address
+  has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address
   has_one :card
   has_many :purchases
   
@@ -60,4 +61,18 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
   validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
+
+  def valid_infomation?
+    valid?
+    excluded_column = :phone
+    errors.delete(excluded_column)
+    errors.empty?
+  end
+
+  def valid_phone?
+    valid?
+    excluded_columns = [:email, :password, :password_confirmation, :nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday]
+    excluded_columns.each{|column| errors.delete(column)}
+    errors.empty?
+  end
 end
