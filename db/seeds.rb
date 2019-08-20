@@ -5,7 +5,97 @@ require "csv"
 # name: row['name']  左側がデータベースカラム、右側がcsvファイルのカラム
 
 # brand一覧
-CSV.foreach('db/brand.csv', headers: true) do |row|
+CSV.foreach('db/brand/ladys_brand.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/men_brand.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/baby_kids.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+ 
+CSV.foreach('db/brand/interior_living_goods.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/kitchen_dishes.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/clocks.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/perfume.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/television.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/sports.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/phones.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/bikes.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/instruments.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/automobile_parts.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/foods.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/home_automobiles.csv', headers: true) do |row|
+  Brand.create(
+    name: row['name'],
+  )
+end
+
+CSV.foreach('db/brand/foreign_automobiles.csv', headers: true) do |row|
   Brand.create(
     name: row['name'],
   )
