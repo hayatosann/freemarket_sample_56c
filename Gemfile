@@ -51,6 +51,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'rspec-rails'
 end
 
 group :development do
