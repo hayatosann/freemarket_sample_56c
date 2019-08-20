@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+
+  def create 
+    @user = User.create(user_params)
+    if @user.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   def mypage
   end
   
@@ -105,4 +115,7 @@ class UsersController < ApplicationController
   def card_params
     params.require(:card).permit(:number, :expiration_date, :security_code, :user_id)
   end
+
+
+  
 end
