@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     session[:family_name_kana] = user_params[:family_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
     # フォームデータを元にDateオブジェクトを作成してからsessionに格納
-    if user_params[:birthday]
+    unless user_params["birthday(1i)"].blank? || user_params["birthday(2i)"].blank? || user_params["birthday(3i)"].blank?
       session[:birthday] = Date.new(user_params["birthday(1i)"]&.to_i, user_params["birthday(2i)"]&.to_i, user_params["birthday(3i)"]&.to_i)
     end
     # /users/addressでユーザー情報の表示をするため、そこまではuser_paramsを使ってインスタンスを作って渡していく形でデータを保持
