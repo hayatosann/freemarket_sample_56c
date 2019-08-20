@@ -109,32 +109,36 @@
                       %li.clearfix.bold
                         .l-left 販売利益
                         .l-right -
-                .modal{:role => "dialog", :tabindex => "-1"}
+                .modal.is-show{role: "dialog", tabindex:"-1"}
                   .modal-inner
+                    %div
+                      %h3.modal-head 出品が完了しました
+                      .sell-modal-body{"data-gtm-vis-first-on-screen-6824027_198" => "42356", "data-gtm-vis-has-fired-6824027_198" => "1", "data-gtm-vis-recent-on-screen-6824027_198" => "42356", "data-gtm-vis-total-visible-time-6824027_198" => "100"}
+                        / react-text: 880
+                        あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+                        / /react-text
+                        =link_to "続けて出品する",'http://3.113.50.33/products/new', class: "btn-default btn-red"
+                        %p.text-center
+                          =link_to "商品ページへ行ってシェアする",'https://item.mercari.com/jp/m21781045456/'
                 .sell-content.sell-btn-box
                   %div
                     %p
-                      %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品
+                      =link_to "禁止されている出品",'https://www.mercari.com/jp/help_center/getting_started/prohibited_items/',target: "_blank"
                       、
-                      %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
+                      =link_to "行為",'https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/',target: "_blank"
                       を必ずご確認ください。
                     %p
                       またブランド品でシリアルナンバー等がある場合はご記載ください。
-                      %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
+                      =link_to "偽ブランドの販売","https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",target: "_blank"
                       は犯罪であり処罰される可能性があります。
                     %p
                       また、出品をもちまして
-                      %a{:href => "/jp/seller_terms/"} 加盟店規約
+                      =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/",target: "_blank"
                       に同意したことになります。
                   %div
-<<<<<<< Updated upstream
-                    = form.submit "出品する", class:"btn-default btn-red"
-                  %a.btn-default.btn-gray もどる
-=======
                     = form.submit "出品する", class:"btn-default btn-red exhibition_submit"
                   %a.btn-default.btn-gray
                    もどる
->>>>>>> Stashed changes
               
               .overlay
     %footer.exhibition-footer
