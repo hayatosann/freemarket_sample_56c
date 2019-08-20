@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
         @product.images.create(image: image, product_id: @product.id)
       end
     else
-      render :new
+      redirect_to new_product_path
     end
   end
     
