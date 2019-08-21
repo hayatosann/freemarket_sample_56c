@@ -86,7 +86,7 @@
           &__detail{
             height: 90px;
             width: 100%;
-            margin-top:20px;
+            margin-top:30px;
             select{
               height: 47px;
               width: 250px;
@@ -94,6 +94,11 @@
               border: solid 1px #dcdcdc;
               background-color: #ffffff;
             }
+          }
+          &__brand{
+            height: 90px;
+            width: 100%;
+            margin-top:50px;
           }
           input[type=checkbox] {
             transform: scale(1.5);
