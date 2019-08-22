@@ -9,7 +9,7 @@ ja:
   helpers:
     page_entries_info:
       one_page:
-        zero: "%{entry_name} が存在しません"
+        zero: "%{params[:q][:name_cont]} が存在しません"
         one: "<b>1件中 1-1 件を表示</b>"
         display_entries: '1-%{count}件表示'
       more_pages:

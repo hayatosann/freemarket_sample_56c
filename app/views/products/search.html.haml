@@ -1,45 +1,26 @@
 = render 'shared/header'
 = render 'shared/exhibitation'
-- if @search_count == 0
-  .seach
-    .seach__seachbox
-      = render 'products/searchbar'
-      .seach__seachbox__seachlist
-        .seach__seachbox__seachlist__logo
+
+.seach
+  .seach__seachbox
+    = render 'products/searchbar'
+    .seach__seachbox__seachlist
+      .seach__seachbox__seachlist__logo
+        -if params[:q].present? && params[:q][:name_cont].present?
           .seach__seachbox__seachlist__logo__word
-            検索結果
+            = params[:q][:name_cont]
           .seach__seachbox__seachlist__logo__result
             の検索結果
-        .seach__seachbox__seachlist__notfound
-          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
-        .seach__seachbox__seachlist__seacharea
-          = render partial: 'products/product', collection: @products
-        .seach__seachbox__seachlist__pagenation
-          = paginate @products
+        -else
+          .seach__seachbox__seachlist__logo__word
+            新着商品
+      .seach__seachbox__seachlist__number
+        = page_entries_info @products
+      .seach__seachbox__seachlist__seacharea
+        = render partial: 'products/product', collection: @products
+      .seach__seachbox__seachlist__pagenation
+        = paginate @products
 
-- else
-  .seach
-    .seach__seachbox
-      = render 'products/searchbar'
-      .seach__seachbox__seachlist
-        .seach__seachbox__seachlist__logo
-          - if @keyword == ""
-            .seach__seachbox__seachlist__logo__word
-              新着商品
-            .seach__seachbox__seachlist__logo__result
-          - else
-            .seach__seachbox__seachlist__logo__word
-              =@keyword
-            .seach__seachbox__seachlist__logo__result
-              の検索結果
-        .seach__seachbox__seachlist__number
-          = page_entries_info @products
-        .seach__seachbox__seachlist__seacharea
-          = render partial: 'products/product', collection: @products
-        .seach__seachbox__seachlist__pagenation
-          = paginate @products
-
-      
 
 
 = render 'shared/footer'
