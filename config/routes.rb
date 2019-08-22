@@ -22,11 +22,15 @@ Rails.application.routes.draw do
 
   get '/users/mypage/identification', to: 'users#identification'
   get '/users/credit_confirmation', to: 'users#credit_confirmation'
+  get '/users/:id', to: "users#edit_profile"
+  patch '/users/:id', to: "users#create_profile"
+
 
   resources :products do
     collection{ get "search" }
     resources :purchase, only: :show
   end
-  resources :users
+  # resources :users
+  resources :users, except: :show
 end
 

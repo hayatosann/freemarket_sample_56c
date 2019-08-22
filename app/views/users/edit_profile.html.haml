@@ -1,0 +1,40 @@
+= render 'shared/header'
+= render 'shared/exhibitation'
+%main.wrapper_all 
+  .left_contents
+    = render partial: 'shared/navigations'
+  .right_contents
+    .profile-title
+      プロフィール
+    .bgimage
+      .person
+        %div.thumbnail= image_tag asset_path('thumbnail.png')
+        //%img.thumbnail{:src => "#{asset_path('thumbnail.png')}"}
+        //%img.thumbnail{:src => "/assets/thumbnail.png"}
+        -# - @users.each do |i|
+        -#   %input.profile-text{:size => "20", :type => "text", :value => i.nickname, :style => "padding: 5px;"}
+
+      = form_for(@user, url: user_path(@user.id), method: :patch) do |f|
+        = f.text_field :nickname, :class => "profile-text", :value => @user.nickname, :style => "padding: 5px;"
+        -# %input.profile-text{:size => "20", :type => "text", :value => @user.nickname, :style => "padding: 5px;"}
+
+        = f.text_area :profile, :class => "text-area", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5"
+        = f.submit "登録", :class => "submit_changes"
+
+         
+    .bottom-boxes
+      -# %textarea.text-area{:cols => "60", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5"}
+      -# %button.submit_changes{:type => "submit"}変更する
+        -# .bottom_boxes
+          -# -@users.each do |i|
+          -#   = f.text_area :profile, :class => "text-area", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5", :value => i.profile
+          -#   = f.submit "登録", :class => "submit_changes"
+
+          -# = f.text_field :nickname, :class => "text-area"
+  
+        -# = f.text_area :profile, :class => "text-area", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5"
+        -# = f.submit "登録", :class => "submit_changes"
+
+
+= render 'shared/footer'
+

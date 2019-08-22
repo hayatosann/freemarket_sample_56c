@@ -9,7 +9,44 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_profile
+    @user = User.find(params[:id])
+  end
+
+  def create_profile
+    # @users=User.all
+    # @user = User.new(profile_params)
+    @user = User.find(params[:id])
+    # @user.profile=profile_params[:profile]
+    # binding.pry
+    # @user.save!
+    
+
+    @user.nickname = profile_params[:nickname]
+    @user.profile = profile_params[:profile]
+    # binding.pry
+    # if @user.update_attributes(nickname: profile_params[:nickname], profile: profile_params[:profile])
+    if @user.save(validate: false)
+      flash[:success] = "登録しました"
+    else
+      flash[:danger]="失敗しました"
+    end
+  end
+
+  # def test
+  #   @users=User.all
+  #   @user = User.new(profile: params[:profile])
+  #   @user.save
+  #   if @user.save
+  #     flash[:success] = "登録しました"
+  #   else
+  #     flash[:danger]="失敗しました"
+  #   end
+  # end
+
+
   def mypage
+    @user = User.find(current_user.id)
   end
   
   def sign_out
@@ -139,13 +176,21 @@ class UsersController < ApplicationController
     render :complete and return
   end
   
-  def show
-  end
+
 
   def identification
   end
   
   def credit_confirmation
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.save
+      flash.now[:alert]="保存できました"
+    else
+      flash.now[:alert]="エラー"
+    end
   end
 
   private
@@ -161,6 +206,9 @@ class UsersController < ApplicationController
     params.require(:card).permit(:number, :expiration_date, :security_code, :user_id)
   end
 
+  def profile_params
+    params.require(:user).permit(:profile, :nickname)
+  end
 
   
 end
