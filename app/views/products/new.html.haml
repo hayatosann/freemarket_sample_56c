@@ -47,14 +47,14 @@
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 商品の詳細
                   .sell-content__form.sell-form-box
-                    .form-group
+                    .form-group.category_form
                       %label
                         カテゴリー
                         %span.form-require 必須
-                      %div
+                      %div.category_form_first
                         .select-wrap
                           %i.fas.fa-chevron-down
-                          = form.collection_select :category_id, Category.where(id: 1..13), :id, :name,class:"select-default",prompt: "---"
+                          = form.collection_select :category_id, Category.where(id: 1..13), :id, :name,class:"select-default category_id",prompt: "---"
                     .form-group
                       %label
                         商品の状態
