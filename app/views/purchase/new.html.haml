@@ -13,22 +13,28 @@
           .buycontent
             .buycontent__inner
               %h3.buyitem__image-clearfix
-                %img.item-picture{:alt => "",style: "width:64px;", "data-src" => "https://static.mercdn.net/thumb/photos/m68393148128_1.jpg?1564776661", :src => "https://static.mercdn.net/thumb/photos/m68393148128_1.jpg?1564776661"}/
-              %p.buyitem__name.bold usjみにおんTシャツ
-              %form.buyform{:action => "https://www.mercari.com/jp/transaction/buy/done/m68393148128/", :method => "POST", :novalidate => "novalidate"}
-                %p.buy-price-ja
-                  ¥ 1,900
-                  %span.sendingfee 送料込み
-                %ul.buy-accordion.not
-                  %li.buy-accordion.not-parent
-                    .buy-accordion.not-toggle
-                      ポイントはありません
-                %ul.buy-price-table
-                  %li.buy-price-row.buy-you-pay.bold
-                    .buy-price-cell 支払い金額
-                    .buy-price-cell
-                      %span{"data-buy-pay" => "1900"} ¥ 1,900
-                %button.btn-default.btn-red.bold{:type => "submit"} 購入する
+                =image_tag("#{@product.images.first.image.url}", size: "64x64", style: "float:left")
+              %p.buyitem__name.bold 
+                =@product.name
+              %p.buy-price-ja
+                ="¥ #{@product.price.to_s(:delimited)}"
+                %span.sendingfee 送料込み
+              %ul.buy-accordion.not
+                %li.buy-accordion.not-parent
+                  .buy-accordion.not-toggle
+                    ポイントはありません
+              %ul.buy-price-table
+                %li.buy-price-row.buy-you-pay.bold
+                  .buy-price-cell
+                    %span 
+                      ="¥ #{@product.price.to_s(:delimited)}"
+                = form_with model: @purchase, local: true, url:product_purchase_index_path, method: :post  do |f|
+                  = f.hidden_field :product_id, value: @product.id
+                  = f.hidden_field :postage_by, value: @product.delivery_fee_id
+                  = f.hidden_field :number, value: @card.number
+                  = f.hidden_field :expiration_date, value: @card.expiration_date
+                  = f.hidden_field :security_code, value: @card.security_code
+                  = f.submit "購入する", class:"btn-default btn-red bold"
         %section.buy-content.buy-user-info
           .buy-content__inner
             %h3 配送先
@@ -62,3 +68,5 @@
         %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983", :width => "80"}/
       %p
         %small © 2019 Mercari
+
+    

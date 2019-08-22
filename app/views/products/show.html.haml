@@ -32,14 +32,15 @@
               %i.fas.fa-angle-right 
                 = link_to '#',class:"blue" do
                   - child=@product.category.path_ids[1].to_i
-                  = @category.find(child).name 
+                  -# = @category.find(child).name 
+                 
               %br 
               %i.fas.fa-angle-right 
                 = link_to '#',class:"blue" do
                   - grandchild=@product.category.path_ids[2].to_i
-                  = @category.find(grandchild).name
+                  -# = @category.find(grandchild).name
                  
-          // params[:id]で取得したidの商品に対してcategory子、孫も表示するために記載//
+          //params[:id]で取得したidの商品に対してcategory子、孫も表示するために記載//
           %tr.table--section
             %th.table--section-left ブランド
             %th.table--section-right-blue 
@@ -72,10 +73,8 @@
         = @product.price.to_s(:delimited)
         %span.item-container1__item-price-tax (税込)
         %span.item-container1__item-price-shipping-fee 送料込み
-
     - unless user_signed_in? && @product.user.id == current_user.id
       = link_to " 購入画面に進む", product_purchase_path(@product.id),  class:"item-container1__item-buy-btn"
-
     .item-container1__item-description 
       %p.item-description-inner
         = @product.detail
