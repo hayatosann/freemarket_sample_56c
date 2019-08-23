@@ -11,10 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
-
   def edit_profile
 
   end
@@ -31,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def mypage
-    @user = User.find(current_user.id)
+  
   end
   
   def sign_out
@@ -194,5 +190,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:profile, :nickname)
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
   
 end
