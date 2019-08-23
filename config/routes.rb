@@ -27,7 +27,11 @@ Rails.application.routes.draw do
 
 
   resources :products do
-    collection{ get "search" }
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get "search"
+    end
     resources :purchase, only: [:new, :create] 
   end
 
