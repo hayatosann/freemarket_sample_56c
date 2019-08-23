@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.user_id = 1  #ログイン機能がついているマスターブランチをプルするまでの仮の値を入れています
+    @product.user_id = current_user.id
     @product.size_id = 1  #非同期通信でのフォーム実装が完了するまで仮の値を入れています
     @product.brand_id = 1  #非同期通信でのフォーム実装が完了するまで仮の値を入れています
     @product.shipping_method_id = 4   #非同期通信でのフォーム実装が完了するまで仮の値を入れています
