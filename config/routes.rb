@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
   get '/users/mypage/identification', to: 'users#identification'
   get '/users/credit_confirmation', to: 'users#credit_confirmation'
-  get '/users/:id', to: "users#edit_profile"
-  patch '/users/:id', to: "users#create_profile"
+  get '/users/:id', to: "profile#edit"
+  patch '/users/:id', to: "profile#create"
 
 
   resources :products do

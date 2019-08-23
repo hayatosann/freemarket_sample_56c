@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit_profile, :create_profile, :update]
-  before_action :authenticate_user!, only: [:mypage, :edit_profile, :create_profile]
+  before_action :set_user, only: [:update]
+  before_action :authenticate_user!, only: [:mypage]
 
   def create 
     @user = User.create(user_params)
@@ -11,20 +11,20 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit_profile
+  # def edit_profile
 
-  end
+  # end
 
-  def create_profile
-    @user.nickname = profile_params[:nickname]
-    @user.profile = profile_params[:profile]
-    if @user.save(validate: false)
-      flash[:success] = "登録しました"
-    else
-      flash[:danger]="失敗しました"
-    end
-    render :edit_profile
-  end
+  # def create_profile
+  #   @user.nickname = profile_params[:nickname]
+  #   @user.profile = profile_params[:profile]
+  #   if @user.save(validate: false)
+  #     flash[:success] = "登録しました"
+  #   else
+  #     flash[:danger]="失敗しました"
+  #   end
+  #   render :edit_profile
+  # end
 
   def mypage
   
@@ -166,11 +166,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.save
-      flash.now[:alert]="保存できました"
-    else
-      flash.now[:alert]="エラー"
-    end
   end
 
   private
@@ -184,10 +179,6 @@ class UsersController < ApplicationController
 
   def card_params
     params.require(:card).permit(:number, :expiration_date, :security_code, :user_id)
-  end
-
-  def profile_params
-    params.require(:user).permit(:profile, :nickname)
   end
 
   def set_user
