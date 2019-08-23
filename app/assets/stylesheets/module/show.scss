@@ -89,15 +89,19 @@
   margin-top: 95px;
   height: 60px;
   width: 60px;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
-  // margin: auto;
   }
 }
 
 .namebox{
   margin-left: -140px;
   margin-top: -25px;
+}
+
+.message{
+  color: green;
+  height: 40px;
+  width: 100%;
+  background-color: rgb(236, 244, 217);
+  text-align: center;
+  padding-top: 5px;
 }

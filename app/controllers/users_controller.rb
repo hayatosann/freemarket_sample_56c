@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit_profile, :create_profile, :update]
+  before_action :authenticate_user!, only: [:mypage, :edit_profile, :create_profile]
 
   def create 
     @user = User.create(user_params)
@@ -9,41 +11,24 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit_profile
+  def set_user
     @user = User.find(params[:id])
   end
 
-  def create_profile
-    # @users=User.all
-    # @user = User.new(profile_params)
-    @user = User.find(params[:id])
-    # @user.profile=profile_params[:profile]
-    # binding.pry
-    # @user.save!
-    
+  def edit_profile
 
+  end
+
+  def create_profile
     @user.nickname = profile_params[:nickname]
     @user.profile = profile_params[:profile]
-    # binding.pry
-    # if @user.update_attributes(nickname: profile_params[:nickname], profile: profile_params[:profile])
     if @user.save(validate: false)
       flash[:success] = "登録しました"
     else
       flash[:danger]="失敗しました"
     end
+    render :edit_profile
   end
-
-  # def test
-  #   @users=User.all
-  #   @user = User.new(profile: params[:profile])
-  #   @user.save
-  #   if @user.save
-  #     flash[:success] = "登録しました"
-  #   else
-  #     flash[:danger]="失敗しました"
-  #   end
-  # end
-
 
   def mypage
     @user = User.find(current_user.id)
@@ -185,7 +170,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.save
       flash.now[:alert]="保存できました"
     else
