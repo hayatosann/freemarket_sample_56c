@@ -1,4 +1,6 @@
 = render 'shared/header'
+- breadcrumb :edit_profile
+= render "shared/breadcrumbs"
 = render 'shared/exhibitation'
 - flash.each do |message_type, message|
   .alert{class: "alert-#{message_type}"}
