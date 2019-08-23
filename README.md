@@ -59,7 +59,7 @@
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false|
-|brand_id|integer|null: false|
+|brand|string|
 |condition_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
 |shipping_method_id|integer|null: false|
