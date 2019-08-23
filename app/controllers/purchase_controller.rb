@@ -7,6 +7,9 @@ class PurchaseController < ApplicationController
     @product = Product.find(params[:product_id])
     @card = current_user.card
     @purchase =Purchase.new
+    if current_user.id == @product.user_id
+      redirect_to product_path(@product.id)
+    end
   end
   
   
