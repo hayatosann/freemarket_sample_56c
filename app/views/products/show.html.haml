@@ -132,8 +132,6 @@
               = link_to product_path(product_other.id),class: "contents__pickup__items__box__contents__link" do
                 .items-box
                   .items-box_photo
-                    -# = image_tag img.image, size: "220x220"
-                    -# = image_tag product_other.images.first.image, size: "220x220"
                     = image_tag("#{product_other.images.first.image.url}", size: "220x220")
                   .items-box_body
                     %h3.items-box-name
