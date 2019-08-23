@@ -47,11 +47,11 @@
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 商品の詳細
                   .sell-content__form.sell-form-box
-                    .form-group.category_form
+                    .form-group
                       %label
                         カテゴリー
                         %span.form-require 必須
-                      %div.category_form_first
+                      %div.category_form
                         .select-wrap
                           %i.fas.fa-chevron-down
                           = form.collection_select :category_id, Category.where(id: 1..13), :id, :name,class:"select-default category_id",prompt: "---"
@@ -62,7 +62,7 @@
                       %div
                         .select-wrap
                           %i.fas.fa-chevron-down
-                          = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap",prompt: "---"
+                          = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap"
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 配送について
                   %a.sell-content__form.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
@@ -73,21 +73,21 @@
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,class:"select-default",prompt: "---"
+                        = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,class:"select-default"
                     .form-group
                       %label
                         発送元の地域
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :prefecture_from_id, PrefectureFrom.all, :id, :name,class:"select-default",prompt: "---"
+                        = form.collection_select :prefecture_from_id, PrefectureFrom.all, :id, :name,class:"select-default"
                     .form-group
                       %label
                         発送までの日数
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :shipping_days_id, ShippingDays.all, :id, :name,class:"select-default",prompt: "---"
+                        = form.collection_select :shipping_days_id, ShippingDays.all, :id, :name,class:"select-default"
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 販売価格(300〜9,999,999)
                   %a.sell-content__form.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?

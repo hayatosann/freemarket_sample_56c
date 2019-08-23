@@ -7,15 +7,6 @@ $(function() {
   `
   
   //選択タグ
-  $('#product_category_id').change(function() {
-    var r = $('option:selected').val();
-    if(r>=1){
-      $(".category_form").append('<li class="list">追加されたリスト</li>');
-    }
-    else {
-      $(".list").remove();
-    }
-})
 
   // appendボタンを押したとき
   $("#appendButton").on("click", function() {
