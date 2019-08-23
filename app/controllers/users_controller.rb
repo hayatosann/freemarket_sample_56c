@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:update]
+  before_action :authenticate_user!, only: [:mypage]
 
   def create 
     @user = User.create(user_params)
@@ -10,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def mypage
+  
   end
   
   def sign_out
@@ -139,13 +142,15 @@ class UsersController < ApplicationController
     render :complete and return
   end
   
-  def show
-  end
+
 
   def identification
   end
   
   def credit_confirmation
+  end
+
+  def update
   end
 
   private
@@ -161,6 +166,8 @@ class UsersController < ApplicationController
     params.require(:card).permit(:number, :expiration_date, :security_code, :user_id)
   end
 
-
+  def set_user
+    @user = User.find(params[:id])
+  end
   
 end
