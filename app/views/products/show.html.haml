@@ -31,13 +31,15 @@
               %br  
               %i.fas.fa-angle-right 
                 = link_to '#',class:"blue" do
-                  - child=@product.category.path_ids[1].to_i
+                  トップス
+                  -# - child=@product.category.path_ids[1].to_i
                   -# = @category.find(child).name 
                  
               %br 
               %i.fas.fa-angle-right 
                 = link_to '#',class:"blue" do
-                  - grandchild=@product.category.path_ids[2].to_i
+                  Tシャツ/カットソー(半袖/袖なし)
+                  -# - grandchild=@product.category.path_ids[2].to_i
                   -# = @category.find(grandchild).name
                  
           //params[:id]で取得したidの商品に対してcategory子、孫も表示するために記載//
