@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     collection{ get "search" }
     resources :purchase, only: :show
   end
-  # resources :users
+
   resources :users, except: :show
 end
 
