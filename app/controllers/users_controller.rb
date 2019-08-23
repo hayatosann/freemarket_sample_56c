@@ -11,21 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def edit_profile
-
-  # end
-
-  # def create_profile
-  #   @user.nickname = profile_params[:nickname]
-  #   @user.profile = profile_params[:profile]
-  #   if @user.save(validate: false)
-  #     flash[:success] = "登録しました"
-  #   else
-  #     flash[:danger]="失敗しました"
-  #   end
-  #   render :edit_profile
-  # end
-
   def mypage
   
   end
