@@ -22,7 +22,7 @@ crumb :credit_confirmation do
   parent :mypage
 end
 
-crumb :profile do
+crumb :edit_profile do
   link "プロフィール", user_path
   parent :mypage
 end
