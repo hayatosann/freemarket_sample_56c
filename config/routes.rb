@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   get '/users/mypage/identification', to: 'users#identification'
   get '/users/credit_confirmation', to: 'users#credit_confirmation'
+  get '/users/:id', to: "profile#edit"
+  patch '/users/:id', to: "profile#create"
+
 
   resources :products do
     collection do
@@ -29,8 +32,9 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get "search"
     end
-    resources :purchase, only: :show
+    resources :purchase, only: [:new, :create] 
   end
-  resources :users
+
+  resources :users, except: :show
 end
 

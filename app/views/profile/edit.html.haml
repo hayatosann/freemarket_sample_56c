@@ -1,0 +1,24 @@
+= render 'shared/header'
+= render 'shared/exhibitation'
+- flash.each do |message_type, message|
+  .alert{class: "alert-#{message_type}"}
+    .message
+      = message
+%main.wrapper_all 
+  .left_contents
+    = render partial: 'shared/navigations'
+  .right_contents
+    .profile-title
+      プロフィール
+    .bgimage
+      .person
+        %div.thumbnail= image_tag asset_path('thumbnail.png')
+      = form_for(@user, url: user_path(@user.id), method: :patch) do |f|
+        = f.text_field :nickname, :class => "profile-text", :value => @user.nickname, :style => "padding: 5px;"
+        = f.text_area :profile, :class => "text-area", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5"
+        = f.submit "登録", :class => "submit_changes"
+         
+    .bottom-boxes
+
+= render 'shared/footer'
+

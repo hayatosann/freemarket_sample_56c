@@ -14,7 +14,7 @@
             - unless index == 0 
               .boxshow 
                 = image_tag image.image.url, size: "72x72"
-          //params[:id]で取得した一つの商品に対する複数枚の写真を並べ出す際に下に複数枚小さく並ぶ箇所にメインの画像とのダブりを解消する記述//
+          // params[:id]で取得した一つの商品に対する複数枚の写真を並べ出す際に下に複数枚小さく並ぶ箇所にメインの画像とのダブりを解消する記述//
       %table.content--detail-table
         %tbody.table
           %tr.table--section
@@ -31,13 +31,16 @@
               %br  
               %i.fas.fa-angle-right 
                 = link_to '#',class:"blue" do
-                  - child=@product.category.path_ids[1].to_i
-                  = @category.find(child).name 
+                  トップス
+                  -# - child=@product.category.path_ids[1].to_i
+                  -# = @category.find(child).name 
+                 
               %br 
               %i.fas.fa-angle-right 
                 = link_to '#',class:"blue" do
-                  - grandchild=@product.category.path_ids[2].to_i
-                  = @category.find(grandchild).name
+                  Tシャツ/カットソー(半袖/袖なし)
+                  -# - grandchild=@product.category.path_ids[2].to_i
+                  -# = @category.find(grandchild).name
                  
           //params[:id]で取得したidの商品に対してcategory子、孫も表示するために記載//
           %tr.table--section
@@ -65,26 +68,36 @@
             %th.table--section-left 配送日目安
             %th.table--section-right
               = @product.shipping_days.name
-        //上記　brand,categoryからクリックすると本物のメルカリではcategory show pageに遷移するが今の時点では割愛する//     
+        // 上記 brand,categoryからクリックすると本物のメルカリではcategory show pageに遷移するが今の時点では割愛する//     
     .item-container1__item-price
       .test
         %span.item-container1__item-price-bold  ¥
         = @product.price.to_s(:delimited)
         %span.item-container1__item-price-tax (税込)
         %span.item-container1__item-price-shipping-fee 送料込み
-    = link_to " 購入画面に進む", product_purchase_path(@product.id),  class:"item-container1__item-buy-btn"
+    - unless user_signed_in? && @product.user.id == current_user.id
+      = link_to " 購入画面に進む", new_product_purchase_path(@product.id),  class:"item-container1__item-buy-btn"
     .item-container1__item-description 
       %p.item-description-inner
         = @product.detail
-        
-    .item-container1__item-other-btn.clearfix
-      .link_btn_left
-        %button.item-other-btn-left 
-          %i.fa.fa-heart いいね！
-        %button#btn.item-other-btn-left  不適切な商品の勧告
-      .link_btn_right
-        %i.fa.fa-lock 
-        = link_to 'あんしん・あんぜんへの取り組み', root_path, class: 'item-other-btn-right'
+
+    - unless user_signed_in? && @product.user.id == current_user.id
+      .item-container1__item-other-btn.clearfix
+        .link_btn_left
+          %button.item-other-btn-left 
+            %i.fa.fa-heart いいね！
+          %button#btn.item-other-btn-left  不適切な商品の勧告
+        .link_btn_right
+          %i.fa.fa-lock 
+          = link_to 'あんしん・あんぜんへの取り組み', root_path, class: 'item-other-btn-right'
+
+  - if user_signed_in? && @product.user.id == current_user.id
+    %section.item-container1
+      = link_to "商品の編集", '#', class: "item-container1__item-edit-btn"
+      or
+      = link_to "出品を一旦停止する", '#', class: "item-container1__item-suspend-btn"
+      = link_to "この商品を削除する", product_path(@product.id), method: :delete, class: "item-container1__item-delete-btn"
+
   .item-detail-message
     .message-container
       .message-content
@@ -108,49 +121,51 @@
       %i.fab.fa-line
       %i.fab.fa-pinterest-square
   .item-others
-    %section.item-others--seller
-      %h2.item-others-seller-name 
-        = @product.user.nickname 
-        さんのその他の商品
-      .item-others--seller_product
-        - @product.user.products.each do |product_other|
-          - unless product_other.id == @product.id
+    - unless @other_products.blank?
+      %section.item-others--seller
+        %h2.item-others-seller-name 
+          = @product.user.nickname 
+          さんのその他の商品
+        .item-others--seller_product
+          - @product.user.products.each do |product_other|
+            - unless product_other.id == @product.id
+              = link_to product_path(product_other.id),class: "contents__pickup__items__box__contents__link" do
+                .items-box
+                  .items-box_photo
+                    = image_tag("#{product_other.images.first.image.url}", size: "220x220")
+                  .items-box_body
+                    %h3.items-box-name
+                      =product_other.name
+                    .items-box-num
+                      .items-box-price ￥
+                      =product_other.price.to_s(:delimited, delimiter: ',')
+                      .items-box-icon
+                        %i.fa.fa-heart
+                        1
+
+    - unless @same_category_products.blank?
+      %section.item-others--product
+        %h2.item-others--product__category-name
+          =@product.category.name
+          その他の商品
+        .item-others--product__content
+        - @same_category_products.each do |product|
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .items-box
-              .items-box_photo
-                -# = image_tag img.image, size: "220x220"
-                -# = image_tag product_other.images.first.image, size: "220x220"
-                = link_to image_tag("#{product_other.images.first.image.url}", size: "220x220"), product_path(product_other.id)  
+              .items-box_photo=image_tag("#{product.images.first.image.url}", size: "220x220")
               .items-box_body
                 %h3.items-box-name
-                  =product_other.name
+                  = product.name
                 .items-box-num
                   .items-box-price ￥
-                  =product_other.price.to_s(:delimited, delimiter: ',')
+                  = product.price.to_s(:delimited, delimiter: ',')
                   .items-box-icon
                     %i.fa.fa-heart
-                    1
- 
-    %section.item-others--product
-      %h2.item-others--product__category-name
-        =@product.category.name
-        その他の商品
-      .item-others--product__content
-      - @same_category_products.each do |product|
-        .items-box
-          .items-box_photo= link_to image_tag("#{product.images.first.image.url}", size: "220x220"), product_path(product.id)
-          .items-box_body
-            %h3.items-box-name
-              = product.name
-            .items-box-num
-              .items-box-price ￥
-              = product.price.to_s(:delimited, delimiter: ',')
-              .items-box-icon
-                %i.fa.fa-heart
-                2
+                    2
         
 = render 'shared/footer'
 
-//下の記述は[不適切な商品の勧告]をクリックした時にmodalを表示させる
+// 下の記述は[不適切な商品の勧告]をクリックした時にmodalを表示させる
 
 #modal.modal
   .modal-content
@@ -161,7 +176,7 @@
       %button#closeBtn.modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
       %button.modal-btn.modal-btn-submit はい
 
-// app/assets/javascript　fileに下記を記述しても反映されないので下記haml内に記載
+// app/assets/javascript fileに下記を記述しても反映されないので下記haml内に記載
 :javascript
   var btn = document.getElementById('btn');
   var modal = document.getElementById('modal');

@@ -20,7 +20,7 @@
   margin-left: 40px;
 }
 
-.submit-changes{
+.submit_changes{
   display: inline-block;
   font-size: 10pt;  
   text-align: center;   
@@ -48,7 +48,7 @@
   padding-top: 10px;
   padding-left: 10px;
   margin-left: 20px;
-  margin-top: 30px;
+  margin-top: 80px;
   height: 100px;
   width: 640px;
 }
@@ -74,10 +74,10 @@
 }
 
 .profile-text{
-  margin-left: 80px;
+  margin-left: 250px;
   margin-top: 110px;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 25px; 
   
 }
 
@@ -85,15 +85,23 @@
   position: absolute;
   img{
   border-radius: 50%;
-  margin-left: 180px;
+  margin-left: 170px;
   margin-top: 95px;
   height: 60px;
   width: 60px;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
-  // margin: auto;
   }
 }
 
+.namebox{
+  margin-left: -140px;
+  margin-top: -25px;
+}
+
+.message{
+  color: green;
+  height: 40px;
+  width: 100%;
+  background-color: rgb(236, 244, 217);
+  text-align: center;
+  padding-top: 5px;
+}
