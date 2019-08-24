@@ -119,7 +119,7 @@
                         / react-text: 880
                         あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
                         / /react-text
-                        =link_to "続けて出品する",'http://3.113.50.33/products/new', class: "btn-default btn-red"
+                        =link_to "続けて出品する", new_product_path, class: "btn-default btn-red"
                         %p.text-center
                           =link_to "商品ページへ行ってシェアする",'https://item.mercari.com/jp/m21781045456/'
                 .sell-content.sell-btn-box
@@ -138,6 +138,8 @@
                       =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/",target: "_blank"
                       に同意したことになります。
                   %div
+                    -# statusに初期状態である0（未売却）を入れる
+                    = form.hidden_field :status, value: 0
                     = form.submit "出品する", class:"btn-default btn-red exhibition_submit"
                   %a.btn-default.btn-gray
                     もどる

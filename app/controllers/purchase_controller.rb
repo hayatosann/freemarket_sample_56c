@@ -29,13 +29,15 @@ class PurchaseController < ApplicationController
         'X-Payjp-Direct-Token-Generate': 'true'
       } 
     )
-    amount = Product.find(purchase_params[:product_id]).price
+    product = Product.find(purchase_params[:product_id])
+    amount = product.price
     Payjp::Charge.create(
       amount: amount, # 決済する値段
       card: response.id,
       currency: 'jpy'
     )
-    Purchase.create(buyer_id: current_user.id,product_id: purchase_params[:product_id],postage_by: purchase_params[:postage_by],status: 1)
+    Purchase.create(buyer_id: current_user.id, product_id: purchase_params[:product_id])
+    product.update(status: 1)
     redirect_to :root
   end
 
