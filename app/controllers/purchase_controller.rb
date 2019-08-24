@@ -36,7 +36,8 @@ class PurchaseController < ApplicationController
       card: response.id,
       currency: 'jpy'
     )
-    Purchase.create(buyer_id: current_user.id,product_id: purchase_params[:product_id],postage_by: purchase_params[:postage_by],status: 1)
+    Purchase.create(buyer_id: current_user.id, product_id: purchase_params[:product_id])
+    product.update(status: 1)
     redirect_to :root
   end
 
