@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
+      @category_parent_array << parent.name
     end
   end
   
@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method_id,:prefecture_from_id,:shipping_days_id,:price,:category_id,images_attributes: [:image])
+    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method_id,:prefecture_from_id,:shipping_days_id,:price,:status,:category_id,images_attributes: [:image])
   end
 
 end
