@@ -29,7 +29,8 @@ class PurchaseController < ApplicationController
         'X-Payjp-Direct-Token-Generate': 'true'
       } 
     )
-    amount = Product.find(purchase_params[:product_id]).price
+    product = Product.find(purchase_params[:product_id])
+    amount = product.price
     Payjp::Charge.create(
       amount: amount, # 決済する値段
       card: response.id,
