@@ -26,9 +26,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    @product.brand_id = 1  #非同期通信でのフォーム実装が完了するまで仮の値を入れています
-    @product.shipping_method_id = 4   #非同期通信でのフォーム実装が完了するまで仮の値を入れています
-    binding.pry
     if @product.save
       params[:images][:image].each do |image|
         @product.images.create(image: image, product_id: @product.id)

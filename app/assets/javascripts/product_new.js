@@ -45,6 +45,39 @@ $(function() {
                 </div>`;
     $('.category_form').append(brandHtml);
   });
+  
+
+  $('#product_delivery_fee_id').on('change', function(){
+    
+    var delivery_fee = $('#product_delivery_fee_id option:selected').text();
+    $('#shipping_wrapper').remove();
+    shipping_Html= '';
+    shipping_Html =`<div class="form-group" id="shipping_wrapper">
+                      <label>
+                      配送の方法
+                      <span class="form-require">必須</span>
+                      </label>
+                      <div class="select-wrap">
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        <select name="product[shipping_method_id]" id="product_shipping_method_id"><option value="">---</option>
+                        <option value="1">未定</option>
+                        <option value="2">らくらくメルカリ便</option>
+                        <option value="3">ゆうメール</option>
+                        <option value="4">レターパック</option>
+                        <option value="5">普通郵便（定型、定形外）</option>
+                        <option value="6">クロネコヤマト</option>
+                        <option value="7">ゆうパック</option>
+                        <option value="8">クリックポスト</option>
+                        <option value="9">ゆうパケット</option></select>
+                      </div>
+                    </div>
+    `
+    if (delivery_fee != "---"){ 
+      $('.delivery_fee_box').append(shipping_Html);
+    }else{
+      $('#shipping_wrapper').remove();
+    }
+  });
 
   //選択タグ
 
