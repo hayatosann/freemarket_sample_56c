@@ -4,7 +4,9 @@
   .exhibition-wrap
     %header.exhibition-header
       %h1
-        %a= image_tag asset_path('logo.svg?863303983')
+        = link_to products_path do
+          = image_tag asset_path('logo.svg?863303983')
+        
     %main.exhibition-main
       %section.l-exhibition-container
         #sell-container
