@@ -71,7 +71,7 @@
         発送元・お届け先住所変更
         = fa_icon 'chevron-right'
     %li.nav__lists__list
-      = link_to "/users/:id/credit_confirmation", class: "nav__lists__list__link" do
+      = link_to "/users/#{@user.id}/credit_confirmation", class: "nav__lists__list__link" do
         支払い方法
         = fa_icon 'chevron-right'
     %li.nav__lists__list
