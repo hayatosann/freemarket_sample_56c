@@ -28,24 +28,33 @@
       =link_to "", class: "menu" do
         = icon("fas", "tag",class:"tag")
         ブランドから探す
-    .header__bottom__iine
-      =link_to "", class: "menu" do
-        = icon("far", "heart",class:"heart")
-        いいね！一覧
-    .header__bottom__news
-      =link_to "", class: "menu" do
-        = icon("far", "bell",class:"bell")
-        お知らせ
-    .header__bottom__todo
-      .header__bottom__todo__icon
+    - if user_signed_in?    
+      .header__bottom__iine
         =link_to "", class: "menu" do
-          = icon("fas", "check",class:"check")
-      .header__bottom__todo__text
+          = icon("far", "heart",class:"heart")
+          いいね！一覧
+      .header__bottom__news
         =link_to "", class: "menu" do
-          やることリスト
-    .header__bottom__mypage
-      =link_to "", class: "menu" do
-        .header__bottom__mypage__thumbnail
-      =link_to "", class: "menu" do
-        .header__bottom__mypage__user
-          マイページ
+          = icon("far", "bell",class:"bell")
+          お知らせ
+      .header__bottom__todo
+        .header__bottom__todo__icon
+          =link_to "", class: "menu" do
+            = icon("fas", "check",class:"check")
+        .header__bottom__todo__text
+          =link_to "", class: "menu" do
+            やることリスト
+      .header__bottom__mypage
+        =link_to "", class: "menu" do
+          .header__bottom__mypage__thumbnail
+        =link_to users_mypage_path, class: "menu" do
+          .header__bottom__mypage__user
+            マイページ
+    - else
+      .header__bottom__user-registration
+        =link_to  new_user_registration_path, class: "btn-red" do
+          新規会員登録
+      .header__bottom__user-login
+        =link_to  new_user_session_path, class: "btn-login" do
+          ログイン
+    
