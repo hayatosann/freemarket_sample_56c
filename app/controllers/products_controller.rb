@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
     @product = Product.new(product_params)
     @product.user_id = current_user.id
     if @product.save!
