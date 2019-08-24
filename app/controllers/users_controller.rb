@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:update]
-  before_action :authenticate_user!, only: [:mypage,:identification,:sign_out]
-
+  before_action :authenticate_user!, only: [:mypage,:identification,:sign_out, :credit_confirmation]
+  
   def create 
     @user = User.create(user_params)
     if @user.save

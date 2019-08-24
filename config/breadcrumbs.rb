@@ -18,7 +18,7 @@ crumb :identification do
 end
 
 crumb :credit_confirmation do
-  link "本人情報の登録", users_credit_confirmation_path
+  link "支払い方法", users_credit_confirmation_path
   parent :mypage
 end
 

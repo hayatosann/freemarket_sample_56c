@@ -17,9 +17,10 @@
         %button.delete_credit{:type => "submit"}削除する
         %br
       .credit_info
-        ***********1111
+        ***********
+        =current_user.card.number.slice(12..16)
         %br
-        06/17
+        =current_user.card.expiration_date.strftime("%m/%y")
       .method
         支払い方法について
         %i.fas.fa-chevron-right
