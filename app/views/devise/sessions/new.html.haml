@@ -1,18 +1,20 @@
 .all
   .log_in
-    %div.log_in__logo= image_tag asset_path('mercari_logo.svg')
-    //%img{src: "/assets/mercari_logo.svg", class: "log_in__logo"}
+    =link_to root_path do
+      =image_tag asset_path("mercari_logo.svg"), class: "log_in__logo"
+
     .boxtop
       %p.boxtop__NoAccount アカウントをお持ちでない方はこちら
-      .boxtop__NewRegistration 新規会員登録
+      .boxtop__NewRegistration
+        = link_to "新規会員登録", users_information_path, style: "color: white"
     .boxbottom
       .boxbottom__FacebookRegistration
         = image_tag asset_path('flogo.png'), class: "boxbottom__FacebookRegistration__flogo"
         = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, style: "color: white;"
       .boxbottom__GoogleRegistration
         -# %img{src: "/assets/google.svg", class: "glogo"}
-        = image_tag asset_path('google.svg'), class: "glogo", style: "color: black;"
-        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
+        = image_tag asset_path('google.svg'), class: "glogo"
+        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, style: "color: black;"
 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
