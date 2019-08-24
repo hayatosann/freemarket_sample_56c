@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:update]
-  before_action :authenticate_user!, only: [:mypage]
+  before_action :authenticate_user!, only: [:mypage, :credit_confirmation]
 
   def create 
     @user = User.create(user_params)
