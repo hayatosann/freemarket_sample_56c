@@ -68,10 +68,10 @@
 |price|integer|null: false|
 
 ### Association
-- belongs_to :user, :brand
+- belongs_to :user
 - belongs_to :category, foreign_key: true, null:false 
 - has_many :images, :comments, :users through :comments
-- belongs_to active_hash :size_id, brand_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
+- belongs_to active_hash :size_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
 
 ## purchasesテーブル
 
@@ -109,12 +109,6 @@
 ### Association
 - belongs_to :purchase
 - belongs_to :user
-
-## brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: true|
 
 ### Association
 - has_many :products
