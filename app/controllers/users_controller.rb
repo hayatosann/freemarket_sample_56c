@@ -148,6 +148,8 @@ class UsersController < ApplicationController
   end
   
   def credit_confirmation
+    @user = User.find(params[:id])
+    @card = @user.card
   end
 
   def update

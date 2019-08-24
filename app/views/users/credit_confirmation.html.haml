@@ -1,5 +1,5 @@
 = render 'shared/header'
-- breadcrumb :credit_confirmation
+-# - breadcrumb :credit_confirmation
 = render "shared/breadcrumbs"
 = render 'shared/exhibitation'
 .container
@@ -17,9 +17,10 @@
         %button.delete_credit{:type => "submit"}削除する
         %br
       .credit_info
-        ***********1111
+        ***********
+        =@card.number.slice(12..16)
         %br
-        06/17
+        =@card.expiration_date.strftime("%m/%y")
       .method
         支払い方法について
         %i.fas.fa-chevron-right
