@@ -1,5 +1,5 @@
 = render 'shared/header'
--# - breadcrumb :credit_confirmation
+- breadcrumb :credit_confirmation
 = render "shared/breadcrumbs"
 = render 'shared/exhibitation'
 .container
@@ -18,9 +18,9 @@
         %br
       .credit_info
         ***********
-        =@card.number.slice(12..16)
+        =current_user.card.number.slice(12..16)
         %br
-        =@card.expiration_date.strftime("%m/%y")
+        =current_user.card.expiration_date.strftime("%m/%y")
       .method
         支払い方法について
         %i.fas.fa-chevron-right

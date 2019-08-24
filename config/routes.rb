@@ -21,8 +21,7 @@ Rails.application.routes.draw do
   post '/users/complete', to: 'users#complete'
 
   get '/users/mypage/identification', to: 'users#identification'
-  get '/users/:id/credit_confirmation', to: 'users#credit_confirmation'
-  post '/users/:id/credit_confirmation', to: 'users#credit_confirmation'
+  get '/users/credit_confirmation', to: 'users#credit_confirmation'
   get '/users/:id', to: "profile#edit"
   patch '/users/:id', to: "profile#create"
 
