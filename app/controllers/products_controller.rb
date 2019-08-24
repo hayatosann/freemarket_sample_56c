@@ -26,9 +26,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    @product.size_id = 1  #非同期通信でのフォーム実装が完了するまで仮の値を入れています
-    @product.brand_id = 1  #非同期通信でのフォーム実装が完了するまで仮の値を入れています
-    @product.shipping_method_id = 4   #非同期通信でのフォーム実装が完了するまで仮の値を入れています
     if @product.save
       params[:images][:image].each do |image|
         @product.images.create(image: image, product_id: @product.id)
@@ -73,7 +70,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:id,:name,:detail,:user_id,:size_id,:brand_id,:condition_id,:delivery_fee_id,:shipping_method,:prefecture_from_id,:shipping_days_id,:price,:category_id,images_attributes: [:image])
+    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method,:prefecture_from_id,:shipping_days_id,:price,:category_id,images_attributes: [:image])
   end
 
 end
