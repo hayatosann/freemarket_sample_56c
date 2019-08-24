@@ -60,6 +60,7 @@
 |category_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false|
 |brand|string|
+|status|integer|null: false|
 |condition_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
 |shipping_method_id|integer|null: false|
@@ -73,15 +74,15 @@
 - has_many :images, :comments, :users through :comments
 - belongs_to active_hash :size_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
 
+### Note
+- status -> 0: 未売却, 1: 売却済
+
 ## purchasesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |buyer_id|integer|null: false, foreign_key: true|
-|seller_id|integer|null: false, foreign_key: true|
-|postage_by|integer|null: false|
-|status|integer|null: false|
-
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :comments
 - belongs_to :buyer, class_name: "User", foreign_key: "buyer_id"
