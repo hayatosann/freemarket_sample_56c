@@ -1,6 +1,6 @@
 $(function(){
   $(document).ready(function() {
-    $("#q_size_id").change(function(){
+    $(".size").change(function(){
       var str = $(this).val();
       if (str == 0){
         $('.field__area__size__clothes').hide();

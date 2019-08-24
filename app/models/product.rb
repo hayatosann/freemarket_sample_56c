@@ -17,7 +17,7 @@ class Product < ApplicationRecord
   belongs_to :brand
   belongs_to :category
   belongs_to_active_hash :brand
-  belongs_to_active_hash :category
+  
 
 end
 

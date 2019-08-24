@@ -1,8 +1,8 @@
 $(function(){
   $(document).ready(function() {
-    $("#q_category_id").change(function(){
-      var str = $(this).val();
-      if (str == 0){
+    $(".parent").change(function(){
+      var child = $(this).val();
+      if (child == ''){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -16,8 +16,21 @@ $(function(){
         $('.field__area__category__ticket').hide();
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
       }
-      else if (str == 1){
+      else if (child == '1/'){
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
         $('.field__area__category__interior').hide();
@@ -31,9 +44,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__ledies').show();
+        $(".ledies").prop("disabled",false);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".ledies").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -54,7 +80,7 @@ $(function(){
             $('.field__area__category__ledies__matanity').hide();
             $('.field__area__category__ledies__other').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '1/14'){
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
             $('.field__area__category__ledies__skirt').hide();
@@ -75,7 +101,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__tops').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '1/15'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__pans').hide();
             $('.field__area__category__ledies__skirt').hide();
@@ -96,7 +122,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__outer').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '1/16'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__skirt').hide();
@@ -117,7 +143,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__pans').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '1/17'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -138,7 +164,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__skirt').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '1/18'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -159,7 +185,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__onepiece').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '1/19'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -180,7 +206,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__shoes').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '1/20'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -201,7 +227,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__pajama').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '1/21'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -222,7 +248,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__sox').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '1/22'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -243,7 +269,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__hut').show();
           }
-          else if (grandchild == 10){
+          else if (grandchild == '1/23'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -264,7 +290,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__bag').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '1/24'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -285,7 +311,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__accessory').show();
           }
-          else if (grandchild == 12){
+          else if (grandchild == '1/25'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -306,7 +332,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__hairaccessory').show();
           }
-          else if (grandchild == 13){
+          else if (grandchild == '1/26'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -327,7 +353,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__komono').show();
           }
-          else if (grandchild == 14){
+          else if (grandchild == '1/27'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -348,7 +374,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__watch').show();
           }
-          else if (grandchild == 15){
+          else if (grandchild == '1/28'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -369,7 +395,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__wig').show();
           }
-          else if (grandchild == 16){
+          else if (grandchild == '1/29'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -390,7 +416,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__summer').show();
           }
-          else if (grandchild == 17){
+          else if (grandchild == '1/30'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -411,7 +437,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__formal').show();
           }
-          else if (grandchild == 18){
+          else if (grandchild == '1/31'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -432,7 +458,7 @@ $(function(){
             $('.field__area__category__ledies__other').hide();
             $('.field__area__category__ledies__matanity').show();
           }
-          if (grandchild == 19){
+          else if (grandchild == '1/32'){
             $('.field__area__category__ledies__tops').hide();
             $('.field__area__category__ledies__outer').hide();
             $('.field__area__category__ledies__pans').hide();
@@ -455,7 +481,7 @@ $(function(){
           }
         });
       }
-      else if (str == 2){
+      else if (child == '2/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__kids').hide();
         $('.field__area__category__interior').hide();
@@ -469,9 +495,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__mens').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",false);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".mens").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -486,7 +525,7 @@ $(function(){
             $('.field__area__category__mens__sox').hide();
             $('.field__area__category__mens__under').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '2/33'){
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
             $('.field__area__category__mens__shoes').hide();
@@ -501,7 +540,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__tops').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '2/34'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__pans').hide();
             $('.field__area__category__mens__shoes').hide();
@@ -516,7 +555,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__outer').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '2/35'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__shoes').hide();
@@ -531,7 +570,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__pans').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '2/36'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -546,7 +585,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__shoes').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '2/37'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -561,7 +600,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__bag').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '2/38'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -576,7 +615,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__suit').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '2/39'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -591,7 +630,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__hut').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '2/40'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -606,7 +645,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__accessary').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '2/41'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -621,7 +660,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__komono').show();
           }
-          else if (grandchild == 10){
+          else if (grandchild == '2/42'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -636,7 +675,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__watch').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '2/43'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -651,7 +690,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__swim').show();
           }
-          else if (grandchild == 12){
+          else if (grandchild == '2/44'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -666,7 +705,7 @@ $(function(){
             $('.field__area__category__mens__under').hide();
             $('.field__area__category__mens__sox').show();
           }
-          else if (grandchild == 13){
+          else if (grandchild == '2/45'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -681,7 +720,7 @@ $(function(){
             $('.field__area__category__mens__sox').hide();
             $('.field__area__category__mens__under').show();
           }
-          if (grandchild == 265){
+          if (grandchild == '3/46'){
             $('.field__area__category__mens__tops').hide();
             $('.field__area__category__mens__outer').hide();
             $('.field__area__category__mens__pans').hide();
@@ -698,7 +737,7 @@ $(function(){
           }
         });
       }
-      if (str == 3){
+      if (child == '3/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__interior').hide();
@@ -712,9 +751,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__kids').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",false);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".kids").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -731,7 +783,7 @@ $(function(){
             $('.field__area__category__kids__memorial').hide();
             $('.field__area__category__kids__other').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '3/47'){
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
             $('.field__area__category__kids__girl100').hide();
@@ -748,7 +800,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__girl95').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '3/48'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__baby95').hide();
             $('.field__area__category__kids__girl100').hide();
@@ -765,7 +817,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__boy95').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '3/49'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__girl100').hide();
@@ -782,7 +834,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__baby95').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '3/50'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -799,7 +851,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__girl100').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '3/51'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -816,7 +868,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__boy100').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '3/52'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -833,7 +885,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__baby100').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '3/53'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -849,7 +901,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__shoes').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '3/54'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -865,7 +917,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__komono').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '3/55'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -882,7 +934,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__omutsu').show();
           }
-          else if (grandchild == 10){
+          else if (grandchild == '3/56'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -899,7 +951,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__move').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '3/57'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -916,7 +968,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__meal').show();
           }
-          else if (grandchild == 12){
+          else if (grandchild == '3/58'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -933,7 +985,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__sleep').show();
           }
-          else if (grandchild == 13){
+          else if (grandchild == '3/59'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -950,7 +1002,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__hoby').show();
           }
-          else if (grandchild == 14){
+          else if (grandchild == '3/60'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -967,7 +1019,7 @@ $(function(){
             $('.field__area__category__kids__other').hide();
             $('.field__area__category__kids__memorial').show();
           }
-          else if (grandchild == 15){
+          else if (grandchild == '4/61'){
             $('.field__area__category__kids__girl95').hide();
             $('.field__area__category__kids__boy95').hide();
             $('.field__area__category__kids__baby95').hide();
@@ -986,7 +1038,7 @@ $(function(){
           }
         });
       }
-      if (str == 4){
+      if (child == '4/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -1000,9 +1052,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__interior').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",false);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".interior").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1016,7 +1081,7 @@ $(function(){
             $('.field__area__category__interior__komono').hide();
             $('.field__area__category__interior__season').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '4/62'){
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
             $('.field__area__category__interior__chair').hide();
@@ -1030,7 +1095,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__kitchen').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '4/63'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sofa').hide();
             $('.field__area__category__interior__chair').hide();
@@ -1044,7 +1109,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__sleep').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '4/64'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__chair').hide();
@@ -1058,7 +1123,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__sofa').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '4/65'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1072,7 +1137,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__chair').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '4/66'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1086,7 +1151,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__table').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '4/67'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1100,7 +1165,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__storage').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '4/68'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1114,7 +1179,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__rag').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '4/69'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1128,7 +1193,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__curtain').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '4/70'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1142,7 +1207,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__light').show();
           }
-          else if (grandchild == 10){
+          else if (grandchild == '4/71'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1156,7 +1221,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__sleeper').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '4/72'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1170,7 +1235,7 @@ $(function(){
             $('.field__area__category__interior__season').hide();
             $('.field__area__category__interior__komono').show();
           }
-          if (grandchild == 12){
+          if (grandchild == '4/73'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1184,7 +1249,7 @@ $(function(){
             $('.field__area__category__interior__komono').hide();
             $('.field__area__category__interior__season').show();
           }
-          if (grandchild == 712){
+          if (grandchild == '5/74'){
             $('.field__area__category__interior__kitchen').hide();
             $('.field__area__category__interior__sleep').hide();
             $('.field__area__category__interior__sofa').hide();
@@ -1200,7 +1265,7 @@ $(function(){
           }
         });
       }
-      if (str == 5){
+      if (child == '5/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -1214,9 +1279,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__book').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",false);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".book").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__magazin').hide();
@@ -1225,7 +1303,7 @@ $(function(){
             $('.field__area__category__book__record').hide();
             $('.field__area__category__book__game').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '5/75'){
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__magazin').hide();
             $('.field__area__category__book__cd').hide();
@@ -1234,7 +1312,7 @@ $(function(){
             $('.field__area__category__book__game').hide();
             $('.field__area__category__book__books').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '5/76'){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__magazin').hide();
             $('.field__area__category__book__cd').hide();
@@ -1243,7 +1321,7 @@ $(function(){
             $('.field__area__category__book__game').hide();
             $('.field__area__category__book__comic').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '5/77'){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__cd').hide();
@@ -1252,7 +1330,7 @@ $(function(){
             $('.field__area__category__book__game').hide();
             $('.field__area__category__book__magazin').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '5/78'){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__magazin').hide();
@@ -1261,7 +1339,7 @@ $(function(){
             $('.field__area__category__book__game').hide();
             $('.field__area__category__book__cd').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '5/79'){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__magazin').hide();
@@ -1270,7 +1348,7 @@ $(function(){
             $('.field__area__category__book__game').hide();
             $('.field__area__category__book__dvd').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '5/80'){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__magazin').hide();
@@ -1279,7 +1357,7 @@ $(function(){
             $('.field__area__category__book__game').hide();
             $('.field__area__category__book__record').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '6/81'){
             $('.field__area__category__book__books').hide();
             $('.field__area__category__book__comic').hide();
             $('.field__area__category__book__magazin').hide();
@@ -1290,7 +1368,7 @@ $(function(){
           }
         });
       }
-      if (str == 6){
+      if (child == '6/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -1304,9 +1382,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__hoby').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",false);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".hoby").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1319,7 +1410,7 @@ $(function(){
             $('.field__area__category__hoby__artgoods').hide();
             $('.field__area__category__hoby__other').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '6/82'){
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
             $('.field__area__category__hoby__card').hide();
@@ -1332,7 +1423,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__hobies').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '6/83'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__anime').hide();
             $('.field__area__category__hoby__card').hide();
@@ -1345,7 +1436,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__tallent').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '6/84'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__card').hide();
@@ -1358,7 +1449,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__anime').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '6/85'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1371,7 +1462,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__card').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '6/87'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1384,7 +1475,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__figure').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '6/88'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1397,7 +1488,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__music').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '6/89'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1410,7 +1501,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__collection').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '6/90'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1423,7 +1514,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__miritary').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '6/91'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1436,7 +1527,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__art').show();
           }
-          else if (grandchild == 10){
+          else if (grandchild == '6/92'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1449,7 +1540,7 @@ $(function(){
             $('.field__area__category__hoby__other').hide();
             $('.field__area__category__hoby__artgoods').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '7/93'){
             $('.field__area__category__hoby__hobies').hide();
             $('.field__area__category__hoby__tallent').hide();
             $('.field__area__category__hoby__anime').hide();
@@ -1464,7 +1555,7 @@ $(function(){
           }
         });
       }
-      if (str == 7){
+      if (child == '7/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -1478,9 +1569,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__cosme').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",false);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".cosme").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1493,7 +1597,7 @@ $(function(){
             $('.field__area__category__cosme__diet').hide();
             $('.field__area__category__cosme__other').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '7/94'){
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
             $('.field__area__category__cosme__freg').hide();
@@ -1506,7 +1610,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__base').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '7/95'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__nail').hide();
             $('.field__area__category__cosme__freg').hide();
@@ -1519,7 +1623,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__up').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '7/96'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__freg').hide();
@@ -1532,7 +1636,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__nail').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '7/97'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1545,7 +1649,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__freg').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '7/98'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1557,7 +1661,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__skin').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '7/99'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1570,7 +1674,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__hair').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '7/100'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1583,7 +1687,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__body').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '7/101'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1596,7 +1700,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__oral').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '7/102'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1609,7 +1713,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__relax').show();
           }
-          else if (grandchild == 10){
+          else if (grandchild == '8/103'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1622,7 +1726,7 @@ $(function(){
             $('.field__area__category__cosme__other').hide();
             $('.field__area__category__cosme__diet').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '8/104'){
             $('.field__area__category__cosme__base').hide();
             $('.field__area__category__cosme__up').hide();
             $('.field__area__category__cosme__nail').hide();
@@ -1637,7 +1741,7 @@ $(function(){
           }
         });
       }
-      if (str == 8){
+      if (child == '8/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -1651,9 +1755,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__machine').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",false);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".machine").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1665,7 +1782,7 @@ $(function(){
             $('.field__area__category__machine__home').hide();
             $('.field__area__category__machine__other').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '8/105'){
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
             $('.field__area__category__machine__camera').hide();
@@ -1677,7 +1794,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__phone').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '8/106'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__pc').hide();
             $('.field__area__category__machine__camera').hide();
@@ -1689,7 +1806,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__accessary').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '8/107'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__camera').hide();
@@ -1701,7 +1818,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__pc').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '8/108'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1713,7 +1830,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__camera').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '8/109'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1725,7 +1842,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__tv').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '8/110'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1737,7 +1854,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__audio').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '8/111'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1749,7 +1866,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__helth').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '8/112'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1761,7 +1878,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__heat').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '9/113'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1773,7 +1890,7 @@ $(function(){
             $('.field__area__category__machine__other').hide();
             $('.field__area__category__machine__home').show();
           }
-          if (grandchild == 10){
+          else if (grandchild == '9/114'){
             $('.field__area__category__machine__phone').hide();
             $('.field__area__category__machine__accessary').hide();
             $('.field__area__category__machine__pc').hide();
@@ -1787,7 +1904,7 @@ $(function(){
           }
         });
       }
-      if (str == 9){
+      if (child == '9/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -1801,9 +1918,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__sports').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",false);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".sports").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1817,7 +1947,7 @@ $(function(){
             $('.field__area__category__sports__outdoor').hide();
             $('.field__area__category__sports__other').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '9/115'){
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
             $('.field__area__category__sports__training').hide();
@@ -1831,7 +1961,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__golf').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '9/116'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__bike').hide();
             $('.field__area__category__sports__training').hide();
@@ -1845,7 +1975,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__fishing').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '9/117'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__training').hide();
@@ -1859,7 +1989,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__bike').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '9/118'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1873,7 +2003,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__training').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '9/119'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1887,7 +2017,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__baseball').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '9/120'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1901,7 +2031,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__soccor').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '9/121'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1915,7 +2045,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__tennis').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '9/122'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1929,7 +2059,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__snowboard').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '9/123'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1943,7 +2073,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__ski').show();
           }
-          if (grandchild == 10){
+          else if (grandchild == '9/124'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1957,7 +2087,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__othersports').show();
           }
-          else if (grandchild == 11){
+          else if (grandchild == '10/115'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1971,7 +2101,7 @@ $(function(){
             $('.field__area__category__sports__other').hide();
             $('.field__area__category__sports__outdoor').show();
           }
-          if (grandchild == 12){
+          else if (grandchild == '10/125'){
             $('.field__area__category__sports__golf').hide();
             $('.field__area__category__sports__fishing').hide();
             $('.field__area__category__sports__bike').hide();
@@ -1987,7 +2117,7 @@ $(function(){
           }
         });
       }
-      if (str == 10){
+      if (child == '10/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -2001,9 +2131,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__handmade').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",false);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".handmade").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2013,7 +2156,7 @@ $(function(){
             $('.field__area__category__handmade__material').hide();
             $('.field__area__category__handmade__second').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '10/127'){
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
             $('.field__area__category__handmade__interior').hide();
@@ -2023,7 +2166,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__ledies').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '10/128'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__watch').hide();
             $('.field__area__category__handmade__interior').hide();
@@ -2033,7 +2176,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__komono').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '10/129'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__interior').hide();
@@ -2043,7 +2186,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__watch').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '10/130'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2053,7 +2196,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__interior').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '10/131'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2063,7 +2206,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__hoby').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '10/132'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2073,7 +2216,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__kids').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '11/133'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2083,7 +2226,7 @@ $(function(){
             $('.field__area__category__handmade__second').hide();
             $('.field__area__category__handmade__material').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '11/134'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2093,7 +2236,7 @@ $(function(){
             $('.field__area__category__handmade__material').hide();
             $('.field__area__category__handmade__second').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == '0'){
             $('.field__area__category__handmade__ledies').hide();
             $('.field__area__category__handmade__komono').hide();
             $('.field__area__category__handmade__watch').hide();
@@ -2105,7 +2248,7 @@ $(function(){
           }
         });
       }
-      if (str == 11){
+      if (child == '11/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -2119,9 +2262,22 @@ $(function(){
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__ticket').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",false);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",true);
         $(".ticket").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
@@ -2130,7 +2286,7 @@ $(function(){
             $('.field__area__category__ticket__right').hide();
             $('.field__area__category__ticket__discount').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '11/135'){
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
             $('.field__area__category__ticket__event').hide();
@@ -2139,7 +2295,7 @@ $(function(){
             $('.field__area__category__ticket__discount').hide();
             $('.field__area__category__ticket__music').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '11/136'){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__musical').hide();
             $('.field__area__category__ticket__event').hide();
@@ -2148,7 +2304,7 @@ $(function(){
             $('.field__area__category__ticket__discount').hide();
             $('.field__area__category__ticket__sports').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '11/137'){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__event').hide();
@@ -2157,7 +2313,7 @@ $(function(){
             $('.field__area__category__ticket__discount').hide();
             $('.field__area__category__ticket__musical').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '11/138'){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
@@ -2166,7 +2322,7 @@ $(function(){
             $('.field__area__category__ticket__discount').hide();
             $('.field__area__category__ticket__event').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '11/139'){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
@@ -2175,7 +2331,7 @@ $(function(){
             $('.field__area__category__ticket__discount').hide();
             $('.field__area__category__ticket__cinema').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '12/140'){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
@@ -2184,7 +2340,7 @@ $(function(){
             $('.field__area__category__ticket__discount').hide();
             $('.field__area__category__ticket__right').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '12/141'){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
@@ -2193,7 +2349,7 @@ $(function(){
             $('.field__area__category__ticket__right').hide();
             $('.field__area__category__ticket__discount').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == 0){
             $('.field__area__category__ticket__music').hide();
             $('.field__area__category__ticket__sports').hide();
             $('.field__area__category__ticket__musical').hide();
@@ -2204,7 +2360,7 @@ $(function(){
           }
         });
       }
-      if (str == 12){
+      if (child == '12/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -2218,9 +2374,22 @@ $(function(){
         $('.field__area__category__ticket').hide();
         $('.field__area__category__other').hide();
         $('.field__area__category__automobil').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",false);
+        $(".other").prop("disabled",true);
         $(".automobil").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__parts').hide();
@@ -2228,7 +2397,7 @@ $(function(){
             $('.field__area__category__automobil__bikeparts').hide();
             $('.field__area__category__automobil__bikeaccessory').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == '12/142'){
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__parts').hide();
             $('.field__area__category__automobil__accessory').hide();
@@ -2236,7 +2405,7 @@ $(function(){
             $('.field__area__category__automobil__bikeaccessory').hide();
             $('.field__area__category__automobil__car').show();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '12/143'){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__parts').hide();
             $('.field__area__category__automobil__accessory').hide();
@@ -2244,7 +2413,7 @@ $(function(){
             $('.field__area__category__automobil__bikeaccessory').hide();
             $('.field__area__category__automobil__tire').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '12/144'){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__accessory').hide();
@@ -2252,7 +2421,7 @@ $(function(){
             $('.field__area__category__automobil__bikeaccessory').hide();
             $('.field__area__category__automobil__parts').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '12/145'){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__parts').hide();
@@ -2260,7 +2429,7 @@ $(function(){
             $('.field__area__category__automobil__bikeaccessory').hide();
             $('.field__area__category__automobil__accessory').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == 0){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__parts').hide();
@@ -2268,7 +2437,7 @@ $(function(){
             $('.field__area__category__automobil__bikeaccessory').hide();
             $('.field__area__category__automobil__bikeparts').hide();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '12/146'){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__parts').hide();
@@ -2276,7 +2445,7 @@ $(function(){
             $('.field__area__category__automobil__bikeaccessory').hide();
             $('.field__area__category__automobil__bikeparts').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '13/147'){
             $('.field__area__category__automobil__car').hide();
             $('.field__area__category__automobil__tire').hide();
             $('.field__area__category__automobil__parts').hide();
@@ -2286,7 +2455,7 @@ $(function(){
           }
         });
       }
-      if (str == 13){
+      if (child == '13/'){
         $('.field__area__category__ledies').hide();
         $('.field__area__category__mens').hide();
         $('.field__area__category__kids').hide();
@@ -2300,9 +2469,22 @@ $(function(){
         $('.field__area__category__ticket').hide();
         $('.field__area__category__automobil').hide();
         $('.field__area__category__other').show();
+        $(".ledies").prop("disabled",true);
+        $(".mens").prop("disabled",true);
+        $(".kids").prop("disabled",true);
+        $(".interior").prop("disabled",true);
+        $(".book").prop("disabled",true);
+        $(".hoby").prop("disabled",true);
+        $(".cosme").prop("disabled",true);
+        $(".machine").prop("disabled",true);
+        $(".sports").prop("disabled",true);
+        $(".handmade").prop("disabled",true);
+        $(".ticket").prop("disabled",true);
+        $(".automobil").prop("disabled",true);
+        $(".other").prop("disabled",false);
         $(".other").change(function(){
           var grandchild = $(this).val();
-          if (grandchild == 0){
+          if (grandchild == ''){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
@@ -2311,7 +2493,7 @@ $(function(){
             $('.field__area__category__other__stationary').hide();
             $('.field__area__category__other__office').hide();
           }
-          else if (grandchild == 1){
+          else if (grandchild == 0){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
@@ -2320,7 +2502,7 @@ $(function(){
             $('.field__area__category__other__stationary').hide();
             $('.field__area__category__other__office').hide();
           }
-          else if (grandchild == 2){
+          else if (grandchild == '13/148'){
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
             $('.field__area__category__other__life').hide();
@@ -2329,7 +2511,7 @@ $(function(){
             $('.field__area__category__other__office').hide();
             $('.field__area__category__other__pet').show();
           }
-          else if (grandchild == 3){
+          else if (grandchild == '13/149'){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__drink').hide();
             $('.field__area__category__other__life').hide();
@@ -2338,7 +2520,7 @@ $(function(){
             $('.field__area__category__other__office').hide();
             $('.field__area__category__other__meal').show();
           }
-          else if (grandchild == 4){
+          else if (grandchild == '13/150'){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__life').hide();
@@ -2347,7 +2529,7 @@ $(function(){
             $('.field__area__category__other__office').hide();
             $('.field__area__category__other__drink').show();
           }
-          else if (grandchild == 5){
+          else if (grandchild == '13/151'){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
@@ -2356,7 +2538,7 @@ $(function(){
             $('.field__area__category__other__office').hide();
             $('.field__area__category__other__life').show();
           }
-          else if (grandchild == 6){
+          else if (grandchild == '13/152'){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
@@ -2365,7 +2547,7 @@ $(function(){
             $('.field__area__category__other__office').hide();
             $('.field__area__category__other__collection').show();
           }
-          else if (grandchild == 7){
+          else if (grandchild == '13/153'){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
@@ -2374,7 +2556,7 @@ $(function(){
             $('.field__area__category__other__office').hide();
             $('.field__area__category__other__stationary').show();
           }
-          else if (grandchild == 8){
+          else if (grandchild == '13/154'){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
@@ -2383,7 +2565,7 @@ $(function(){
             $('.field__area__category__other__stationary').hide();
             $('.field__area__category__other__office').show();
           }
-          else if (grandchild == 9){
+          else if (grandchild == 0){
             $('.field__area__category__other__pet').hide();
             $('.field__area__category__other__meal').hide();
             $('.field__area__category__other__drink').hide();
