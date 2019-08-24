@@ -1,5 +1,5 @@
 .seach__seachbox__seachbar
-  = search_form_for @search, url: '/products/search' ,html: { method: :post } do |f|
+  = search_form_for @search, url: '/products/search' ,html: {} do |f|
     = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()'} )
     .field
       .field__area
@@ -5017,8 +5017,8 @@
 
         .field__area__brand
           = icon("fas", "tag",class:"tag")
-          = f.label :brand_name_cont,'ブランド名から探す', class: 'label'
-          = f.search_field :brand_name_cont,class: 'form',placeholder: "例) シャネル"
+          = f.label :brand_id,'ブランド名から探す', class: 'label'
+          = f.search_field :brand_id_eq,class: 'form',placeholder: "例) シャネル"
 
         .field__area__size
           = icon("fas", "arrows-alt",class:"tag")
@@ -5585,7 +5585,7 @@
         .field__area__price
           = icon("fas", "yen",class:"icon")
           = f.label '価格', class: 'label'
-          = f.select:price, {'選択してください':  '', '300 ~ 1000':  '1', '1000 ~ 5000': '2', '5000 ~ 10000': '3', '10000 ~ 30000': '4','30000 ~ 50000': '5', '50000 ~': '6'}
+          = f.select:price, {'選択してください':  '0', '300 ~ 1000':  '1', '1000 ~ 5000': '2', '5000 ~ 10000': '3', '10000 ~ 30000': '4','30000 ~ 50000': '5', '50000 ~': '6'}
           = f.search_field :price_gteq,class: 'min',placeholder: "¥ Min"
           = f.label '~',class: 'wave'
           = f.search_field :price_lteq,class: 'max',placeholder: "¥ Max"
@@ -5660,5 +5660,3 @@
           = f.submit "クリア", type: :reset,class:'clear'
           = f.submit "完了",class:'comp'
         
-
-    

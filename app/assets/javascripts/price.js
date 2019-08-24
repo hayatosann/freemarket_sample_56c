@@ -2,7 +2,11 @@ $(function(){
   $(document).ready(function() {
     $("#q_price").change(function(){
       var str = $(this).val();
-      if (str == 1){
+      if (str == 0){
+        $('#q_price_gteq').val('');
+        $('#q_price_lteq').val('');
+      }
+      else if (str == 1){
         $('#q_price_gteq').val('300');
         $('#q_price_lteq').val('1000');
       }
