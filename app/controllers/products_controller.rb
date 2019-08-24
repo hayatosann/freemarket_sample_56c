@@ -24,9 +24,10 @@ class ProductsController < ApplicationController
   end
 
   def create
+    binding.pry
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    if @product.save
+    if @product.save!
       params[:images][:image].each do |image|
         @product.images.create(image: image, product_id: @product.id)
       end
@@ -70,7 +71,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method,:prefecture_from_id,:shipping_days_id,:price,:category_id,images_attributes: [:image])
+    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method_id,:prefecture_from_id,:shipping_days_id,:price,:category_id,images_attributes: [:image])
   end
 
 end
