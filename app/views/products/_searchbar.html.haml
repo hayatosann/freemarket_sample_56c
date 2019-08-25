@@ -1,5 +1,5 @@
 .seach__seachbox__seachbar
-  = search_form_for @search, url: '/products/search' ,html: {} do |f|
+  = search_form_for @search, url: search_products_path ,html: {} do |f|
     = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()'} )
     .field
       .field__area
@@ -7,7 +7,7 @@
           詳細検索
         .field__area__detail
           = icon("fas", "plus",class:"icon")
-          = f.label :name_cont,'キーワードを追加する', class: 'label'
+          = f.label :name_start,'キーワードを追加する', class: 'label'
           = f.search_field :name_cont,class: 'form',placeholder: "例) 値下げ"
 
         .field__area__category
@@ -5025,7 +5025,7 @@
           = f.label 'サイズを指定する', class: 'label'
           = f.select:size_id, {'すべて':  '0', '洋服のサイズ': '1', 'メンズ靴のサイズ': '2', 'レディース靴のサイズ': '3', 'スカートのサイズ': '4', 'キッズ服のサイズ': '5','ベビー・キッズ靴のサイズ': '6', 'ベビー服のサイズ': '7', 'テレビのサイズ': '8', 'カメラレンズのサイズ': '9', 'オートバイのサイズ': '10', 'ヘルメットのサイズ': '11', 'タイヤのサイズ': '12', 'スキーのサイズ': '13', 'スノーボードのサイズ': '14'}, {multiple: true},{class: 'size'}
           .field__area__size__clothes
-            .checks
+            .checks.clothes
               .checks__check
                 = f.check_box :size_id_eq_any, {multiple: true},checked_value = 1, unchecked_value = nil
                 .checks__check__label

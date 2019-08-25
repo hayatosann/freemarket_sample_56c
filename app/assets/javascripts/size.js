@@ -130,7 +130,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__babyclothes').show();
       }
-      if (str == 8){
+      else if (str == 8){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
@@ -146,7 +146,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__tv').show();
       }
-      if (str == 9){
+      else if (str == 9){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
@@ -162,7 +162,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__camera').show();
       }
-      if (str == 10){
+      else if (str == 10){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
@@ -178,7 +178,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__bike').show();
       }
-      if (str == 11){
+      else if (str == 11){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
@@ -194,7 +194,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__helmet').show();
       }
-      if (str == 12){
+      else if (str == 12){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
@@ -210,7 +210,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__tire').show();
       }
-      if (str == 13){
+      else if (str == 13){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
@@ -226,7 +226,7 @@ $(function(){
         $('.field__area__size__snowboard').hide();
         $('.field__area__size__ski').show();
       }
-      if (str == 14){
+      else if (str == 14){
         $('.field__area__size__clothes').hide();
         $('.field__area__size__mens').hide();
         $('.field__area__size__ladies').hide();
