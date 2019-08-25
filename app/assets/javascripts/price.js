@@ -1,8 +1,3 @@
-// $(".input-default").addEventListener("keyup", function(){
-//   var $result;
-//   for (var $val of $)
-//   $('.l-right').text($result);
-// });
 $(function(){
   $("#product_price").on("keyup", function(){
     var input = $(this).val().toLocaleString();
