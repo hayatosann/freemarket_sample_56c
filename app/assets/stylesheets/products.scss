@@ -548,3 +548,29 @@ select#product_size_id {
   border-image: initial;
   background: 0px center;
 }
+.dropzone-container{
+  float:left;
+}
+.dropzone-area{
+  float:left;
+}
+#preview{
+  float:left;
+}
+.img_view{
+  text-align: left;
+  float:left;
+  font-size: 10px;
+  .img_view_inner{
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.upload-items-drop-box{
+  float:left;
+}
+.dropzone-area2{
+  width: 620px;
+  margin: 16px auto 0;
+}
