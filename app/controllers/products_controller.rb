@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
   end
     
   def index
+    @search = Product.ransack()
     @products = Product.order(id: :desc).limit(4)
   end
   
@@ -49,14 +50,15 @@ class ProductsController < ApplicationController
     @other_products = @product.user.products.where.not(id: @product.id)
   end
 
-
   def search
-    if params[:search]
-      @products = Product.where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(132).order('updated_at DESC')
-      @keyword = params[:search]
-      @search_count = Product.where('name LIKE ?', "%#{params[:search]}%").size
+    if params[:q].present?
+      @search = Product.ransack(search_params)
+      @products = @search.result.page(params[:page]).per(132)
+      @products0 = Product.all.limit(24)
     else
-      @products = Product.page(params[:page]).per(132).order('updated_at DESC')
+      params[:q] = { sorts: 'id desc' }
+      @search = Product.ransack()
+      @products = Product.all.page(params[:page]).per(132)
     end
   end
 
@@ -74,4 +76,10 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method_id,:prefecture_from_id,:shipping_days_id,:price,:status,:category_id,images_attributes: [:image])
   end
 
+  
+  def search_params
+    params.require(:q).permit!
+  end
 end
+
+

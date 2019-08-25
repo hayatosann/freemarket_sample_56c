@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_08_24_062428) do
     t.text "detail", null: false
     t.bigint "user_id", null: false
     t.integer "size_id", null: false
-    t.string "brand", default: ""
+    t.string "brand"
     t.integer "condition_id", null: false
     t.integer "delivery_fee_id", null: false
     t.integer "shipping_method_id", null: false
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_08_24_062428) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
+    t.integer "sales_status"
     t.integer "status", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
