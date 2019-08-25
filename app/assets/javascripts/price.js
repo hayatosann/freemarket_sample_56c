@@ -34,7 +34,6 @@ $(function(){
       }
     });
   });
-})
   $("#product_price").on("keyup", function(){
     var input = $(this).val().toLocaleString();
     var commission2 = Math.round(input * 0.1);
