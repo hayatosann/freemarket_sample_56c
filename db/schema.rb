@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_08_24_062428) do
     t.text "detail", null: false
     t.bigint "user_id", null: false
     t.integer "size_id", null: false
-    t.string "brand"
+    t.string "brand", default: ""
     t.integer "condition_id", null: false
     t.integer "delivery_fee_id", null: false
     t.integer "shipping_method_id", null: false
