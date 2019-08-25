@@ -37,7 +37,6 @@ class ProductsController < ApplicationController
   end
     
   def index
-    @search = Product.ransack()
     @products = Product.order(id: :desc).limit(4)
   end
   
