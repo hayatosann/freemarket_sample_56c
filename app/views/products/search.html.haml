@@ -1,25 +1,43 @@
 = render 'shared/header'
 = render 'shared/exhibitation'
 
-.seach
-  .seach__seachbox
-    = render 'products/searchbar'
-    .seach__seachbox__seachlist
-      .seach__seachbox__seachlist__logo
-        -if params[:q].present? && params[:q][:name_cont].present?
+- if @products.total_count == 0
+  .seach
+    .seach__seachbox
+      = render 'products/searchbar'
+      .seach__seachbox__seachlist
+        .seach__seachbox__seachlist__logo
           .seach__seachbox__seachlist__logo__word
             = params[:q][:name_cont]
           .seach__seachbox__seachlist__logo__result
             の検索結果
-        -else
-          .seach__seachbox__seachlist__logo__word
-            新着商品
-      .seach__seachbox__seachlist__number
-        = page_entries_info @products
-      .seach__seachbox__seachlist__seacharea
-        = render partial: 'products/product', collection: @products
-      .seach__seachbox__seachlist__pagenation
-        = paginate @products
+        .seach__seachbox__seachlist__noproduct
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+        .seach__seachbox__seachlist__new
+          新着商品
+        .seach__seachbox__seachlist__seacharea
+          = render partial: 'products/product', collection: @products0
+
+- else 
+  .seach
+    .seach__seachbox
+      = render 'products/searchbar'
+      .seach__seachbox__seachlist
+        .seach__seachbox__seachlist__logo
+          -if params[:q].present? && params[:q][:name_cont].present?
+            .seach__seachbox__seachlist__logo__word
+              = params[:q][:name_cont]
+            .seach__seachbox__seachlist__logo__result
+              の検索結果
+          -else
+            .seach__seachbox__seachlist__logo__word
+              新着商品
+        .seach__seachbox__seachlist__number
+          = page_entries_info @products
+        .seach__seachbox__seachlist__seacharea
+          = render partial: 'products/product', collection: @products
+        .seach__seachbox__seachlist__pagenation
+          = paginate @products
 
 
 
