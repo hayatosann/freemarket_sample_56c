@@ -23,10 +23,15 @@
     margin-left: auto;
     margin-right: auto;
     background: white;
+    padding-top: 20px;
+    p {
+      text-align: center;
+      color: red;
+    }
     &__form{
       width: 345px;
       height: 300px;
-      padding-top:40px;
+      padding-top: 40px;
       margin-left: auto;
       margin-right: auto;
       font-weight: bold;
@@ -78,6 +83,12 @@
     }
     .pulldown{
       display: flex;
+      line-height: 60px;
+      font-weight: normal;
+      select {
+        margin-left: 3px;
+        margin-right: 3px;
+      }
       &__month{
         margin-top:20px;
         margin-left: 10px;

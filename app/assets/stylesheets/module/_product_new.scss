@@ -226,6 +226,91 @@ select {
     transform: translate(0, -50%);
   }
 }
+pre.upload-items-drop-box__drop{
+  position: absolute;
+  top: 45%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0px;
+  i.upload-items-drop-box__icon{
+    font-style: italic;
+  }
+}
+.upload-items-drop-box__file{
+  display:none
+}
+select#product_category_id {
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+select#product_condition_id{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+select#product_delivery_fee_id{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+select#product_prefecture_from_id{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+select#product_shipping_days_id{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
 .select-default {
   position: relative;
   z-index: 2;
@@ -335,9 +420,10 @@ select {
                 .upload-items-drop-box.have-item-0 {
                   float: right;
                   width: 620px;
+                  height: 162px;
                   padding: 40px;
                 }
-                .upload-items-drop-box {
+                .image-upload-box {
                   position: relative;
                   min-height: 162px;
                   background: #f5f5f5;
@@ -351,7 +437,8 @@ select {
                   cursor: pointer;
                   float: right;
                   margin-left: 2%;
-                  .upload-items-drop-box__file{
+                  .product_images_attributes_0_image{
+                    display:none
                   }
                   input{
                     border: 0;
@@ -564,7 +651,16 @@ select {
                 }
               }
             }
+            .is-show {
+              display: block;
+            }
+            .is-animate {
+              opacity: 1;
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
             .modal {
+              opacity: 1;
               display: none;
               position: fixed;
               top: 0;
@@ -577,14 +673,42 @@ select {
               -webkit-overflow-scrolling: touch;
               -webkit-transition: all ease-out .3s;
               transition: all ease-out .3s;
-              opacity: 0;
               -webkit-transform: translate(0, -10px);
               transform: translate(0, -10px);
               .modal-inner {
                 max-width: none;
                 width: 600px;
                 margin: 20px auto;
+                position: relative;
+                overflow: hidden;
+                background: #fff;
+                h3.modal-head {
+                  text-align: center;
+                  line-height: 80px;
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+                .sell-modal-body {
+                  border-top: 1px solid #eee;
+                  padding: 40px;
+                }
               }
+            }
+            .overlay {
+              display: none;
+              position: fixed;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 2999;
+              background: rgba(0,0,0,0.64);
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              opacity: 0;
+            }
+            .modal-open {
+              display: block;
             }
             .sell-content.sell-btn-box{
               padding: 40px;
@@ -663,3 +787,6 @@ select {
   }
 }
 
+.category_form_second{
+  display:none;
+}

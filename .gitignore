@@ -25,9 +25,13 @@
 /yarn-error.log
 
 /public/assets
+/public/uploads/image
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
 secret.env
+payjp.env
+
+# /public/uploads/*

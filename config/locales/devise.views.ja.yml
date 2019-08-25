@@ -7,6 +7,25 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        nickname: "ニックネーム"
+        family_name: "名字"
+        first_name: "名前"
+        family_name_kana: "名字（カナ）"
+        first_name_kana: "名前（カナ）"
+        birthday: "生年月日"
+        phone: "電話番号"
+      address:
+        postal_code: "郵便番号"
+        prefecture_id: "都道府県"
+        city: "市区町村"
+        block: "番地"
+        building: "建物名"
+        sub_phone: "電話"
+      card:
+        number: "カード番号"
+        expiration_date: "有効期限"
+        security_code: "セキュリティコード"
+        
     models:
       user: "ユーザ"
   devise:

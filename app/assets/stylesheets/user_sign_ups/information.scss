@@ -1,0 +1,177 @@
+.information{
+  height: calc(100% - 130px - 180px);
+  width: 100vw;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  &__areaup{
+    height: 95px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    &__logo{
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+      padding-top:40px;
+    }
+  }
+  &__areadown{
+    height: 1400px;
+    width: 700px;
+    margin-top:2px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    &__form{
+      width: 345px;
+      height: 300px;
+      padding-top:40px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: bold;
+      p {
+        color: red;
+      }
+    }
+    .title{
+      margin-top:30px;
+    }
+    .need{
+      color: white;
+      background-color: #ea352d;
+      height: 25px;
+      width: 35px;
+      text-align: center;
+      border-radius: 2px;
+    }
+    .forms{
+      height: 50px;
+      width: 100%;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 5px;
+      padding-left: 10px;
+      font-weight: 100;
+      margin-left: 0;
+    }
+    .name{
+      height: 50px;
+      width: 47.5%;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 5px;
+      padding-left: 10px;
+      font-weight: 100;
+    }
+    .names{
+      height: 50px;
+      width: 47.5%;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 5px;
+      margin-left:5px;
+      padding-left: 10px;
+      font-weight: 100;
+    }
+    .person{
+      margin-top:20px;
+      text-align: left;
+    }
+    .text{
+      margin-top:10px;
+      width: 100%;
+      font-weight: 100;
+      line-height: 1.5em;
+    }
+    .nameform{
+      display: flex;;
+    }
+    .nextsubmit{
+      margin-top:3px;
+      height: 50px;
+      width: 345px;
+      background-color: #ea352d;
+      color:white;
+      font-weight: 100;
+    }
+    .robot{
+      margin-top:40px;
+      height: 80px;
+      width: 310px;
+      background: image-url('robot.png');
+      background-size: cover;
+    }
+    .birthday{
+      display: flex;
+      line-height: 60px;
+      font-weight: normal;
+      select {
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+      &__year{
+        margin-top:25px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 100
+      }
+      &__month{
+        margin-top:20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 100;
+      }
+      &__day{
+        margin-top:25px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 100
+      }
+    }
+    .personalinfo{
+      margin-top:5px;
+      font-weight: 100;
+      color:#888;
+      line-height: 1.5em;
+    }
+    select{
+      height: 50px;
+      width: 25%;
+      border: solid 1px rgb(221, 208, 208);
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 5px;
+      padding-left: 10px;
+      font-weight: 100;
+      background: white;
+    }
+    .agreement{
+      margin-top:30px;
+      width: 100%;
+      text-align: center;
+      font-weight: 100;
+      line-height: 1.5em;
+    }
+    .actions{
+      margin-top: 30px;
+      .nextsubmit {
+        cursor: pointer;
+      }
+    }
+    .about{
+      width: 345px;
+      height: 20px;
+      margin-top: 30px;
+      text-align: right;
+      font-weight: 100;
+      line-height: 20px;
+      .angle{
+        font-size: 15px;
+      }
+    }
+  }
+}

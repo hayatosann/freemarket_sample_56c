@@ -4,14 +4,16 @@
   .exhibition-wrap
     %header.exhibition-header
       %h1
-        %a= image_tag asset_path('logo.svg?863303983')
+        = link_to products_path do
+          = image_tag asset_path('logo.svg?863303983')
+        
     %main.exhibition-main
       %section.l-exhibition-container
         #sell-container
           %div{"data-reactroot" => ""}
             .sell-container-inner
               %h2.sell-container-inner__head 商品の情報を入力
-              = form_with model: @product, class:'sell-form sell-container-inner__form' do |form|
+              = form_with model: @product, class:'sell-form sell-container-inner__form',local: true do |form|
                 .sell-upload-box
                   %h3.sell-upload-box__head
                     出品画像
@@ -21,10 +23,10 @@
                     .upload-items
                       .upload-items__box.have-item-0
                         %ul
-                    .upload-items-drop-box.have-item-0
+                    %div.image-upload-box
                       = form.fields_for :images do |i|
-                        = i.label :image
-                        = i.file_field :image,class:'upload-items-drop-box__file'
+                        = i.label :image,class:"upload-items-drop-box have-item-0"
+                        = i.file_field :image,multiple: true,name: "images[image][]",class:'upload-items-drop-box__file'
                         %pre.upload-items-drop-box__drop
                           :preserve
                             ドラッグアンドドロップ
@@ -51,40 +53,43 @@
                       %label
                         カテゴリー
                         %span.form-require 必須
-                      %div
+                      %div.category_form
                         .select-wrap
                           %i.fas.fa-chevron-down
-                          = form.collection_select :category_id, Category.all, :id, :name,class:"select-default"
+                          = form.collection_select :category_id, Category.where(id: 1..13), :id, :name,class:"select-default category_id",prompt: "---"
                     .form-group
                       %label
                         商品の状態
                         %span.form-require 必須
-                      = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap"
+                      %div
+                        .select-wrap
+                          %i.fas.fa-chevron-down
+                          = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap",prompt: "---"
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 配送について
                   %a.sell-content__form.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
                   .sell-form-box
-                    .form-group
+                    .form-group.delivery_fee_box
                       %label
                         配送料の負担
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,class:"select-default"
+                        = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,class:"select-default",prompt: "---"
                     .form-group
                       %label
                         発送元の地域
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :prefecture_from_id, PrefectureFrom.all, :id, :name,class:"select-default"
+                        = form.collection_select :prefecture_from_id, PrefectureFrom.all, :id, :name,class:"select-default",prompt: "---"
                     .form-group
                       %label
                         発送までの日数
                         %span.form-require 必須
                       .select-wrap
                         %i.fas.fa-chevron-down
-                        = form.collection_select :shipping_days_id, ShippingDays.all, :id, :name,class:"select-default"
+                        = form.collection_select :shipping_days_id, ShippingDays.all, :id, :name,class:"select-default",prompt: "---"
                 .sell-content.clearfix
                   %h3.sell-content__head.sell-sub-head 販売価格(300〜9,999,999)
                   %a.sell-content__form.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
@@ -102,31 +107,42 @@
                       %li.clearfix
                         .l-left
                           販売手数料 (10%)
-                        .l-right -
+                        #commission.l-right -
                       %li.clearfix.bold
                         .l-left 販売利益
-                        .l-right -
-                .modal{:role => "dialog", :tabindex => "-1"}
+                        #price.l-right -
+                .modal.is-show{role: "dialog", tabindex:"-1"}
                   .modal-inner
+                    %div
+                      %h3.modal-head 出品が完了しました
+                      .sell-modal-body{"data-gtm-vis-first-on-screen-6824027_198" => "42356", "data-gtm-vis-has-fired-6824027_198" => "1", "data-gtm-vis-recent-on-screen-6824027_198" => "42356", "data-gtm-vis-total-visible-time-6824027_198" => "100"}
+                        / react-text: 880
+                        あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+                        / /react-text
+                        =link_to "続けて出品する", new_product_path, class: "btn-default btn-red"
+                        %p.text-center
+                          =link_to "商品ページへ行ってシェアする",'https://item.mercari.com/jp/m21781045456/'
                 .sell-content.sell-btn-box
                   %div
                     %p
-                      %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品
+                      =link_to "禁止されている出品",'https://www.mercari.com/jp/help_center/getting_started/prohibited_items/',target: "_blank"
                       、
-                      %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
+                      =link_to "行為",'https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/',target: "_blank"
                       を必ずご確認ください。
                     %p
                       またブランド品でシリアルナンバー等がある場合はご記載ください。
-                      %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
+                      =link_to "偽ブランドの販売","https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",target: "_blank"
                       は犯罪であり処罰される可能性があります。
                     %p
                       また、出品をもちまして
-                      %a{:href => "/jp/seller_terms/"} 加盟店規約
+                      =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/",target: "_blank"
                       に同意したことになります。
-                  .btn-default.btn-red
-                    = form.submit
-                    出品する
-                  %a.btn-default.btn-gray もどる
+                  %div
+                    -# statusに初期状態である0（未売却）を入れる
+                    = form.hidden_field :status, value: 0
+                    = form.submit "出品する", class:"btn-default btn-red exhibition_submit"
+                  %a.btn-default.btn-gray
+                    もどる
               
               .overlay
     %footer.exhibition-footer

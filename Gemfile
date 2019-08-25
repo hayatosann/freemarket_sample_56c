@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -51,6 +51,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -60,6 +61,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -90,11 +92,16 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
+gem 'pry-rails'
 gem 'kaminari'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 gem 'ransack'
 gem 'jquery-rails'
+gem 'payjp'
+gem 'gretel'

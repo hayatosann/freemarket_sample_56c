@@ -39,9 +39,39 @@ class User < ApplicationRecord
 
   has_many :bought_plural, class_name: "Purchase", dependent: :destroy
   has_many :sold_plural, class_name: "Purchase", dependent: :destroy
-  has_many :comments
-  has_many :products, through: :comments
-  has_one :address
+  has_many :products
+  #  取引成立前のコメント機能は後ほど実装予定
+  # has_many :comments
+  # has_many :products, through: :comments
+  has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address
   has_one :card
   has_many :purchases
+  before_save { self.email = email.downcase }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 6 }
+  validates :password_confirmation, presence: true, length: { minimum: 6 }
+  validates :nickname, presence: true
+  validates :family_name, presence: true
+  validates :first_name, presence: true
+  validates :family_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  validates :birthday, presence: true
+  VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
+  validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
+
+  def valid_information?
+    valid?
+    excluded_column = :phone
+    errors.delete(excluded_column)
+    errors.empty?
+  end
+
+  def valid_phone?
+    valid?
+    excluded_columns = [:email, :password, :password_confirmation, :nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday]
+    excluded_columns.each{|column| errors.delete(column)}
+    errors.empty?
+  end
 end

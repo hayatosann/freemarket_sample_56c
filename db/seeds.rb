@@ -4,12 +4,6 @@ require "csv"
 # csvファイル作成時にブランド一覧サインであるア~ンの一文字と数字の一文字は削除済み
 # name: row['name']  左側がデータベースカラム、右側がcsvファイルのカラム
 
-# brand一覧
-CSV.foreach('db/brand.csv', headers: true) do |row|
-  Brand.create(
-    name: row['name'],
-  )
-end
 
 parent_element = []
 children_element = []
@@ -51,4 +45,6 @@ grandchild_category.each_with_index do |grandchild,index|
 end
 
 # 本番環境では
+
 # rake db:seed RAILS_ENV=production
+
