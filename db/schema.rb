@@ -10,29 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_18_075333) do
+
+ActiveRecord::Schema.define(version: 2019_08_24_062428) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "postal_code", null: false
+    t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "block", null: false
     t.string "building"
-    t.integer "sub_phone"
+    t.string "sub_phone"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number", null: false
+    t.string "number", null: false
     t.date "expiration_date", null: false
     t.integer "security_code", null: false
     t.bigint "user_id", null: false
@@ -68,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_08_18_075333) do
     t.text "detail", null: false
     t.bigint "user_id", null: false
     t.integer "size_id", null: false
-    t.integer "brand_id", null: false
+    t.string "brand"
     t.integer "condition_id", null: false
     t.integer "delivery_fee_id", null: false
     t.integer "shipping_method_id", null: false
@@ -78,16 +74,15 @@ ActiveRecord::Schema.define(version: 2019_08_18_075333) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
-    t.integer "sales_status"
+
+    t.integer "status", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "buyer_id", null: false
-    t.integer "seller_id", null: false
-    t.integer "postage_by", null: false
-    t.integer "status", null: false
+    t.integer "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -106,9 +101,10 @@ ActiveRecord::Schema.define(version: 2019_08_18_075333) do
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.date "birthday", null: false
-    t.integer "phone", null: false
-    t.string "image", null: false
-    t.text "profile", null: false
+
+    t.string "phone"
+    t.string "image"
+    t.text "profile"
     t.string "uid"
     t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true

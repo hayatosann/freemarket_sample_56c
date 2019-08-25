@@ -1,7 +1,7 @@
 @media (min-width: 1020px) {
   .header{
     height: 95px;
-    width: 1010px;;
+    width: 1010px;
     margin-right: auto;
     margin-left : auto;
     &__top{
@@ -48,6 +48,7 @@
             background: #f5f5f5;
             margin-left: -40px;
             opacity: 0;
+
           }
           .search-icon{
             font-family: FontAwesome;
@@ -59,7 +60,6 @@
     }
     &__bottom{
       height: 50px;
-      width: 72%;
       display: flex;
       position:relative;
       &__category{
@@ -159,7 +159,41 @@
           font-size: 15px;
         }
       }
+      &__user-registration {
+        position: absolute;
+        right: 140px;
+        top: 8px;
+      }
+      &__user-login {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        margin-right: 43px;
+      }
     }
+  }
+
+  .btn-red{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin-right: 3px;
+    padding: 0 10px;
+    line-height: 30px;
+    float:right;
+    border-radius: 4px;
+  }
+  .btn-login{
+    display: inline-block;
+    padding: 0 6px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 26px;
+    border: 1px solid #0099e8;
+    background: #fff;
+    color: #0099e8;
+    padding: 0 10px;
+    line-height: 30px;
   }
   .menu{
     text-decoration: none ;
@@ -199,10 +233,19 @@
         margin-left: 3%;
         background: #f5f5f5;
       }
+      .submit{
+        background-color:#f5f5f5;
+        border-color:#f5f5f5;
+      }
+      .search-icon{
+        font-family: FontAwesome;
+        margin-top: 12px;
+        margin-left: -30px;
+      }
     }
     &__bottom{
       height: 50px;
-      width: 72%;
+      width: 100%;
       display: flex;
       position:relative;
       &__category{
@@ -297,13 +340,47 @@
           font-size: 15px;
         }
       }
+      &__user-registration {
+        position: absolute;
+        right: 140px;
+        top: 8px;
+      }
+      &__user-login {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        margin-right: 43px;
+      }
     }
+  }
+  .btn-red{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin-right: 3px;
+    padding: 0 10px;
+    line-height: 30px;
+    float:right;
+    border-radius: 4px;
+  }
+  .btn-login{
+    display: inline-block;
+    padding: 0 6px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 26px;
+    border: 1px solid #0099e8;
+    background: #fff;
+    color: #0099e8;
+    padding: 0 10px;
+    line-height: 30px;
   }
   .menu{
     text-decoration: none ;
     color: black;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   }
+  
 }
 
 @media (max-width: 740px) {
@@ -349,7 +426,6 @@
               border-radius: 50%;
               height: 35px;
               width: 35px;
-              background: image-url('thumbnail.png');
               background-size: cover;
             }     
           } 
@@ -363,6 +439,23 @@
         background: #f5f5f5;
         margin-left: auto;
         margin-right: auto;
+        .field{
+          position:relative;
+          .submit{
+            background-color:#f5f5f5;
+            border-color:#f5f5f5;
+          }
+        }
+        
+      }
+      .search-icon{
+        font-family: FontAwesome;
+        margin-top: 12px;
+        margin-left: -30px;
+        position:absolute;
+        left:178px;
+        top:-4px;
+
       }
     }
     &__bottom{
@@ -418,6 +511,7 @@
         .bell{
           color: #dcdcdc;
           font-size: 20px;
+          display: none;
         }
       }
       &__todo{
@@ -447,7 +541,6 @@
           border-radius: 50%;
           height: 35px;
           width: 35px;
-          background: image-url('thumbnail.png');
           background-size: cover;
         }      
         &__user{
@@ -458,12 +551,39 @@
           font-size: 15px;
         }
       }
+      &__user-registration {
+        position: absolute;
+        right: 140px;
+        top: 20px;
+      }
+      &__user-login {
+        position: absolute;
+        right: 3px;
+        top: 20px;
+        margin-right: 43px;
+      }
     }
   }
-  .menu{
-    text-decoration: none ;
-    color: black;
-    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  .btn-red{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin-right: 3px;
+    padding: 0 10px;
+    line-height: 30px;
+    float:right;
+    border-radius: 4px;
+    }
+    .btn-login{
+    display: inline-block;
+    padding: 0 6px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 26px;
+    border: 1px solid #0099e8;
+    background: #fff;
+    color: #0099e8;
+    padding: 0 10px;
+    line-height: 30px;
+    }
   }
-}
-

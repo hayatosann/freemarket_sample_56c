@@ -5,16 +5,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|mail|string|null: false, unique:true|
+|email|string|null: false, unique:true|
 |password|string|null: false|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
-|phone|integer|null: false, unique:true|
-|image|string|null: false|
-|profile|text|null: false|
+|phone|integer|unique:true|
+|image|string||
+|profile|text||
 
 ### Association
 - has_one :address, :card
@@ -26,12 +26,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|postal_code|integer|null: false|
-|prefecture|integer|null: false, unique:true|
+|postal_code|string|null: false|
+|prefecture_id|integer|null: false, unique:true|
 |city|string|null: false|
 |block|string|null: false|
 |building|string|null: true|
-|sub_phone|integer|null: true|
+|sub_phone|string|null: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -42,7 +42,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false|
+|number|string|null: false|
 |expiration_date|date|null: false|
 |security_code|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
@@ -59,7 +59,8 @@
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false|
-|brand_id|integer|null: false|
+|brand|string|
+|status|integer|null: false|
 |condition_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
 |shipping_method_id|integer|null: false|
@@ -68,20 +69,20 @@
 |price|integer|null: false|
 
 ### Association
-- belongs_to :user, :brand
+- belongs_to :user
 - belongs_to :category, foreign_key: true, null:false 
 - has_many :images, :comments, :users through :comments
-- belongs_to active_hash :size_id, brand_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
+- belongs_to active_hash :size_id, condition_id, delivery_fee_id, shipping_method, prefecture_from, shipping_days
+
+### Note
+- status -> 0: 未売却, 1: 売却済
 
 ## purchasesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |buyer_id|integer|null: false, foreign_key: true|
-|seller_id|integer|null: false, foreign_key: true|
-|postage_by|integer|null: false|
-|status|integer|null: false|
-
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :comments
 - belongs_to :buyer, class_name: "User", foreign_key: "buyer_id"
@@ -109,12 +110,6 @@
 ### Association
 - belongs_to :purchase
 - belongs_to :user
-
-## brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: true|
 
 ### Association
 - has_many :products

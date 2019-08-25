@@ -10,19 +10,20 @@
         =link_to "", class: "item" do
           レディース 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+        - @products.each do |product|
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
    
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
@@ -34,18 +35,19 @@
           メンズ 新着アイテム
       .contents__pickup__items__box__contents
         - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
@@ -56,18 +58,19 @@
           ベビー・キッズ 新着アイテム
       .contents__pickup__items__box__contents
         - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
@@ -78,18 +81,19 @@
           コスメ・香水・美容 新着アイテム
       .contents__pickup__items__box__contents
         - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
@@ -103,18 +107,19 @@
           シャネル 新着アイテム
       .contents__pickup__items__box__contents
         - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
@@ -125,18 +130,19 @@
           ルイビトン 新着アイテム
       .contents__pickup__items__box__contents
         - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
@@ -146,19 +152,20 @@
         =link_to "", class: "item" do
           シュプリーム 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15
+        - @products.each do |product|
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る
@@ -169,18 +176,19 @@
           ナイキ 新着アイテム
       .contents__pickup__items__box__contents
         - @products.each do |product|  
-          .contents__pickup__items__box__contents__card
-            .contents__pickup__items__box__contents__card__thumbnail
-              = image_tag product.images.first.image, size: '213x218'
-            .contents__pickup__items__box__contents__card__title
-              = product.name
-            .contents__pickup__items__box__contents__card__footer
-              .contents__pickup__items__box__contents__card__footer__price
-                ¥
-                = product.price
-              .contents__pickup__items__box__contents__card__footer__iine
-                = icon("far", "heart",class:"heart")
-                15F
+          = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
+            .contents__pickup__items__box__contents__card
+              .contents__pickup__items__box__contents__card__thumbnail
+                = image_tag product.images.first.image.url, size: '213x218'
+              .contents__pickup__items__box__contents__card__title
+                = product.name
+              .contents__pickup__items__box__contents__card__footer
+                .contents__pickup__items__box__contents__card__footer__price
+                  ¥
+                  = product.price
+                .contents__pickup__items__box__contents__card__footer__iine
+                  = icon("far", "heart",class:"heart")
+                  15F
       .contents__pickup__items__box__more
         =link_to "", class: "item" do
           すべての商品を見る

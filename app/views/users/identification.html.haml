@@ -1,4 +1,6 @@
 = render 'shared/header'
+- breadcrumb :identification
+= render "shared/breadcrumbs"
 = render 'shared/exhibitation'
 
 .wrapper001
@@ -20,13 +22,16 @@
                 %i.fas.fa-chevron-right
           .form-group
             %label お名前
-            %p{style: "text-align: left;"} name name
+            %p{style: "text-align: left;"}
+              = "#{current_user.family_name} #{current_user.first_name}"
           .form-group
             %label お名前カナ
-            %p{style: "text-align: left;"} ナマエ ナマエ
+            %p{style: "text-align: left;"}
+              = "#{current_user.family_name_kana} #{current_user.first_name_kana}"
           .form-group
             %label{:for => "birthday"} 生年月日
-            %p{style: "text-align: left;"} 2001/01/01
+            %p{style: "text-align: left;"}
+              = current_user.birthday.strftime("%Y/%m/%d")
           .form-group
             %label{:for => "zip_code"} 郵便番号
             %span.form-arbitrary 任意

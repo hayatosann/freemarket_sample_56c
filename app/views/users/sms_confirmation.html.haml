@@ -3,12 +3,12 @@
   .signup-header__area
     .signup-header__area__logo
     .signup-header__area__figure
-      .signup-header__area__figure__infomation
-        .signup-header__area__figure__infomation__title
+      .signup-header__area__figure__information
+        .signup-header__area__figure__information__title
           会員情報
-        .signup-header__area__figure__infomation__under
-          .signup-header__area__figure__infomation__under__dot
-          .signup-header__area__figure__infomation__under__bar-sms
+        .signup-header__area__figure__information__under
+          .signup-header__area__figure__information__under__dot
+          .signup-header__area__figure__information__under__bar-sms
 
       .signup-header__area__figure__sms
         .signup-header__area__figure__sms__title-sms
@@ -36,29 +36,31 @@
         .signup-header__area__figure__complete__under
           .signup-header__area__figure__complete__under__dot
 
-
-
 .confirmation
   .confirmation__areaup
     .confirmation__areaup__logo
       電話番号の確認
   
   .confirmation__areadown
+    - if @messages
+      - @messages.each do |message|
+        %p
+          = message
     .confirmation__areadown__phonenumber
-      = form_with model: @user do |f|
+      = form_with model: @user, url: users_address_path, local: true do |f|
         .field
-          = f.label :携帯電話の番号,class: 'label__phonenumber'
+          = f.label :phone, '携帯電話の番号', class: 'label__phonenumber'
           %br/
-          = f.phone_field :phonenumber, autofocus: true,placeholder: "携帯電話の番号を入力" ,required: "",class: 'form__phonenumber'
+          = f.phone_field :phone, autofocus: true, placeholder: "携帯電話の番号を入力" , required: "", class: 'form__phonenumber'
           .confirmation__areadown__text
             本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         .actions
-          = f.submit "SMSを送信する",class:'sms_submit'
+          = f.submit "SMSを送信する", class: 'sms_submit'
         .confirmation__areadown__phonesubmit
           ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .confirmation__areadown__reason
-          =link_to "", class: "reason" do
+          = link_to "", class: "reason" do
             電話番号の確認が必要な理由
-            = icon("fas", "angle-right",class:"angle")
+            = icon("fas", "angle-right", class:"angle")
 
 = render 'shared/sign_up_footer'

@@ -1,0 +1,116 @@
+.signup-header
+  .signup-header__block
+  .signup-header__area
+    .signup-header__area__logo
+    .signup-header__area__figure
+      .signup-header__area__figure__information
+        .signup-header__area__figure__information__title-info
+          会員情報
+        .signup-header__area__figure__information__under
+          .signup-header__area__figure__information__under__dot
+          .signup-header__area__figure__information__under__bar
+
+      .signup-header__area__figure__sms
+        .signup-header__area__figure__sms__title
+          電話番号認証
+        .signup-header__area__figure__sms__under
+          .signup-header__area__figure__sms__under__dot
+          .signup-header__area__figure__sms__under__bar
+
+      .signup-header__area__figure__address
+        .signup-header__area__figure__address__title
+          お届け先住所
+        .signup-header__area__figure__address__under
+          .signup-header__area__figure__address__under__dot
+          .signup-header__area__figure__address__under__bar
+
+      .signup-header__area__figure__payment
+        .signup-header__area__figure__payment__title
+          支払い方法
+        .signup-header__area__figure__payment__under
+          .signup-header__area__figure__payment__under__dot
+          .signup-header__area__figure__payment__under__bar
+      .signup-header__area__figure__complete
+        .signup-header__area__figure__complete__title
+          完了
+        .signup-header__area__figure__complete__under
+          .signup-header__area__figure__complete__under__dot
+
+.information
+  .information__areaup
+    .information__areaup__logo
+      会員情報入力
+  .information__areadown
+    .information__areadown__form
+      - if @messages
+        - @messages.each do |message|
+          %p
+            = message
+      = form_with model: @user, url: users_sms_confirmation_path, local: true do |f|
+        .field
+          = f.label :nickname, 'ニックネーム', class: 'title'
+          = f.label :必須, class: 'need'
+          %br/
+          = f.text_field :nickname, placeholder: "例)メルカリ太郎", class: 'forms'
+
+        .field
+          = f.label :email, 'メールアドレス', class: 'title'
+          = f.label :必須, class: 'need'
+          %br/
+          = f.text_field :email, placeholder: "PC・携帯どちらでも可", class: 'forms'
+
+        .field
+          = f.label :password, 'パスワード', class: 'title'
+          = f.label :password, '必須', class: 'need'
+          %br/
+          = f.password_field :password, placeholder: "6文字以上", class: 'forms'
+
+        .field
+          = f.label :password_confirmation, 'パスワード (確認)', class: 'title'
+          = f.label :必須, class: 'need'
+          %br/
+          = f.password_field :password_confirmation, placeholder: "6文字以上", class: 'forms'
+
+        .person
+          本人確認
+        .text
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+        .field
+          = f.label "お名前(全角)", class: 'title'
+          = f.label :必須, class: 'need'
+          .nameform
+            = f.text_field :family_name, placeholder: "例)山田", class: 'name'
+            = f.text_field :first_name, placeholder: "例)彩" , class: 'names'
+
+        .field
+          = f.label "お名前カナ(全角)", class: 'title'
+          = f.label :必須, class: 'need'
+          .nameform
+            = f.text_field :family_name_kana, placeholder: "例)ヤマダ", class: 'name'
+            = f.text_field :first_name_kana, placeholder: "例)アヤ", class: 'names'
+
+          = f.label :birthday, '生年月日', class: 'title'
+          = f.label :必須, class: 'need'
+          .birthday
+            = raw sprintf(f.date_select(:birthday, prompt: '--', start_year: Time.now.year, end_year: 1900, use_month_numbers: true, date_separator: '%s'),'年','月')
+            日
+          .personalinfo
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .robot
+          -# = recaptcha_tags
+        
+        .agreement
+          「次へ進む」のボタンを押すことにより、
+          %a{ href: "" } 利用規約
+          に同意したものとみなします。
+
+        .actions
+          = f.submit "次へ進む", class: 'nextsubmit'
+
+        .about
+          = link_to "", class: "about" do
+            本人情報の登録について
+            = icon("fas", "angle-right", class:"angle")
+
+= render 'shared/sign_up_footer'
