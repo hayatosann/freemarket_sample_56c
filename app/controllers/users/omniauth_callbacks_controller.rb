@@ -51,7 +51,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:password] = @user.password
       session[:provider] = @user.provider
       session[:uid] = @user.uid
-      redirect_to new_user_registration_sns_path
+
+      if provider == "google"
+        redirect_to user_google_oauth2_omniauth_callback_path
+        
+      else
+        redirect_to user_facebook_omniauth_callback_path
+      end
     end
   end
 end

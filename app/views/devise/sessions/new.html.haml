@@ -10,7 +10,10 @@
     .boxbottom
       .boxbottom__FacebookRegistration
         = image_tag asset_path('flogo.png'), class: "boxbottom__FacebookRegistration__flogo"
-        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, style: "color: white;"
+        - if Rails.env == "development"
+          =link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, style: "color: white;"
+        - else
+          = link_to root_path 
       .boxbottom__GoogleRegistration
         -# %img{src: "/assets/google.svg", class: "glogo"}
         = image_tag asset_path('google.svg'), class: "glogo"
