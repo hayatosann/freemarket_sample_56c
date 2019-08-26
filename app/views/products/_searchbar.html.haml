@@ -5632,11 +5632,11 @@
               .checks__check__label
                 すべて
             .checks__check-r
-              = f.check_box :delivery_fee_id_eq_any , {multiple: true},checked_value = 1, unchecked_value = nil
+              = f.check_box :delivery_fee_id_eq_any , {multiple: true},checked_value = 2, unchecked_value = nil
               .checks__check__label-2line
                 着払い(購入者負担)
             .checks__check
-              = f.check_box :delivery_fee_id_eq_any, {multiple: true},checked_value = 2, unchecked_value = nil
+              = f.check_box :delivery_fee_id_eq_any, {multiple: true},checked_value = 1, unchecked_value = nil
               .checks__check__label-2line
                 送料込み(出品者負担)
 
