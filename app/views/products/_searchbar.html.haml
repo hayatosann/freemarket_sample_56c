@@ -5624,18 +5624,18 @@
 
         .field__area__status
           = icon("fas", "shopping-cart",class:"icon")
-          = f.label :sales_status_eq_any,'販売状況', class: 'label'
+          = f.label :status_eq_any,'販売状況', class: 'label'
           .checks
             .checks__check
-              = f.check_box :sales_status_eq_any, {multiple: true},checked_value = "", unchecked_value = nil
+              = f.check_box :status_eq_any, {multiple: true},checked_value = "", unchecked_value = nil
               .checks__check__label
                 すべて
             .checks__check-r
-              = f.check_box :sales_status_eq_any , {multiple: true},checked_value = 0, unchecked_value = nil
+              = f.check_box :status_eq_any , {multiple: true},checked_value = 0, unchecked_value = nil
               .checks__check__label
                 販売中
             .checks__check
-              = f.check_box :sales_status_eq_any, {multiple: true},checked_value = 1, unchecked_value = nil
+              = f.check_box :status_eq_any, {multiple: true},checked_value = 1, unchecked_value = nil
               .checks__check__label
                 売り切れ
         .action
