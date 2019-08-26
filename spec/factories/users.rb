@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :user do
     nickname {"メルカリ太郎"}
     email {"mercari-taro@gmail.com"}
@@ -12,5 +11,4 @@ FactoryBot.define do
     birthday {"1999-09-09"}
     phone {"09012345678"}
   end
- 
- end
+end
