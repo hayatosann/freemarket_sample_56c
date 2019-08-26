@@ -22,6 +22,7 @@
                       .upload-items__box.have-item-0
                         %ul
                     .image_box_multi
+                    .image_box_multi2
                     .image-upload-box
                       = form.fields_for :images do |i|
                         .dropzone-container.clearfix
@@ -39,6 +40,19 @@
                           .dropzone-area2
                             = i.label :image, class: "dropzone-box", for: "upload-image" do
                               %p ここをクリックしてください
+                    .image-upload-box2
+                      = form.fields_for :images do |i|
+                        .dropzone-container.clearfix
+                          #preview
+                          .dropzone-area
+                            = i.label :image,class:"upload-items-drop-box have-item-0 dropzone-box",for: "upload-image" do
+                              .input_area
+                                = i.file_field :image,multiple: true,name: "images[image][]",class:'upload-items-drop-box__file upload-image',id: "upload-image",'data-image': 0
+                              %pre.upload-items-drop-box__drop
+                                :preserve
+                                  ドラッグアンドドロップ
+                                  またはクリックしてファイルをアップロード
+                              %i.upload-items-drop-box__icon
                 .sell-content
                   .sell-content__form--top.form-group
                     %label

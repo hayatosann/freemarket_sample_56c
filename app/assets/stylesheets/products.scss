@@ -562,8 +562,8 @@ select#product_size_id {
   float:left;
   font-size: 10px;
   .img_view_inner{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -573,4 +573,31 @@ select#product_size_id {
 .dropzone-area2{
   width: 620px;
   margin: 16px auto 0;
+}
+
+.image-upload-box{
+  float:left;
+}
+
+.image_box_multi{
+  float:left;
+}
+.image-upload-box2{
+  display: none;
+  position: relative;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  font-size: 0;
+  text-align: center;
+  -webkit-transition: -webkit-box-shadow ease-out .3s;
+  transition: -webkit-box-shadow ease-out .3s;
+  transition: box-shadow ease-out .3s;
+  transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+  cursor: pointer;
+  float: right;
+  margin-left: 2%;
+}
+.input_area{
+  display:none;
 }
