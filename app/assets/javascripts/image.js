@@ -14,7 +14,7 @@ $(function(){
     inputs.push($(this));
     var img = $(`<div class= "img_view"><img class= "img_view_inner"></div>`);
     reader.onload = function(e) {
-      var btn_wrapper = $('<div class="btn_wrapper"><div class="btn edit">編集</div><div class="btn delete">削除</div></div>');
+      var btn_wrapper = $('<div class="btn_wrapper"><div class="btn_edit_image btn edit">編集</div><div class="btn_delete_image btn delete">削除</div></div>');
       img.append(btn_wrapper);
       img.find('img').attr({
         src: e.target.result
@@ -41,7 +41,7 @@ $(function(){
         dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
       }
     } else {
-        $('#preview').empty();
+        $('.image_box_multi').empty();
         $.each(images, function(index, image) {
           image.attr('data-image', index);
           $('.image_box_multi').append(image);
@@ -97,13 +97,10 @@ $(function(){
       })
       $.each(images, function(index, image) {
         image.attr('data-image', index);
-        var image1 = image.slice(0,4);
-        var image2 = arr.slice(5,9);
-        $('.image_box_multi').append(image1);
-        $('.image_box_multi2').append(image2);
-      })
-      $('.image-upload-box2').css({
-        'width': `calc(100% - (135px * ${images.length - 5}))`
+        $('.image_box_multi2').append(image);
+        $('.image-upload-box2').css({
+          'width': `calc(100% - (135px * ${images.length -5}))`
+        })
       })
       if(images.length == 9) {
         $('.image-upload-box2').find('p').replaceWith('<i class="fa fa-camera"></i>')
