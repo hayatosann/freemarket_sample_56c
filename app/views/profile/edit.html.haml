@@ -16,9 +16,9 @@
       .person
         %div.thumbnail= image_tag asset_path('thumbnail.png')
       = form_for(@user, url: user_path(@user.id), method: :patch) do |f|
-        = f.text_field :nickname, :class => "profile-text", :value => @user.nickname, :style => "padding: 5px;"
-        = f.text_area :profile, :class => "text-area", :placeholder => "例）こんにちは☆ご覧いただきありがとうございます！", :rows => "5"
-        = f.submit "登録", :class => "submit_changes", :name => "confirm"
+        = f.text_field :nickname, class: "profile-text", value: @user.nickname, style: "padding: 5px;"
+        = f.text_area :profile, class: "text-area", placeholder: "例）こんにちは☆ご覧いただきありがとうございます！", rows: "5"
+        = f.submit "登録", class: "submit_changes", name: "confirm"
          
     .bottom-boxes
 
