@@ -25,14 +25,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.size_id=1
-    @product.brand="a"
-    @product.name="a"
-    @product.price="1000"
-    @product.detail="a"
-    @product.condition_id=1
-    @product.user_id = 1
-    # @product.user_id = current_user.id
+    @product.user_id = current_user.id
     @product.delivery_fee_id=1
     @product.shipping_method_id=1
     @product.prefecture_from_id=1
