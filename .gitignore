@@ -34,4 +34,4 @@
 secret.env
 payjp.env
 
-# /public/uploads/*
+/public/uploads/*

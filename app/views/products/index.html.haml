@@ -10,7 +10,7 @@
         =link_to "", class: "item" do
           レディース 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|
+        - @ledies.each do |product|
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -34,7 +34,7 @@
         =link_to "", class: "item" do
           メンズ 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
+        - @mens.each do |product|  
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -57,7 +57,7 @@
         =link_to "", class: "item" do
           ベビー・キッズ 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
+        - @kids.each do |product|  
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -80,7 +80,7 @@
         =link_to "", class: "item" do
           コスメ・香水・美容 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
+        - @cosme.each do |product|  
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -104,9 +104,9 @@
     .contents__pickup__items__box
       .contents__pickup__items__box__title
         =link_to "", class: "item" do
-          シャネル 新着アイテム
+          シャネラ 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
+        - @syanera.each do |product|  
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -129,7 +129,7 @@
         =link_to "", class: "item" do
           ルイビトン 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
+        - @ruibiton.each do |product|  
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -150,9 +150,9 @@
     .contents__pickup__items__box
       .contents__pickup__items__box__title
         =link_to "", class: "item" do
-          シュプリーム 新着アイテム
+          シュプリンム 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|
+        - @syupurinmu.each do |product|
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
@@ -173,9 +173,9 @@
     .contents__pickup__items__box
       .contents__pickup__items__box__title
         =link_to "", class: "item" do
-          ナイキ 新着アイテム
+          ナイコ 新着アイテム
       .contents__pickup__items__box__contents
-        - @products.each do |product|  
+        - @naiko.each do |product|  
           = link_to product_path(product.id),class: "contents__pickup__items__box__contents__link" do
             .contents__pickup__items__box__contents__card
               .contents__pickup__items__box__contents__card__thumbnail
