@@ -37,7 +37,14 @@ class ProductsController < ApplicationController
   end
     
   def index
-    @products = Product.order(id: :desc).limit(4)
+    @ledies = Product.ransack(category_ancestry_start: "1/").result.order(id: :desc).limit(4)
+    @mens = Product.ransack(category_ancestry_start: "2/").result.order(id: :desc).limit(4)
+    @kids = Product.ransack(category_ancestry_start: "3/").result.order(id: :desc).limit(4)
+    @cosme = Product.ransack(category_ancestry_start: "7/").result.order(id: :desc).limit(4)
+    @syanera = Product.ransack(brand_cont: "シャネラ").result.order(id: :desc).limit(4)
+    @ruibiton = Product.ransack(brand_cont: "ルイビトン").result.order(id: :desc).limit(4)
+    @syupurinmu = Product.ransack(brand_cont: "シュプリンム").result.order(id: :desc).limit(4)
+    @naiko = Product.ransack(brand_cont: "ナイコ").result.order(id: :desc).limit(4)
   end
   
   def show
