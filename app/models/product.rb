@@ -26,5 +26,18 @@ class Product < ApplicationRecord
     Product.where("id > ?",id).order("id ASC").first
   end
 
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :detail, presence: true, length: { maximum: 1000 }
+  validates :category_id, presence: true
+  validates :size_id, presence: true
+  validates :condition_id, presence: true
+  validates :delivery_fee_id, presence: true
+  validates :shipping_method_id, presence: true
+  validates :prefecture_from_id, presence: true
+  validates :shipping_days_id, presence: true
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+  validates :user_id, presence: true
+  validates :status, presence: true
+
 end
 
