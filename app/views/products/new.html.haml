@@ -13,7 +13,7 @@
           %div{"data-reactroot" => ""}
             .sell-container-inner
               %h2.sell-container-inner__head 商品の情報を入力
-              = form_with model: @product, class:'sell-form sell-container-inner__form',local: true do |form|
+              = form_with model: @product, class:'sell-form sell-container-inner__form dropzone', id: "item-dropzone",local: true do |form|
                 .sell-upload-box
                   %h3.sell-upload-box__head
                     出品画像
@@ -21,17 +21,38 @@
                   %p 最大10枚までアップロードできます
                   .sell-upload-box__container.clearfix.state-image-number-10
                     .upload-items
-                      .upload-items__box.have-item-0
-                        %ul
-                    %div.image-upload-box
+                      .image_box_multi
+                      .image_box_multi2
+                    .image-upload-box
                       = form.fields_for :images do |i|
-                        = i.label :image,class:"upload-items-drop-box have-item-0"
-                        = i.file_field :image,multiple: true,name: "images[image][]",class:'upload-items-drop-box__file'
-                        %pre.upload-items-drop-box__drop
-                          :preserve
-                            ドラッグアンドドロップ
-                            またはクリックしてファイルをアップロード
-                        %i.upload-items-drop-box__icon
+                        .dropzone-container.clearfix
+                          #preview
+                          .dropzone-area
+                            = i.label :image,class:"upload-items-drop-box have-item-0 dropzone-box",for: "upload-image" do
+                              .input_area
+                                = i.file_field :image,multiple: true,name: "images[image][]",class:'upload-items-drop-box__file upload-image',id: "upload-image",'data-image': 0
+                              %pre.upload-items-drop-box__drop
+                                :preserve
+                                  ドラッグアンドドロップ
+                                  またはクリックしてファイルをアップロード
+                              %i.upload-items-drop-box__icon
+                          #preview2
+                          .dropzone-area2
+                            = i.label :image, class: "dropzone-box", for: "upload-image" do
+                              %p ここをクリックしてください
+                    .image-upload-box2
+                      = form.fields_for :images do |i|
+                        .dropzone-container.clearfix
+                          #preview
+                          .dropzone-area
+                            = i.label :image,class:"upload-items-drop-box have-item-0 dropzone-box",for: "upload-image" do
+                              .input_area
+                                = i.file_field :image,multiple: true,name: "images[image][]",class:'upload-items-drop-box__file upload-image',id: "upload-image",'data-image': 0
+                              %pre.upload-items-drop-box__drop
+                                :preserve
+                                  ドラッグアンドドロップ
+                                  またはクリックしてファイルをアップロード
+                              %i.upload-items-drop-box__icon
                 .sell-content
                   .sell-content__form--top.form-group
                     %label
