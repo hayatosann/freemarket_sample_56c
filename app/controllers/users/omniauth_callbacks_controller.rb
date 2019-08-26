@@ -54,7 +54,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       if provider == "google"
         redirect_to user_google_oauth2_omniauth_callback_path
-        
       else
         redirect_to user_facebook_omniauth_callback_path
       end
