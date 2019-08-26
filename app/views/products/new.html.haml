@@ -13,6 +13,9 @@
           %div{"data-reactroot" => ""}
             .sell-container-inner
               %h2.sell-container-inner__head 商品の情報を入力
+              - unless flash[:error].blank?
+                - flash[:error].each do |msg|
+                  = content_tag :p, msg, class: 'error-message'
               = form_with model: @product, class:'sell-form sell-container-inner__form',local: true do |form|
                 .sell-upload-box
                   %h3.sell-upload-box__head

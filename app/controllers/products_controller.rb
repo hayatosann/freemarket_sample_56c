@@ -27,13 +27,23 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    if @product.save!
-      params[:images][:image].each do |image|
-        @product.images.create(image: image, product_id: @product.id)
+    if @product.valid?
+      if @product.save!
+        params[:images][:image].each do |image|
+          @product.images.create(image: image, product_id: @product.id)
+        end
+      else
+        redirect_to new_product_path
       end
     else
+      @messages = @product.errors.full_messages
+      flash[:error] = []
+      @messages.each do |message|
+        flash[:error] << message
+      end
       redirect_to new_product_path
     end
+    
   end
     
   def index
