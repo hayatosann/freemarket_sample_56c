@@ -1,0 +1,534 @@
+.field__area__category{
+  height: auto;
+  width: 100%;
+  margin-top:20px;
+  select{
+    height: 47px;
+    width: 250px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: solid 1px #dcdcdc;
+    background-color: #ffffff;
+  }
+  .checks{
+    font-size:13px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:5px;
+    width: 100%;
+    &__check{
+      margin-top:20px;
+      width: 45%;
+      display: flex;
+      input[type=checkbox] {
+        transform: scale(1.5);
+      }
+      &__label{
+        margin-top:-2px;
+        margin-left: 10px;
+      }
+      &__label-2line{
+        width: 128px;
+        margin-top:-5px;
+        margin-left: 10px;
+        line-height: 14px;
+      }
+      &__label-3line{
+        margin-top:-10px;
+        margin-left: 10px;
+        line-height: 14px;
+      }
+    }
+    &__check-r{
+      margin-top:20px;
+      margin-left:6px;
+      width: 45%;
+      display: flex;
+      &__label{
+        margin-top:-2px;
+        margin-left: 10px;
+      }
+      &__label-2line{
+        margin-top:-5px;
+        margin-left: 10px;
+        line-height: 14px;
+      }
+      &__label-3line{
+        margin-top:-10px;
+        margin-left: 10px;
+        line-height: 14px;
+      }
+    }
+  }
+  &__ledies{
+    display: none;
+    margin-top: 10px;
+    font-size:13px;
+    &__tops{
+      display: none;
+    }
+    &__outer{
+      display: none;
+    }
+    &__pans{
+      display: none;
+    }
+    &__skirt{
+      display: none;
+    }
+    &__onepiece{
+      display: none;
+    }
+    &__shoes{
+      display: none;
+    }
+    &__shoes{
+      display: none;
+    }
+    &__pajama{
+      display: none;
+    }
+    &__sox{
+      display: none;
+    }
+    &__hut{
+      display: none;
+    }
+    &__bag{
+      display: none;
+    }
+    &__accessory{
+      display: none;
+    }
+    &__hairaccessory{
+      display: none;
+    }
+    &__komono{
+      display: none;
+    }
+    &__watch{
+      display: none;
+    }
+    &__wig{
+      display: none;
+    }
+    &__summer{
+      display: none;
+    }
+    &__formal{
+      display: none;
+    }
+    &__matanity{
+      display: none;
+    }
+    &__other{
+      display: none;
+    }
+  }
+  &__mens{
+    display: none;
+    margin-top: 10px;
+    font-size:13px;
+    &__tops{
+      display: none;
+    }
+    &__outer{
+      display: none;
+    }
+    &__pans{
+      display: none;
+    }
+    &__shoes{
+      display: none;
+    }
+    &__bag{
+      display: none;
+    }
+    &__suit{
+      display: none;
+    }
+    &__hut{
+      display: none;
+    }
+    &__accessary{
+      display: none;
+    }
+    &__komono{
+      display: none;
+    }
+    &__watch{
+      display: none;
+    }
+    &__swim{
+      display: none;
+    }
+    &__sox{
+      display: none;
+    }
+    &__under{
+      display: none;
+    }
+  }
+  &__kids{
+    display: none;
+    margin-top: 10px;
+    &__girl95{
+      display: none;
+    }
+    &__boy95{
+      display: none;
+    }
+    &__baby95{
+      display: none;
+    }
+    &__girl100{
+      display: none;
+    }
+    &__boy100{
+      display: none;
+    }
+    &__baby100{
+      display: none;
+    }
+    &__shoes{
+      display: none;
+    }
+    &__komono{
+      display: none;
+    }
+    &__omutsu{
+      display: none;
+    }
+    &__move{
+      display: none;
+    }
+    &__meal{
+      display: none;
+    }
+    &__sleep{
+      display: none;
+    }
+    &__hoby{
+      display: none;
+    }
+    &__memorial{
+      display: none;
+    }
+    &__other{
+      display: none;
+    }
+  }
+  &__interior{
+    display: none;
+    margin-top: 10px;
+    &__kitchen{
+      display: none;
+    }
+    &__sleep{
+      display: none;
+    }
+    &__sofa{
+      display: none;
+    }
+    &__chair{
+      display: none;
+    }
+    &__table{
+      display: none;
+    }
+    &__storage{
+      display: none;
+    }
+    &__rag{
+      display: none;
+    }
+    &__curtain{
+      display: none;
+    }
+    &__light{
+      display: none;
+    }
+    &__sleeper{
+      display: none;
+    }
+    &__komono{
+      display: none;
+    }
+    &__season{
+      display: none;
+    }
+  }
+  &__book{
+    display: none;
+    margin-top: 10px;
+    &__books{
+      display: none;
+    }
+    &__comic{
+      display: none;
+    }
+    &__magazin{
+      display: none;
+    }
+    &__cd{
+      display: none;
+    }
+    &__dvd{
+      display: none;
+    }
+    &__record{
+      display: none;
+    }
+    &__game{
+      display: none;
+    }
+  }
+  &__hoby{
+    display: none;
+    margin-top: 10px;
+    &__hobies{
+      display: none;
+    }
+    &__tallent{
+      display: none;
+    }
+    &__anime{
+      display: none;
+    }
+    &__card{
+      display: none;
+    }
+    &__figure{
+      display: none;
+    }
+    &__music{
+      display: none;
+    }
+    &__collection{
+      display: none;
+    }
+    &__miritary{
+      display: none;
+    }
+    &__art{
+      display: none;
+    }
+    &__artgoods{
+      display: none;
+    }
+    &__other{
+      display: none;
+    }
+  }
+  &__cosme{
+    display: none;
+    margin-top: 10px;
+    &__base{
+      display: none;
+    }
+    &__up{
+      display: none;
+    }
+    &__nail{
+      display: none;
+    }
+    &__freg{
+      display: none;
+    }
+    &__skin{
+      display: none;
+    }
+    &__hair{
+      display: none;
+    }
+    &__body{
+      display: none;
+    }
+    &__oral{
+      display: none;
+    }
+    &__relax{
+      display: none;
+    }
+    &__diet{
+      display: none;
+    }
+    &__other{
+      display: none;
+    }
+  }
+  &__machine{
+    display: none;
+    margin-top: 10px;
+    &__phone{
+      display: none;
+    }
+    &__accessary{
+      display: none;
+    }
+    &__pc{
+      display: none;
+    }
+    &__camera{
+      display: none;
+    }
+    &__tv{
+      display: none;
+    }
+    &__audio{
+      display: none;
+    }
+    &__helth{
+      display: none;
+    }
+    &__heat{
+      display: none;
+    }
+    &__home{
+      display: none;
+    }
+    &__other{
+      display: none;
+    }
+  }
+  &__sports{
+    display: none;
+    margin-top: 10px;
+    &__golf{
+      display: none;
+    }
+    &__fishing{
+      display: none;
+    }
+    &__bike{
+      display: none;
+    }
+    &__training{
+      display: none;
+    }
+    &__baseball{
+      display: none;
+    }
+    &__soccor{
+      display: none;
+    }
+    &__tennis{
+      display: none;
+    }
+    &__snowboard{
+      display: none;
+    }
+    &__ski{
+      display: none;
+    }
+    &__othersports{
+      display: none;
+    }
+    &__outdoor{
+      display: none;
+    }
+    &__other{
+      display: none;
+    }
+  }
+  &__handmade{
+    display: none;
+    margin-top: 10px;
+    &__ledies{
+      display: none;
+    }
+    &__komono{
+      display: none;
+    }
+    &__watch{
+      display: none;
+    }
+    &__interior{
+      display: none;
+    }
+    &__hoby{
+      display: none;
+    }
+    &__kids{
+      display: none;
+    }
+    &__material{
+      display: none;
+    }
+    &__second{
+      display: none;
+    }
+  }
+  &__ticket{
+    display: none;
+    margin-top: 10px;
+    &__music{
+      display: none;
+    }
+    &__sports{
+      display: none;
+    }
+    &__musical{
+      display: none;
+    }
+    &__event{
+      display: none;
+    }
+    &__cinema{
+      display: none;
+    }
+    &__right{
+      display: none;
+    }
+    &__discount{
+      display: none;
+    }
+  }
+  &__automobil{
+    display: none;
+    margin-top: 10px;
+    &__car{
+      display: none;
+    }
+    &__tire{
+      display: none;
+    }
+    &__parts{
+      display: none;
+    }
+    &__accessory{
+      display: none;
+    }
+    &__bikeparts{
+      display: none;
+    }
+    &__bikeaccessory{
+      display: none;
+    }
+  }
+  &__other{
+    display: none;
+    margin-top: 10px;
+    &__pet{
+      display: none;
+    }
+    &__meal{
+      display: none;
+    }
+    &__drink{
+      display: none;
+    }
+    &__life{
+      display: none;
+    }
+    &__collection{
+      display: none;
+    }
+    &__stationary{
+      display: none;
+    }
+    &__office{
+      display: none;
+    }
+  }
+}

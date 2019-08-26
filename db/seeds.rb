@@ -4,6 +4,7 @@ require "csv"
 # csvファイル作成時にブランド一覧サインであるア~ンの一文字と数字の一文字は削除済み
 # name: row['name']  左側がデータベースカラム、右側がcsvファイルのカラム
 
+
 parent_element = []
 children_element = []
 
@@ -43,5 +44,10 @@ grandchild_category.each_with_index do |grandchild,index|
   end
 end
 
+user = User.new(:email=>"tanaka.tarou@gmail.com", :password => 'hugahuga', :password_confirmation => 'hugahuga', :nickname => 'taro', :family_name => '田中', :first_name => '太朗', :family_name_kana =>'タナカ', :first_name_kana =>'タロウ',:birthday =>'1992/11/08',:phone =>'09012123434')
+ user.save!
+
 # 本番環境では
+
 # rake db:seed RAILS_ENV=production
+

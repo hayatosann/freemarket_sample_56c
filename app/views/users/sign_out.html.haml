@@ -6,6 +6,6 @@
   .left_contents
     = render partial: 'shared/navigations'
   .back-box
-    = link_to 'ログアウト', "/users/sign_out", method: :delete, class: :logout
+    = link_to 'ログアウト', "/users/sign_out", method: :delete, class: :logout, name: :bye
 = render 'shared/footer'
 

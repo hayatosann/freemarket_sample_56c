@@ -5,16 +5,13 @@
     %h1.item-container1__item-name 
       = @product.name
     .item-container1__item-content.clearfix
-      .content--photo
+      .content--photo 
         .content--photo-up
-          = image_tag @product.images.first.image.url, size: "300x300"
-    
-        .content--photo-down
-          - @product.images.each_with_index do |image, index|
-            - unless index == 0 
-              .boxshow 
-                = image_tag image.image.url, size: "72x72"
-          // params[:id]で取得した一つの商品に対する複数枚の写真を並べ出す際に下に複数枚小さく並ぶ箇所にメインの画像とのダブりを解消する記述//
+          = image_tag @product.images.first.image.url, size: "300x300", class:"mainimage img01"
+        %ul.subimage.img01
+          - @product.images.each do |image|
+            %li.picture
+              = image_tag image.image.url, size: "60x60", class:"boxshow"
       %table.content--detail-table
         %tbody.table
           %tr.table--section
@@ -29,18 +26,16 @@
                 - parent=@product.category.path_ids[0].to_i
                 = @category.find(parent).name
               %br  
-              %i.fas.fa-angle-right 
-                = link_to '#',class:"blue" do
-                  トップス
-                  -# - child=@product.category.path_ids[1].to_i
-                  -# = @category.find(child).name 
+              = link_to '#',class:"blue" do
+                %i.fas.fa-angle-right 
+                - child=@product.category.path_ids[1].to_i
+                = @category.find(child).name 
                  
               %br 
-              %i.fas.fa-angle-right 
-                = link_to '#',class:"blue" do
-                  Tシャツ/カットソー(半袖/袖なし)
-                  -# - grandchild=@product.category.path_ids[2].to_i
-                  -# = @category.find(grandchild).name
+              = link_to '#',class:"blue" do
+                %i.fas.fa-angle-right 
+                - grandchild=@product.category.path_ids[2].to_i
+                = @category.find(grandchild).name
                  
           //params[:id]で取得したidの商品に対してcategory子、孫も表示するために記載//
           %tr.table--section
@@ -174,20 +169,4 @@
       %h1 不適切な商品を報告しますか？
     .modalbtnbox
       %button#closeBtn.modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-      %button.modal-btn.modal-btn-submit はい
-
-// app/assets/javascript fileに下記を記述しても反映されないので下記haml内に記載
-:javascript
-  var btn = document.getElementById('btn');
-  var modal = document.getElementById('modal');
-  
-
-  btn.addEventListener('click', function() {
-    modal.style.display = 'block';
-  });
-
-  var closeBtn = document.getElementById('closeBtn');
-
-  closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
+      %button.modal-btn.modal-btn-submit はい  

@@ -15,32 +15,297 @@
     display: flex;
     &__seachbar{
       width: 280px;
-      background-color: aqua;
+      select{
+        height: 47px;
+        width: 280px;
+        padding-left: 10px;
+        border: solid 1px #dcdcdc;
+        background-color: #ffffff;
+      }
+      .icon{
+        color: #888;
+      }
+      .tag{
+        color: #888;
+        transform: rotate(-45deg);
+      }
+      .label{
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .form{
+        padding-left:10px;
+        padding-right: 10px;
+        height: 47px;
+        width: 100%;
+        border: solid 1px #dcdcdc;
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+      .min{
+        margin-top:10px;
+        padding-left:10px;
+        padding-right: 10px;
+        height: 47px;
+        width: 45%;
+        border: solid 1px #dcdcdc;
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+      .max{
+        margin-top: 10px;
+        margin-left: 5px;
+        padding-left:10px;
+        padding-right: 10px;
+        height: 47px;
+        width: 45%;
+        border: solid 1px #dcdcdc;
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+      .wave{
+        font-size:10px;
+        margin-top:10px;
+        margin-left: 5px;
+        color: #888;
+      }
+      .field{
+        height: auto;
+        width: 280px;
+        margin-top: 40px;
+        background-color: #ffffff;
+        padding-bottom:15px;
+        &__area{
+          width: 250px;
+          margin:0 auto;
+          &__logo{
+            font-weight: bold;
+            font-size: 16px;
+            padding-top: 10px;
+          }
+          &__detail{
+            height: 90px;
+            width: 100%;
+            margin-top:30px;
+            select{
+              height: 47px;
+              width: 250px;
+              padding-left: 10px;
+              border: solid 1px #dcdcdc;
+              background-color: #ffffff;
+            }
+          }
+          &__brand{
+            height: 90px;
+            width: 100%;
+            margin-top:50px;
+          }
+          input[type=checkbox] {
+            transform: scale(1.5);
+          }
+          &__price{
+            height: 150px;
+            width: 100%;
+            margin-top:40px;
+            select{
+              height: 47px;
+              width: 250px;
+              padding-left: 10px;
+              border: solid 1px #dcdcdc;
+              background-color: #ffffff;
+            }
+          }
+          &__size{
+            height: auto;
+            width: 100%;
+            margin-top:20px;
+            select{
+              height: 47px;
+              width: 250px;
+              padding-left: 10px;
+              border: solid 1px #dcdcdc;
+              background-color: #ffffff;
+            }
+          }
+          &__condition{
+            height: 180px;
+            width: 100%;
+            margin-top:20px;
+            .checks{
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              &__check{
+                margin-top:15px;
+                width: 45%;
+                display: flex;
+                input[type=checkbox] {
+                  transform: scale(1.5);
+                }
+                &__label{
+                  margin-left: 10px;
+                  font-size:14px;
+                }
+                &__label-2line{
+                  margin-top:-5px;
+                  margin-left: 10px;
+                  line-height: 14px;
+                  font-size:14px;
+                }
+              }
+              &__check-r{
+                margin-top:15px;
+                margin-left:20px;
+                width: 45%;
+                display: flex;
+
+                &__label{
+                  margin-left: 10px;
+                  font-size:14px;
+                }
+                &__label-2line{
+                  margin-top:-5px;
+                  margin-left: 10px;
+                  line-height: 14px;
+                  font-size:14px;
+                }
+              }
+            }
+          }
+          &__fee{
+            height: 110px;
+            width: 280px;
+            margin-top:30px;
+            .checks{
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              &__check{
+                margin-top:15px;
+                width: 45%;
+                display: flex;
+                input[type=checkbox] {
+                  transform: scale(1.5);
+                }
+                &__label{
+                  margin-left: 10px;
+                  font-size:14px;
+                }
+                &__label-2line{
+                  width: 128px;
+                  margin-top:-5px;
+                  margin-left: 10px;
+                  line-height: 14px;
+                  font-size:14px;
+                }
+              }
+              &__check-r{
+                margin-top:15px;
+                margin-left:6px;
+                width: 45%;
+                display: flex;
+
+                &__label{
+                  margin-left: 10px;
+                  font-size:14px;
+                }
+                &__label-2line{
+                  margin-top:-5px;
+                  margin-left: 10px;
+                  line-height: 14px;
+                  font-size:14px;
+                }
+              }
+            }
+          }
+          &__status{
+            height: 120px;
+            width: 280px;
+            margin-top:30px;
+            .checks{
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              &__check{
+                margin-top:15px;
+                width: 45%;
+                display: flex;
+                input[type=checkbox] {
+                  transform: scale(1.5);
+                }
+                &__label{
+                  margin-left: 10px;
+                  font-size:14px;
+                }
+              }
+              &__check-r{
+                margin-top:15px;
+                margin-left:6px;
+                width: 45%;
+                display: flex;
+
+                &__label{
+                  margin-left: 10px;
+                  font-size:14px;
+                }
+              }
+            }
+          }
+          .clear{
+            height: 50px;
+            width: 117.6px;
+            background-color: #aaaaaa;
+            color: #ffffff;
+          }
+          .comp{
+            height: 50px;
+            width: 117.6px;
+            margin-left: 10px;
+            background-color: #ea352d;
+            color: #ffffff;
+          }
+        }
+      }
     }
     &__seachlist{
       width: 710px;
       margin-left: 40px;
       &__logo{
         height: 30px;
-        font-size: 20px;
+        font-size: 30px;
         margin-left: 10px;
         display: flex;
         &__word{
           font-weight: bold;
-          font-size: 20px;
+          font-size: 24px;
         }
         &__result{
           margin-left:10px;
-          font-size: 18px;
+          font-size: 23px;
         }
+      }
+      &__new{
+        height: 30px;
+        font-size: 24px;
+        margin-top: 40px;
+        margin-left: 10px;
+        font-weight: bold;
       }
       &__notfound{
         margin-top: 10px;
         margin-left: 10px;
         font-size: 15px;
       }
+      &__noproduct{
+        margin-top: 10px;
+        margin-left: 10px;
+        height: 15px;
+        font-size: 15px;
+        color: black;
+      }
       &__number{
         margin-top: 10px;
+        margin-left: 10px;
         height: 15px;
         font-size: 12px;
         color: #888;

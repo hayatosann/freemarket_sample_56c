@@ -14,9 +14,9 @@
           =link_to "", class: "menu" do
             .header__top__contents__icons__mypage__thumbnail
     .header__top__search
-      = form_with url:'/products/search', method: :get, local: true do |f|
+      = search_form_for Product.ransack, url: search_products_path ,html: { method: :post } do |f|
         .field
-          = f.text_field :search,placeholder: "何かお探しですか？" ,class: 'search',value:@keyword
+          = f.search_field :name_cont,placeholder: "何かお探しですか？" ,class: 'search'
           = f.submit "",class:'submit', name: nil
           = icon("far", "search",class:"search-icon")
   .header__bottom
