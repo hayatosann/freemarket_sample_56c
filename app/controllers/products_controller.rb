@@ -52,12 +52,12 @@ class ProductsController < ApplicationController
   def search
     if params[:q].present?
       @search = Product.ransack(search_params)
-      @products = @search.result.page(params[:page]).per(132)
-      @products0 = Product.all.limit(24)
+      @products = @search.result.page(params[:page]).per(132).order(id: :desc)
+      @products0 = Product.all.limit(24).order(id: :desc)
     else
       params[:q] = { sorts: 'id desc' }
       @search = Product.ransack()
-      @products = Product.all.page(params[:page]).per(132)
+      @products = Product.page(params[:page]).per(132).order(id: :desc)
     end
   end
 
