@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :shipping_days
   belongs_to :category
 
-  
+  validates :images, presence: true
 
   def previous
     Product.where("id < ?",id).order("id DESC").first
