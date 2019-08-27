@@ -374,8 +374,13 @@ select#product_shipping_days_id{
             text-align: center;
             font-weight: bold;
           }
+          .error-message {
+            color:red;
+            text-align: center;
+          }
           form.sell-container-inner__form.sell-form{
             border-top: 1px solid #eee;
+            margin-top: 25px;
             .sell-upload-box{
               padding: 40px 2.5%;
               padding: 40px;
