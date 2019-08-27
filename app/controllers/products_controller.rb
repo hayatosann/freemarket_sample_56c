@@ -29,9 +29,6 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     if @product.valid?
       if @product.save!
-        params[:images][:image].each do |image|
-          @product.images.create(image: image, product_id: @product.id)
-        end
       else
         redirect_to new_product_path
       end
