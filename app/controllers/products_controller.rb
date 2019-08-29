@@ -42,6 +42,26 @@ class ProductsController < ApplicationController
     end
     
   end
+
+  def edit
+    @product = Product.find(params[:id])
+    # @images = @product.images
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    binding.pry
+    # @images = @product.images
+    if @product.update(product_params)
+      # params[:images][:image].each do |image|
+      #   @product.images.update(image: image, product_id: @product.id)
+        redirect_to root_path
+      # end
+    else
+      redirect_to new_product_path
+    end
+  end
     
   def index
     @ledies = Product.ransack(category_ancestry_start: "1/").result.order(id: :desc).limit(4)
@@ -75,6 +95,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def delete
+    product = Product.find(params[:id])
+      if product.user_id == current_user.id
+        product.destroy
+      end
+  end
+
   def destroy
     product = Product.find(params[:id])
       if product.user_id == current_user.id
@@ -86,7 +113,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method_id,:prefecture_from_id,:shipping_days_id,:price,:status,:category_id,images_attributes: [:image])
+    params.require(:product).permit(:name,:detail,:user_id,:size_id,:brand,:condition_id,:delivery_fee_id,:shipping_method_id,:prefecture_from_id,:shipping_days_id,:price,:status,:category_id,images_attributes: [:image, :id,:_destroy])
   end
 
   

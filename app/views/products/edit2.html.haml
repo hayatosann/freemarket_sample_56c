@@ -1,0 +1,171 @@
+.product_input
+  %noscript
+    %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden", :width => "0"}
+  .exhibition-wrap
+    %header.exhibition-header
+      %h1
+        = link_to products_path do
+          = image_tag asset_path('logo.svg?863303983')
+        
+    %main.exhibition-main
+      %section.l-exhibition-container
+        #sell-container
+          %div{"data-reactroot" => ""}
+            .sell-container-inner
+              %h2.sell-container-inner__head 商品の情報を入力
+              = form_with model: @product, class:'sell-form sell-container-inner__form dropzone', id: "item-dropzone",local: true do |form|
+                .sell-upload-box
+                  %h3.sell-upload-box__head
+                    出品画像
+                    %span.form-require 必須
+                  %p 最大10枚までアップロードできます
+                  .sell-upload-box__container.clearfix.state-image-number-10
+                    .upload-items
+                      - @product.images.each_with_index do |img, i|
+                        .image_box_multi2
+                          .img_view{"data-image" => i}
+                            = image_tag img.image.url, size: "110x110", class: "image_box_multi2 img_view__inner", style: "display: flex;"
+                            .btn_wrapper
+                              .btn_edit_image.btn.edit 編集
+                              .btn_delete_image.btn.delete 削除 
+               
+                    .image-upload-box
+                      = form.fields_for :images do |i|
+                        .dropzone-container.clearfix
+                          #preview
+                          .dropzone-area
+                            = i.label :image,class:"upload-items-drop-box have-item-0 dropzone-box",for: "upload-image" do
+                              .input_area
+                                .img_view{"data-image" => i}
+                                  = image_tag i.object.image.url, size: "110x110", class: "image_box_multi2 img_view__inner", style: "display: flex;"
+                                  .btn_wrapper
+                                    .btn_edit_image.btn.edit 編集
+                                    .btn_delete_image.btn.delete 削除
+                                = i.file_field :image,multiple: true,name: "product[images_attributes][0][image]",class:'upload-items-drop-box__file upload-image',id: "upload-image",'data-image': 0
+                                = i.hidden_field :id, value: i.object.id
+                              %pre.upload-items-drop-box__drop
+                                :preserve
+                                  ドラッグアンドドロップ
+                                  またはクリックしてファイルをアップロード
+                                
+                              %i.upload-items-drop-box__icon
+                          #preview2
+                          .dropzone-area2
+                            = i.label :image, class: "dropzone-box", for: "upload-image" do
+                              %p ここをクリックしてください
+                   
+                .sell-content
+                  .sell-content__form--top.form-group
+                    %label
+                      商品名
+                      %span.form-require 必須
+                    %div
+                      //商品名の入力フォーム
+                      = form.text_field :name,class:"input-default",placeholder:"商品名（必須 40文字まで)"
+                  .sell-content__form--bottom.form-group
+                    %label
+                      商品の説明
+                      %span.form-require 必須
+                    //商品詳細のフォーム
+                    = form.text_area :detail,class:"textarea-default textarea-detail",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",rows: 5
+                .sell-content.clearfix
+                  %h3.sell-content__head.sell-sub-head 商品の詳細
+                  .sell-content__form.sell-form-box
+                    .form-group
+                      %label
+                        カテゴリー
+                        %span.form-require 必須
+                      %div.category_form
+                        .select-wrap
+                          %i.fas.fa-chevron-down
+                          = form.collection_select :category_id, Category.all, :id, :name,class:"select-default category_id",prompt: "---"
+                    .form-group
+                      %label
+                        商品の状態
+                        %span.form-require 必須
+                      %div
+                        .select-wrap
+                          %i.fas.fa-chevron-down
+                          = form.collection_select :condition_id, Condition.all, :id, :name,class:"select-wrap",prompt: "---"
+                .sell-content.clearfix
+                  %h3.sell-content__head.sell-sub-head 配送について
+                  %a.sell-content__form.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
+                  .sell-form-box
+                    .form-group.delivery_fee_box
+                      %label
+                        配送料の負担
+                        %span.form-require 必須
+                      .select-wrap
+                        %i.fas.fa-chevron-down
+                        = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,class:"select-default",prompt: "---"
+                    .form-group
+                      %label
+                        発送元の地域
+                        %span.form-require 必須
+                      .select-wrap
+                        %i.fas.fa-chevron-down
+                        = form.collection_select :prefecture_from_id, PrefectureFrom.all, :id, :name,class:"select-default",prompt: "---"
+                    .form-group
+                      %label
+                        発送までの日数
+                        %span.form-require 必須
+                      .select-wrap
+                        %i.fas.fa-chevron-down
+                        = form.collection_select :shipping_days_id, ShippingDays.all, :id, :name,class:"select-default",prompt: "---"
+                .sell-content.clearfix
+                  %h3.sell-content__head.sell-sub-head 販売価格(300〜9,999,999)
+                  %a.sell-content__form.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
+                  .sell-form-box
+                    %ul.sell-form-box__price
+                      %li.form-group
+                        .clearfix
+                          %label.l-left
+                            価格
+                            %span.form-require 必須
+                          .l-right.sell-price-input
+                            %span.yen ¥
+                            %span.price-box
+                              = form.number_field :price,class:"input-default",placeholder:"例）300"
+                      %li.clearfix
+                        .l-left
+                          販売手数料 (10%)
+                        #commission.l-right -
+                      %li.clearfix.bold
+                        .l-left 販売利益
+                        #price.l-right -
+                .sell-content.sell-btn-box
+                  %div
+                    %p
+                      =link_to "禁止されている出品",'https://www.mercari.com/jp/help_center/getting_started/prohibited_items/',target: "_blank"
+                      、
+                      =link_to "行為",'https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/',target: "_blank"
+                      を必ずご確認ください。
+                    %p
+                      またブランド品でシリアルナンバー等がある場合はご記載ください。
+                      =link_to "偽ブランドの販売","https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",target: "_blank"
+                      は犯罪であり処罰される可能性があります。
+                    %p
+                      また、出品をもちまして
+                      =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/",target: "_blank"
+                      に同意したことになります。
+                  %div
+                    -# statusに初期状態である0（未売却）を入れる
+                    = form.hidden_field :status, value: 0
+                    = form.submit "変更する", class:"btn-default btn-red exhibition_submit", method: "patch"
+                  %a.btn-default.btn-gray
+                    もどる
+              
+              .overlay
+    %footer.exhibition-footer
+      %nav
+        %ul.clearfix
+          %li
+            %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+          %li
+            %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+          %li
+            %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+      %a.single-footer-logo
+        %div.LogoGray= image_tag asset_path('logo-gray.svg')
+      %p
+        %small © 2019 Mercari

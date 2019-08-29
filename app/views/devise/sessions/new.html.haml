@@ -14,6 +14,7 @@
         - else
           = link_to "Facebookでログイン", root_path, style: "color: white;"
       .boxbottom__GoogleRegistration
+        -# %img{src: "/assets/google.svg", class: "glogo"}
         = image_tag asset_path('google.svg'), class: "glogo"
         - if Rails.env == "development"
           = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, style: "color: black;"

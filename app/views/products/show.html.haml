@@ -88,7 +88,7 @@
 
   - if user_signed_in? && @product.user.id == current_user.id
     %section.item-container1
-      = link_to "商品の編集", '#', class: "item-container1__item-edit-btn"
+      = link_to "商品の編集", edit_product_path(@product.id), class: "item-container1__item-edit-btn"
       or
       = link_to "出品を一旦停止する", '#', class: "item-container1__item-suspend-btn"
       = link_to "この商品を削除する", product_path(@product.id), method: :delete, class: "item-container1__item-delete-btn"
