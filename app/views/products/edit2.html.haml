@@ -13,9 +13,6 @@
           %div{"data-reactroot" => ""}
             .sell-container-inner
               %h2.sell-container-inner__head 商品の情報を入力
-              - unless flash[:error].blank?
-                - flash[:error].each do |msg|
-                  = content_tag :p, msg, class: 'error-message'
               = form_with model: @product, class:'sell-form sell-container-inner__form dropzone', id: "item-dropzone",local: true do |form|
                 .sell-upload-box
                   %h3.sell-upload-box__head
@@ -24,48 +21,39 @@
                   %p 最大10枚までアップロードできます
                   .sell-upload-box__container.clearfix.state-image-number-10
                     .upload-items
-                      .image_box_multi
-                        .upload-items
-                          - @product.images.each_with_index do |img, i|
-                            .update__img-view{"data-image" => i}
-                              = image_tag img.image.url, size: "110x110", class: "image_box_multi2 img_view__inner", style: "display: flex;"
-                              .btn_wrapper
-                                .edit-btn 編集
-                                .update__delete-btn 削除 
-                      .image_box_multi2
+                      - @product.images.each_with_index do |img, i|
+                        .image_box_multi2
+                          .img_view{"data-image" => i}
+                            = image_tag img.image.url, size: "110x110", class: "image_box_multi2 img_view__inner", style: "display: flex;"
+                            .btn_wrapper
+                              .btn_edit_image.btn.edit 編集
+                              .btn_delete_image.btn.delete 削除 
+               
                     .image-upload-box
-                      .dropzone-container.clearfix
-                        #preview
-                        = form.fields_for :images do |image|
-                          .dropzone-area
-                            = image.label :image,class:"upload-items-drop-box have-item-0 dropzone-box",for: "upload-image" do
-                              .delete_box
-                                = image.label '削除'
-                                = image.check_box :_destroy
-                                .input_area
-                                  = image.file_field :image,multiple: true,name: "product[images_attributes][0][image]",class:'upload-items-drop-box__file upload-image',id: "upload-image",'data-image': 0
-                                %pre.upload-items-drop-box__drop
-                                  :preserve
-                                    ドラッグアンドドロップ
-                                    またはクリックしてファイルをアップロード
-                                %i.upload-items-drop-box__icon
-                          #preview2
-                          .dropzone-area2
-                            = image.label :image, class: "dropzone-box", for: "upload-image" do
-                              %p ここをクリックしてください
-                    .image-upload-box2
                       = form.fields_for :images do |i|
                         .dropzone-container.clearfix
                           #preview
                           .dropzone-area
                             = i.label :image,class:"upload-items-drop-box have-item-0 dropzone-box",for: "upload-image" do
                               .input_area
+                                .img_view{"data-image" => i}
+                                  = image_tag i.object.image.url, size: "110x110", class: "image_box_multi2 img_view__inner", style: "display: flex;"
+                                  .btn_wrapper
+                                    .btn_edit_image.btn.edit 編集
+                                    .btn_delete_image.btn.delete 削除
                                 = i.file_field :image,multiple: true,name: "product[images_attributes][0][image]",class:'upload-items-drop-box__file upload-image',id: "upload-image",'data-image': 0
+                                = i.hidden_field :id, value: i.object.id
                               %pre.upload-items-drop-box__drop
                                 :preserve
                                   ドラッグアンドドロップ
                                   またはクリックしてファイルをアップロード
+                                
                               %i.upload-items-drop-box__icon
+                          #preview2
+                          .dropzone-area2
+                            = i.label :image, class: "dropzone-box", for: "upload-image" do
+                              %p ここをクリックしてください
+                   
                 .sell-content
                   .sell-content__form--top.form-group
                     %label
@@ -90,7 +78,7 @@
                       %div.category_form
                         .select-wrap
                           %i.fas.fa-chevron-down
-                          = form.collection_select :category_id, Category.where(id: 1..13), :id, :name,class:"select-default category_id",prompt: "---"
+                          = form.collection_select :category_id, Category.all, :id, :name,class:"select-default category_id",prompt: "---"
                     .form-group
                       %label
                         商品の状態
@@ -145,17 +133,6 @@
                       %li.clearfix.bold
                         .l-left 販売利益
                         #price.l-right -
-                .modal.is-show{role: "dialog", tabindex:"-1"}
-                  .modal-inner
-                    %div
-                      %h3.modal-head 出品が完了しました
-                      .sell-modal-body{"data-gtm-vis-first-on-screen-6824027_198" => "42356", "data-gtm-vis-has-fired-6824027_198" => "1", "data-gtm-vis-recent-on-screen-6824027_198" => "42356", "data-gtm-vis-total-visible-time-6824027_198" => "100"}
-                        / react-text: 880
-                        あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
-                        / /react-text
-                        =link_to "続けて出品する", new_product_path, class: "btn-default btn-red"
-                        %p.text-center
-                          =link_to "商品ページへ行ってシェアする", root_path
                 .sell-content.sell-btn-box
                   %div
                     %p
@@ -174,7 +151,7 @@
                   %div
                     -# statusに初期状態である0（未売却）を入れる
                     = form.hidden_field :status, value: 0
-                    = form.submit "出品する", class:"btn-default btn-red exhibition_submit"
+                    = form.submit "変更する", class:"btn-default btn-red exhibition_submit", method: "patch"
                   %a.btn-default.btn-gray
                     もどる
               

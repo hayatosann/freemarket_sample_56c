@@ -632,3 +632,57 @@ select#product_size_id {
   color: #0099e8;
   text-decoration: none;
 }
+
+.update__img-view{
+  float:left;
+}
+
+.edit-btn{
+  display: inline-block;
+  width: 50%;
+  background: #f5f5f5;
+  line-height: 44px;
+  text-align: center;
+  color: #0099e8;
+  text-decoration: none;
+}
+.update__delete-btn{
+  display: inline-block;
+  width: 50%;
+  background: #f5f5f5;
+  line-height: 44px;
+  text-align: center;
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.update__img-view{
+  text-align: left;
+  float:left;
+  font-size: 10px;
+  margin: 0 0 10px 10px;
+}
+
+input.exhibition_submit{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  margin: 40px 0 0;
+}
+
+.btn-default.btn-gray{
+  width: 45%;
+  margin: 110px auto 0;
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+}
